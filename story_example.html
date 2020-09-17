@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--localStorage Example-->
+	<title>Story Writer</title>
+	<script>
+		function loadStory() {
+			//gets story by given input, and grabs story from localStorage
+			//an alteration could be to add a check to see if there are saved stories and notify the user.
+			var storyName = document.getElementById("name_input").value;
+			var storyHTML = localStorage.getItem(storyName);
+			document.getElementById("story_editor").value = storyHTML;
+		}
+		function saveStory() {
+			//saves name from input, and text from textarea to localStorage
+			var storyName = document.getElementById('name_input').value;
+			var storyHTML = document.getElementById('story_editor').value;
+			localStorage.setItem(storyName, storyHTML);
+		}
+		function displayStory() {
+			//grabs story from text area, and displays
+			var storyHTML = document.getElementById("story_editor").value;
+			document.getElementById('story_display').innerHTML = storyHTML;
+		}
+	</script>
+	<style>
+		body {
+			background-color: #7F006EBD;
+			color: #fffeee;
+			font-style: italic;
+			font-family: sans-serif;
+		}
+		button {
+			margin: .5em;
+			margin-left: 0;
+		}
+		textarea {
+			width: 90%;
+			height: 50vh;
+			background-color: #F7FF5FFF;
+			padding: 1em;
+
+		}
+	</style>
+</head>
+<body>
+	<h1>Story Editor</h1>
+	Story Name:<input id=name_input></body>
+	<section>
+		<!--sections take up entire width-->
+		<button onclick="loadStory()">Find and Edit it</button>
+		<button onclick="saveStory()">Save it</button>
+		<button onclick="displayStory()">Display It</button>	
+	</section>
+	<textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+	<section id="story_display"></section>
+</body>
+	</html>
