@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kian Hyatt">
+	<meta name="description" content="WDD 330 Portfolio: Week 1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href=".././main.css">
+	<title>Hyatt | Week 1 | Note it!</title>
+	<script>
+
+		function saveNote() {
+			var currentDateAndTime = new Date();
+			var aNoteDescription = document.getElementById("description_input").value;
+			var aNoteText = document.getElementById("note_editor").value;
+			var aCompleteNote = currentDateAndTime.toLocaleString() + "--" + aNoteDescription;
+			aCompleteNote += "<p>" + aNoteText + "</p>";
+
+			var storedNotesString = localStorage.getItem("all_notes");
+			var allNotes = JSON.parse(storedNotesString);
+			if (allNotes == null) {
+				allNotes = [];
+			}
+			allNotes.push(aCompleteNote);
+			var allNotesString = JSON.stringify(allNotes);
+			//console.log(allNotes);
+			localStorage.setItem("all_notes", allNotesString);
+			showAllNotes();
+			document.getElementById("description_input").value = null;
+			document.getElementById("note_editor").value = null;
+		}
+		function showAllNotes() {
+			//function to display the notes to the user
+			var storedNotesString = localStorage.getItem("all_notes");
+			allNotes = JSON.parse(storedNotesString);
+			if (allNotes != null) {
+				var noteDisplayer = document.getElementById("all_notes_display");
+				noteDisplayer.innerHTML = null;
+				//var numberOfNotes = allNotes.length
+				for (var i = 0; i < allNotes.length; i++) {
+					var aNote = allNotes[i];
+					noteDisplayer.innerHTML += "<hr><p>" + aNote + "</p>";
+				}
+			}
+		}
+		function downloadNotes() {
+			//function to download all of your stored notes
+			var fileName = document.getElementById('file_name').value;
+			var storedNotes = localStorage.getItem('all_notes');
+			allNotes = JSON.parse(storedNotes);
+			for (var i=0; i < allNotes.length; i++) {
+				var aNote = allNotes[i];
+				aNote = "<hr><p>" + aNote + "</p>";
+			}
+			//console.log(allNotes);
+			var a = document.createElement('a');
+			a.setAttribute('href', 'data:text/plain;charset=utf-8' + encodeURIComponent(allNotes));
+			a.setAttribute('download', fileName);
+			a.setAttribute('style', 'display:none');
+			document.body.appendChild(a);
+
+			a.click();
+		}
+	</script>
+
+	<style>
+		h1 {
+			text-align: center;
+		}
+
+		body {
+			background-color: LightGrey;
+		}
+
+		input {
+			margin-top: 5px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px #666666 inset;
+			height: 25px;
+			width: 200px;
+			text-indent: 5px;
+		}
+
+		input:focus {
+			outline: none;
+		}
+
+		textarea {
+			margin-top: 10px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px #666666 inset;
+			width: 90%;
+			height: 150px;
+			text-indent: 5px;
+			resize: none;
+			overflow: scroll;
+		}
+
+		#note_entry_area {
+			width: 500px;
+			padding-left: 5px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px #666666 inset;
+			text-indent: 5px;
+		}
+
+		.show {
+			display: none;
+		}
+	</style>
+</head>
+
+<body onload="showAllNotes()">
+	<h1>Note It! <em>altered</em></h1>
+	<nav>
+		<button onclick="backwards()">Go Back</button>
+	</nav>
+	<hr>
+	<button onclick="toggleNoteArea()">Write A Note</button>
+	<section id="note_entry_area" class="take_notes show">
+		Description: <input id="description_input"></input>
+		<textarea id="note_editor" placeholder="Note it down. Don't forget."></textarea>
+		<br>
+		<button onclick="saveNote()">Save</button>
+		<br>
+		Desired File Name: <input id="file_name"></input>
+		<br>
+		<button onclick="downloadNotes()">Download Notes</button>
+	</section>
+	<section id="all_notes_display"></section>
+	<script src=".././js/functionality.js"></script>
+</body>
+
+</html>

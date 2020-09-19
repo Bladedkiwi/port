@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <meta name="author" content="Kian Hyatt">
+    <meta name="description" content="WDD 330 Portfolio: Week 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href=".././main.css">
+	<title>Story Writer</title>
+	<script>
+	function loadStory() {
+		//gets story by given input, and grabs story from localStorage
+		//an alteration could be to add a check to see if there are saved stories and notify the user.
+		var storyName = document.getElementById("name_input").value;
+		var storyHTML = localStorage.getItem(storyName);
+		document.getElementById("story_editor").value = storyHTML;
+	}
+
+	function saveStory() {
+		//saves name from input, and text from textarea to localStorage
+		var storyName = document.getElementById('name_input').value;
+		var storyHTML = document.getElementById('story_editor').value;
+		localStorage.setItem(storyName, storyHTML);
+	}
+
+	function displayStory() {
+		//grabs story from text area, and displays
+		var storyHTML = document.getElementById("story_editor").value;
+		document.getElementById('story_display').innerHTML = storyHTML;
+	}
+	</script>
+	<style>
+	body {
+		background-color: #7F006EBD;
+		color: #fffeee;
+		font-style: italic;
+		font-family: sans-serif;
+	}
+	
+	button {
+		margin: .5em;
+		margin-left: 0;
+	}
+	
+	textarea {
+		width: 90%;
+		height: 50vh;
+		background-color: #F7FF5FFF;
+		padding: 1em;
+	}
+	.show {
+		display: none;
+	}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Story Editor</h1>
+		<nav>
+			<button onclick="backwards()">Go Back</button>
+		</nav>
+	</header> Story Name:
+	<input id=name_input>
+	<section>
+		<!--sections take up entire width-->
+		<button onclick="loadStory()">Find and Edit it</button>
+		<button onclick="saveStory()">Save it</button>
+		<button onclick="displayStory()">Display It</button>
+	</section>
+	<textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+	<section id="story_display"></section>
+<script src=".././js/functionality.js"></script>
+</body>
+
+</html>
