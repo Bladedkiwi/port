@@ -49,10 +49,12 @@
 			//function to download all of your stored notes
 			var fileName = document.getElementById('file_name').value;
 			var storedNotes = localStorage.getItem('all_notes');
+			var copyNotes = document.getElementById('copy_area');
 			allNotes = JSON.parse(storedNotes);
 			for (var i=0; i < allNotes.length; i++) {
 				var aNote = allNotes[i];
 				aNote = "<hr><p>" + aNote + "</p>";
+				copyNotes.textContent += aNote;
 			}
 			console.log(allNotes);
 			var a = document.createElement('a');
@@ -131,6 +133,7 @@
 		Desired File Name: <input id="file_name"></input>
 		<br>
 		<button onclick="downloadNotes()">Download Notes</button>
+		<p id="copy_area"></p>
 	</section>
 	<section id="all_notes_display"></section>
 	<script src=".././js/functionality.js"></script>
