@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href=".././main.css">
 	<title>Hyatt | Week 1 | Note it!</title>
 	<script>
+		//turned into a note taker that provides a file of your notes or the html text for copying 
+		//Downloading hasn't been completely successful, yet.
 
 		function saveNote() {
 			var currentDateAndTime = new Date();
@@ -47,6 +49,9 @@
 		}
 		function downloadNotes() {
 			//function to download all of your stored notes
+			//currently doesn't download all the way, might be settings I have in chrome
+			//Trying to figure out the why behind that. 
+			//Did a workaround with displaying all the text for copying and pasting into my notes.html
 			var fileName = document.getElementById('file_name').value;
 			var storedNotes = localStorage.getItem('all_notes');
 			var copyNotes = document.getElementById('copy_area');
