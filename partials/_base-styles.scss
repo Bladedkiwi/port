@@ -18,9 +18,21 @@ h1,h2,h3,h4,h5,h6 {
   color: $cyan;
   font-family: $title;
   font-weight: $titleS;
+  @include MQ(M) {
+    font-weight: $titleM;
+  }
+  @include MQ(L) {
+    font-weight: $titleL;
+  }
 }
 p,li,a {
   color: $off-white;
   font-family: $text;
   font-weight: $textS;
+  @include MQ(M) {
+    font-weight: $textM;
+  }
+  @include MQ(L) {
+    font-weight: $textL;
+  }
 }

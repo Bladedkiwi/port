@@ -89,9 +89,33 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 0.8rem;
 }
 
+@media only screen and (min-width: 32.5em) {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 2rem;
+  }
+}
+
 p, li, a {
   color: #C5C6C7;
   font-family: "David Libre", serif;
   font-weight: 0.4rem;
+}
+
+@media only screen and (min-width: 32.5em) {
+  p, li, a {
+    font-weight: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  p, li, a {
+    font-weight: 1.25rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
