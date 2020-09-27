@@ -12,3 +12,10 @@ $L: 60em;
         @media only screen and (min-width: $L) {@content; }
     }
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: justify;
+}
