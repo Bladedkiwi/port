@@ -17,22 +17,22 @@ body {
 h1,h2,h3,h4,h5,h6 {
   color: $cyan;
   font-family: $title;
-  font-weight: $titleS;
+  font-size: $titleS;
   @include MQ(M) {
-    font-weight: $titleM;
+    font-size: $titleM;
   }
   @include MQ(L) {
-    font-weight: $titleL;
+    font-size: $titleL;
   }
 }
 p,li,a {
   color: $off-white;
   font-family: $text;
-  font-weight: $textS;
+  font-size: $textS;
   @include MQ(M) {
-    font-weight: $textM;
+    font-size: $textM;
   }
   @include MQ(L) {
-    font-weight: $textL;
+    font-size: $textL;
   }
 }
