@@ -16,7 +16,11 @@ body {
 }
 h1,h2,h3,h4,h5,h6 {
   color: $cyan;
+  font-family: $title;
+  font-weight: $titleS;
 }
 p,li,a {
   color: $off-white;
+  font-family: $text;
+  font-weight: $textS;
 }

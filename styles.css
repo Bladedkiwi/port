@@ -73,9 +73,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: #66FCF1;
+  font-family: "Bangers", cursive;
+  font-weight: 0.8rem;
 }
 
 p, li, a {
   color: #C5C6C7;
+  font-family: "David Libre", serif;
+  font-weight: 0.4rem;
 }
 /*# sourceMappingURL=styles.css.map */
