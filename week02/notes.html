@@ -22,75 +22,8 @@
     </section>
     <ol id="index"></ol>
     <section>
-        <hr>
-        <p>9/23/2020, 12:36:44 PM--Variables
-        <p>const used when the variable will not be reassigned let used if variable might be reassigned later in program
-            let and const are block scoped meaning value only exists inside the block they are declared in let and const
-            prevent you from overwriting any built-in methods by assignment - var doesn't Keep global variables to a
-            minimum</p>
-        </p>
-        <hr>
-        <p>9/23/2020, 12:41:25 PM--String Literals
-        <p>const name = `Siri`; `Hello ${ name }!`; << 'Hello Siri!' const age=39; `I will be ${ age + 1 } next year`;
-                << 'I will be 40 next year' Code inside {} is a JavaScript expression inserted inside a string. HTML
-                tags can be included for in strings and displayed with dynamic content. </p>
-        </p>
-        <hr>
-        <p>9/23/2020, 12:46:48 PM--Number Methods
-        <p>toExponential() returns number as a string in exponential notation -always write integers as a decimal or
-            place in () toFixed() rounds a number to a fixed number of decimal places toPrecision() rounds a number to a
-            fixed number of significant figures -returned as string, often using exponential notation </p>
-        </p>
-        <hr>
-        <p>9/23/2020, 12:49:58 PM--Operators
-        <p>** exponentiation % remainder of a division -result is always the same sign as the first number</p>
-        </p>
-        <hr>
-        <p>9/23/2020, 12:51:59 PM--Checking a Value is a Number
-        <p>Number.isFinite() -returns true if the value is a number that isn't Infinity, -Infinity or NaN</p>
-        </p>
-        <hr>
-        <p>9/23/2020, 12:55:10 PM--Tricks for converting String to Numbers
-        <p>const answer - '5' * 1; << 5 typeof answer; <<"number" const answer=+'5'; << 5 typeof answer; << "number"
-                Hacky methods, not recommended but can see them</p>
-        </p>
-        <hr>
-        <p>9/23/2020, 1:04:54 PM--Useful things
-        <p>parseInt('23',10); << 23 If string starts with a number, the parseInt function will use this number and
-                ignore any letters null behaves like zero, used by programmer undefined is not a number, set by
-                JavaScript NaN===NaN returns false, combat this by doing Number.isNaN(NaN); Number.isNaN() should always
-                be used to check if value is NaN</p>
-        </p>
-        <hr>
-        <p>9/26/2020, 4:34:59 PM--Common/Best Practices Ch.3
-        <p>const myArray = []; delete avengers[3]; replaces value with undefined [x,y] = [y,x]; neat way to swap with
-            destructuring avengers = [...avengers, ...['Hulk','Hawk']; -added to ES6, similar to .concat(); Useful for
-            spreading out elements, and putting two arrays together. .join() useful for turning array into string
-            separated by a character .splice() careful, changes the array permanently .sort() numbers sort by first
-            digit not numerically flattened multi-dimensional/nested arrays: const flat = [ ...summer, ...winter];
-            ['Jun', 'Jul', 'Aug', 'Dec', 'Jan', 'Feb']; const list = new Set(); list.add().add(); list.has(); -
-            efficient checking if item included list.delete(); -single value deleted list.clear(); -all values cleared
-            const ArrayList = [ ...valuesOfSet]; or Array.from(valuesOfSet); -converts to Array -Sets are useful for
-            keeping track of data w/o checking/getting rid of duplicated values, and quick for checking if particular
-            value is in set Maps -any data types can be used for keys -size property allows for efficient sizing of
-            array -focused on storage/retrieval -get() used for retrieval -has() finds value returns boolean -can be
-            converted into nested array via ... or array.from() Weak Maps and Sets -no primitives -garbage collector
-            automatically collects deleted entries Ternary Operator-use with care condition ? [code run that's true] :
-            [code run that's false] for of Loop for (const item of array) -const declaration a must - maps values() -
-            value - maps entries() - key and value -WeakMaps are non-enumerable </p>
-        </p>
-        <hr>
-        <p>9/26/2020, 8:42:49 PM--Common/Best Practices Ch. 4
-        <p>Declare Function literals, function declarations or function expressions Don't repeat yourself - every part
-            of a program only written once rest operator - Collects all the arguments entered into an array. Common to
-            use a for of loop to iterate over each of the arguments entered. function rest(...args) { return args; }
-            Useful for an improved mean function: function mean(...values) { let total = 0; for (const value of values)
-            { total += value; } return total/values.length; } Default Parameters- Assigning values on default function
-            hello(name= 'World') { console.log(`Hello ${name}!`); } -Golden rule: Always put default parameters after
-            all the other parameters Arrow Functions const square = x => x*x; -less verbose -single parameters don't
-            need parenthesis -body of function doesn't need placing inside a block -return keyword not required -don't
-            bind their own value of this to the function </p>
-        </p>
+        <hr><p>9/23/2020, 12:36:44 PM--Variables<p>const used when the variable will not be reassigned let used if variable might be reassigned later in program let and const are block scoped meaning value only exists inside the block they are declared in let and const prevent you from overwriting any built-in methods by assignment - var doesn't Keep global variables to a minimum</p></p><hr><p>9/23/2020, 12:41:25 PM--String Literals<p>const name = `Siri`; `Hello ${ name }!`; << 'Hello Siri!' const age = 39; `I will be ${ age + 1 } next year`; << 'I will be 40 next year' Code inside {} is a JavaScript expression inserted inside a string. HTML tags can be included for in strings and displayed with dynamic content. </p></p><hr><p>9/23/2020, 12:46:48 PM--Number Methods<p>toExponential() returns number as a string in exponential notation -always write integers as a decimal or place in () toFixed() rounds a number to a fixed number of decimal places toPrecision() rounds a number to a fixed number of significant figures -returned as string, often using exponential notation </p></p><hr><p>9/23/2020, 12:49:58 PM--Operators<p>** exponentiation % remainder of a division -result is always the same sign as the first number</p></p><hr><p>9/23/2020, 12:51:59 PM--Checking a Value is a Number<p>Number.isFinite() -returns true if the value is a number that isn't Infinity, -Infinity or NaN</p></p><hr><p>9/23/2020, 12:55:10 PM--Tricks for converting String to Numbers<p>const answer - '5' * 1; << 5 typeof answer; <<"number" const answer = +'5'; << 5 typeof answer; << "number" Hacky methods, not recommended but can see them</p></p><hr><p>9/23/2020, 1:04:54 PM--Useful things<p>parseInt('23',10); << 23 If string starts with a number, the parseInt function will use this number and ignore any letters null behaves like zero, used by programmer undefined is not a number, set by JavaScript NaN === NaN returns false, combat this by doing Number.isNaN(NaN); Number.isNaN() should always be used to check if value is NaN</p></p><hr><p>9/26/2020, 4:34:59 PM--Common/Best Practices Ch.3<p>const myArray = []; delete avengers[3]; replaces value with undefined [x,y] = [y,x]; neat way to swap with destructuring avengers = [...avengers, ...['Hulk','Hawk']; -added to ES6, similar to .concat(); Useful for spreading out elements, and putting two arrays together. .join() useful for turning array into string separated by a character .splice() careful, changes the array permanently .sort() numbers sort by first digit not numerically flattened multi-dimensional/nested arrays: const flat = [ ...summer, ...winter]; ['Jun', 'Jul', 'Aug', 'Dec', 'Jan', 'Feb']; const list = new Set(); list.add().add(); list.has(); - efficient checking if item included list.delete(); -single value deleted list.clear(); -all values cleared const ArrayList = [ ...valuesOfSet]; or Array.from(valuesOfSet); -converts to Array -Sets are useful for keeping track of data w/o checking/getting rid of duplicated values, and quick for checking if particular value is in set Maps -any data types can be used for keys -size property allows for efficient sizing of array -focused on storage/retrieval -get() used for retrieval -has() finds value returns boolean -can be converted into nested array via ... or array.from() Weak Maps and Sets -no primitives -garbage collector automatically collects deleted entries Ternary Operator-use with care condition ? [code run that's true] : [code run that's false] for of Loop for (const item of array) -const declaration a must - maps values() - value - maps entries() - key and value -WeakMaps are non-enumerable </p></p><hr><p>9/26/2020, 8:42:49 PM--Common/Best Practices Ch. 4<p>Declare Function literals, function declarations or function expressions Don't repeat yourself - every part of a program only written once rest operator - Collects all the arguments entered into an array. Common to use a for of loop to iterate over each of the arguments entered. function rest(...args) { return args; } Useful for an improved mean function: function mean(...values) { let total = 0; for (const value of values) { total += value; } return total/values.length; } Default Parameters- Assigning values on default function hello(name= 'World') { console.log(`Hello ${name}!`); } -Golden rule: Always put default parameters after all the other parameters Arrow Functions const square = x => x*x; -less verbose -single parameters don't need parenthesis -body of function doesn't need placing inside a block -return keyword not required -don't bind their own value of this to the function </p></p><hr><p>9/29/2020, 7:57:58 PM--Sorting Numbers<p>function numerically (a,b) { if (a<b) { return -1; } else if (a > b) { return 1; } else { return 0; } }</p></p><hr><p>9/29/2020, 7:58:51 PM--Looping through Arrays<p>colors.forEach( (color,index) => console.log(`Color at position ${index} is ${color}`) ); << "Color at position 0 is Red" "Color at position 1 is Green" "Color at position 2 is Blue"</p></p>
+
 
 
     </section>
