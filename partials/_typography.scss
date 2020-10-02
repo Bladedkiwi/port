@@ -1,5 +1,11 @@
-//Font Families
-$title: 'Bangers', cursive;
-$text: 'David Libre', serif;
-
-//fix this partial, certain base styles need to be pulled here along with above variables moved to variables
+body {
+    background-color: $black;
+}
+h1,h2,h3,h4,h5,h6 {
+    color: $cyan;
+    font-family: $title;
+}
+p,li,a {
+    color: $off-white;
+    font-family: $text;
+}

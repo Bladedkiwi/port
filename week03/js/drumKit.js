@@ -19,7 +19,10 @@ Step Three: Change class to .playing for userInput
 -Got it! - Syntax error...yay... In the data-key="e.keyCode" I left a bracket inside the "" 
 Figured out the error after reading through someone's journey on js30
 https://medium.com/@murkrage/javascript-30-day-1-drum-kit-cb3d6e5780ce
+*
+*
 */
+
 function playSound (e) {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     //console.log(audio);
