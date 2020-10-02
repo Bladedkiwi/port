@@ -1,6 +1,8 @@
 
 
 /*
+WES BOS JS30 DAY 1 - Followed along, and researched things for it in the middle of it
+*
 Keyboard playing drum kit: 
 Step One: add eventListener for keys pressed
 Step Two: Use a function to select the object that was pressed, and specify which soundKey needed
