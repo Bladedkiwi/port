@@ -23,7 +23,7 @@ function removeTransition(e) {
     this.classList.remove('playing'); //remove the playing class
 }
 //Grab all the key div's
-const keys = document.querySelectorAll('.key');
+const keys = Array.from(document.querySelectorAll('.key'));
 //iterate over nodeList and remove playing class when transform is done
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 // playSound when key is down 
