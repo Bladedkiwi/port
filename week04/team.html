@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="tictactoe.css">
+
+</head>
+
+<body>
+  <h1>Let's Play Tic Tac Toe</h1>
+  <h2>Team Activity - Week 4</h2>
+  <button>Reset</button>
+  <table class="board">
+    <tbody>
+      <tr class="col1">
+        <td class="row1"></td>
+        <td class="row2"></td>
+        <td class="row3"></td>
+      </tr>
+      <tr class="col2">
+        <td class="row1"></td>
+        <td class="row2"></td>
+        <td class="row3"></td>
+      </tr>
+      <tr class="col3">
+        <td class="row1"></td>
+        <td class="row2"></td>
+        <td class="row3"></td>
+      </tr>
+    </tbody>
+    
+  </table>
+</body>
+<script>
+  const kisses = 'X';
+  const hugs = 'O';
+  let middleMan = kisses;
+  //const reset = document.documentGetElementById('reset');
+  const game = document.querySelector('.board');
+
+  document.querySelector('.board').addEventListener('click', turn);
+  document.querySelector('button').addEventListener('click', resetGame);
+  function resetGame() {
+    for (row of game.rows) {
+      for (cell of row.cells) {
+        cell.innerHTML = '';
+      }
+    }
+  }
+  function turn(e) {
+    //console.log('It clicked');
+    //document.querySelector(e).innerHTML = "X";
+    //Curious if a ternary operator version exists
+    //middleMan === kisses ? middleMan = kisses : middleMan = hugs;
+      if (!(e.target.innerHTML)) {
+        e.target.innerHTML = middleMan;
+        if (middleMan === kisses) {
+          middleMan = hugs;
+        }
+        else {
+          middleMan = kisses;
+        }
+      e.target.innerHTML === kisses ? middleMan = hugs : middleMan = kisses; //it exists :D
+      }
+  }
+    
+</script>
+
+</html>

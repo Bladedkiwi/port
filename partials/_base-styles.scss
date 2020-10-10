@@ -11,12 +11,7 @@ Base Styles
 img {
     width: 100%;
 }
-body {
-  background-color: $black;
-}
 h1,h2,h3,h4,h5,h6 {
-  color: $cyan;
-  font-family: $title;
   font-size: $titleS;
   @include MQ(M) {
     font-size: $titleM;
@@ -26,8 +21,6 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 p,li,a {
-  color: $off-white;
-  font-family: $text;
   font-size: $textS;
   @include MQ(M) {
     font-size: $textM;
