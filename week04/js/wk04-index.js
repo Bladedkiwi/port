@@ -3,4 +3,4 @@ const links = [
 		url:"./notes.html"},
 		{label: "Tic Tac Toe",
 		url:"./team.html"}
-]
+];
