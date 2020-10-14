@@ -22,10 +22,16 @@ h1,h2,h3,h4,h5,h6 {
 }
 p,li,a {
   font-size: $textS;
+  padding: 1em;
   @include MQ(M) {
     font-size: $textM;
   }
   @include MQ(L) {
     font-size: $textL;
   }
+}
+code {
+  padding: .3rem;
+  display: block;
+  margin: 1rem;
 }

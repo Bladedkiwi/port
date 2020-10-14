@@ -198,6 +198,18 @@ p, li, a {
   font-family: "David Libre", serif;
 }
 
+em {
+  font-style: italic;
+  color: white;
+}
+
+code {
+  color: #66FCF1;
+  font-family: monospace;
+  border: 1px #45A29E solid;
+  background-color: #1F2833;
+}
+
 /*
 Base Styles
 */
@@ -230,6 +242,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p, li, a {
   font-size: 0.4rem;
+  padding: 1em;
 }
 
 @media only screen and (min-width: 32.5em) {
@@ -242,5 +255,11 @@ p, li, a {
   p, li, a {
     font-size: 1.25rem;
   }
+}
+
+code {
+  padding: .3rem;
+  display: block;
+  margin: 1rem;
 }
 /*# sourceMappingURL=styles.css.map */

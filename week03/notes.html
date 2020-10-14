@@ -30,7 +30,9 @@
                 <br>
                 Simpler way: DOMStringMap reading via a dataset property
                 <br>
+                <code>
                 data-key-number = dataset.keyNumber
+                </code>
                 <br>-the dashes are converted to CamelCase in JavaScript.
             </p>
         </p>
@@ -78,10 +80,18 @@
                 For before IE ver.10:
                 <br> Creating a function for adding a
                 class is the workaround.
+                <pre>
                 <code>
-                    function addClass(element,newClass){if (element.className) {element.className =
-                    element.className + ' ' + newClass;} else {element.className = newClass;}return element.className;}
+                    function addClass(element,newClass) {
+                        if (element.className) {
+                            element.className = element.className + ' ' + newClass;
+                    } else {
+                        element.className = newClass;
+                    }
+                    return element.className;
+                    }
                 </code>
+                </pre>
             </p>
         </p>
         <hr>
@@ -93,11 +103,13 @@
                 <br>
                 window (the browser viewport) is NOT including toolbars
                 and scrollbars.
-                <br><br> window.open() - opens in a new window
-                <br> window.close() - closes current window
-                <br> window.moveTo() - move current window
-                <br> window.resizeTo() - resize current window
-                <br>
+                <pre><code>
+                window.open() //opens in a new window
+                window.close() //closes current window
+                window.moveTo() //move current window
+                window.resizeTo() //resize current window
+                </code></pre>
+               
             </p>
         </p>
         <hr>

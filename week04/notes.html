@@ -24,11 +24,12 @@
         <hr>
         <p><em>Other Notes inside examples</em>
         </p>
-        <p>10/10/2020, 9:02:34 PM--Date Object<p>Date is an object with various getter methods for returning
-                information
+        <p>10/10/2020, 9:02:34 PM--Date Object<p>Date is an object with various getter methods for returning information
                 about time like timezone, year, month, etc. <br> <br> Returns information in local time or
                 Coordinated
-                Universal Time (UTC). <br> <br> <em>Methods using index start at 1 not 0:</em>
+                Universal Time (UTC). <br> <br>
+                <em>Methods using index start at 1 not 0:</em>
+
                 <ul>
                     <li>getDate(): day of month</li>
                     <li>getUTCDate(): day of month</li>
@@ -36,13 +37,18 @@
                         community. It's the primary time standard by which the world regulates clocks, much the
                         same as
                         GMT. </li>
-                </ul> <em>Methods using index start at 0:</em>
+                </ul>
+
+                <em>Methods using index start at 0:</em>
+
                 <ul>
                     <li>getDay() day of week</li>
                     <li>getUTCDay() day of week</li>
                     <li>getMonth() month</li>
                     <li>getUTCMonth()</li>
-                </ul> <em>Other Methods: </em>
+                </ul>
+
+                <em>Other Methods: </em>
                 <ul>
                     <li>getFullYear() - use instead of getYear() because it has broken years after 2000</li>
                     <li>getUTCFullYear()</li>
@@ -53,9 +59,11 @@
                     <li>getSeconds()/getUTCSeconds()</li>
                     <li>getMiliseconds()/getUTCMilliseconds()</li>
                     <li>getTime()</li>
-                </ul> <br> GetTime() returns a timestamp representing the number in milliseconds <br> -A day can
+                </ul>
+                <br> GetTime() returns a timestamp representing the number in milliseconds <br> -A day can
                 be
-                represented by 1000 * 60 * 60 * 24 milliseconds <code> const christmasEve = new
+                represented by 1000 * 60 * 60 * 24 milliseconds
+                <code> const christmasEve = new
                     Date(christmas.getTime()
                     - 1000 *➥ 60 * 60 * 24) // one day before ChristmaschristmasEve.toString();<< Fri Dec 26 2014
                         00:00:00 GMT+0000 (GMT)" </code> </p> </p> <hr>

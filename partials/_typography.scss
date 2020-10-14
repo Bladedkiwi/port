@@ -10,3 +10,13 @@ p,li,a {
     color: $off-white;
     font-family: $text;
 }
+em {
+    font-style: italic;
+    color: lighten($off-white, 50%);
+}
+code {
+    color: $cyan;
+    font-family: monospace;
+    border: 1px $ocean-blue solid;
+    background-color: $dgray;
+}
