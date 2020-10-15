@@ -11,17 +11,21 @@ Base Styles
 img {
     width: 100%;
 }
-h1,h2,h3,h4,h5,h6 {
-  font-size: $titleS;
+
+html {
+  font-size: 16px;
   @include MQ(M) {
-    font-size: $titleM;
+    font-size: calc(12px + .2vw);
   }
   @include MQ(L) {
-    font-size: $titleL;
+    font-size: calc(12px + .4vw);
   }
 }
+h1,h2,h3,h4,h5,h6 {
+  font-size: 1.5rem;
+}
 p,li,a {
-  font-size: $textS;
+  font-size: 1rem;
   padding: 1em;
   @include MQ(M) {
     font-size: $textM;
@@ -30,8 +34,61 @@ p,li,a {
     font-size: $textL;
   }
 }
+
+// an idea from: https://codepen.io/jinukurian7/pen/grvwdb
+//@each $heading in $headings {
+//  #{$heading} {
+//    font-size: $flat-size * $add-scale;
+//    $add-scale: $add-scale + 1;
+//  }
+//}
+
 code {
   padding: .3rem;
   display: block;
   margin: 1rem;
 }
+//Taken from note-taker.html - might need to alter in future
+input {
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px $dgray inset;
+  background-color: $off-white;
+  height: 25px;
+  width: 200px;
+  text-indent: 5px;
+}
+input:focus {
+  outline: none;
+}
+textarea {
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0px 0px 5px $dgray inset;
+  background-color: $off-white;
+  width: 90%;
+  height: 150px;
+  text-indent: 5px;
+  resize: none;
+  overflow: scroll;
+}
+#note_entry_area {
+  width: 500px;
+  padding-left: 5px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px $dgray inset;
+  text-indent: 5px;
+}
+.take_notes {
+  background-color: $ocean-blue;
+  display: flex;
+  flex-direction: column;
+    }
+.show {
+  display: none;
+}
+//end of note-taker.html styles

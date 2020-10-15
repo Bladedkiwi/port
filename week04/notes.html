@@ -22,14 +22,13 @@
     <ol id="index"></ol>
     <section>
         <hr>
-        <p><em>Other Notes inside examples</em>
-        </p>
-        <p>10/10/2020, 9:02:34 PM--Date Object<p>Date is an object with various getter methods for returning information
-                about time like timezone, year, month, etc. <br> <br> Returns information in local time or
-                Coordinated
-                Universal Time (UTC). <br> <br>
-                <em>Methods using index start at 1 not 0:</em>
-
+        <h2>Other Notes inside examples</h2>
+        <article class="notebook__note">10/10/2020, 9:02:34 PM--<h2>Date Object</h2>
+            <div class="note__content">Date is an object with various getter methods for returning information
+                about time like timezone, year, month, etc. 
+                <br><br>
+                Returns information in local time or Coordinated Universal Time (UTC). <br> <br>
+                <h3>Methods using index start at 1 not 0:</h3>
                 <ul>
                     <li>getDate(): day of month</li>
                     <li>getUTCDate(): day of month</li>
@@ -38,17 +37,14 @@
                         same as
                         GMT. </li>
                 </ul>
-
-                <em>Methods using index start at 0:</em>
-
+                <h3>Methods using index start at 0:</h3>
                 <ul>
                     <li>getDay() day of week</li>
                     <li>getUTCDay() day of week</li>
                     <li>getMonth() month</li>
                     <li>getUTCMonth()</li>
                 </ul>
-
-                <em>Other Methods: </em>
+                <h3>Other Methods: </h3>
                 <ul>
                     <li>getFullYear() - use instead of getYear() because it has broken years after 2000</li>
                     <li>getUTCFullYear()</li>
@@ -60,39 +56,54 @@
                     <li>getMiliseconds()/getUTCMilliseconds()</li>
                     <li>getTime()</li>
                 </ul>
-                <br> GetTime() returns a timestamp representing the number in milliseconds <br> -A day can
-                be
-                represented by 1000 * 60 * 60 * 24 milliseconds
-                <code> const christmasEve = new
-                    Date(christmas.getTime()
-                    - 1000 *➥ 60 * 60 * 24) // one day before ChristmaschristmasEve.toString();<< Fri Dec 26 2014
-                        00:00:00 GMT+0000 (GMT)" </code> </p> </p> <hr>
-                        <p>10/10/2020, 9:35:09 PM--This and That<p>This points to the object calling a method
-                                <br>
-                                -allows for generalized methods <br> -Careful with losing scope of this with
-                                functions
-                                inside functions <br> <em>That</em> solves this problem by referencing outside
-                                of
-                                current scope </p>
-                        </p>
-                        <hr>
-                        <p>10/10/2020, 9:40:26 PM--For Loops<p>
-                                <ul>
-                                    <li> <em>For</em> - loops through a block</li>
-                                    <li> <em>for/in</em> - loops through properties</li>
-                                    <li> <em>for/of</em> - loops through values</li>
-                                    <li> <em>forEach</em> - loops through array and activates function on each
-                                        element
-                                    </li>
-                                    <li>
-                            </p>
-                        </p>
-                        <hr>
-                        <p>10/10/2020, 9:42:14 PM--Arrow Functions<p>Useful because they don't have their own
-                                <em>this</em> context. Meaning, this will stay in scope when the function is
-                                called.
-                            </p>
-                        </p>
+                <br> GetTime() returns a timestamp representing the number in milliseconds <br>A day can
+                be represented by 1000 * 60 * 60 * 24 milliseconds
+                <pre>
+                    <code> 
+            const christmasEve = new
+            Date(christmas.getTime()
+            << 1000 *➥ 60 * 60 * 24) // one day before 
+            ChristmaschristmasEve.toString();
+            << Fri Dec 26 2014 00:00:00 GMT+0000 (GMT) 
+                    </code>
+                </pre> 
+            </div> 
+        </article> 
+        <hr>
+        <article class="notebook__note">10/10/2020, 9:35:09 PM--
+            <h2>This and That</h2>
+            <div class="note__content">
+                This points to the object calling a method
+                <br>
+                -allows for generalized methods <br> -Careful with losing scope of this with
+                functions
+                inside functions <br> <em>That</em> solves this problem by referencing outside
+                of
+                current scope
+            </div>
+        </article>
+        <hr>
+        <article class="notebook__note">10/10/2020, 9:40:26 PM--
+            <h2>For Loops</h2>
+            <div class="note__content">
+                <ul>
+                    <li> <em>for:</em> loops through a block</li>
+                    <li> <em>for/in:</em> loops through properties</li>
+                    <li> <em>for/of:</em> loops through values</li>
+                    <li> <em>forEach:</em> loops through array and activates function on each
+                        element
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <hr>
+        <article class="notebook__note">10/10/2020, 9:42:14 PM--
+            <h2>Arrow Functions</h2>
+            <div class="note__content">Useful because they don't have their own
+                <em>this</em> context. Meaning, this will stay in scope when the function is
+                called.
+            </div>
+        </article>
 
 
     </section>

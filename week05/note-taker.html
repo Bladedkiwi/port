@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kian Hyatt">
+	<meta name="description" content="WDD 330 Portfolio: Week 5 Note Taking Program">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../styles.css">
+	<title>Hyatt | Week 5 | Note It! Revisited</title>
+    <!--
+        Took Original Altered Note It!, and upgraded it to include useful html tags and classes built into the note. 
+        -Next idea would be to find a way to easily add in various element tags in my notes so I don't have to write them out as I note take, but add in a keyword/number to identify the tag I want and then have it dynamically get built into the notes. 
+        -->
+</head>
+
+<body onload="noteView()">
+	<h1>Note It! <em>Upgraded</em></h1>
+	<nav>
+		<button onclick="backwards()">Go Back</button>
+	</nav>
+	<hr>
+	<button onclick="toggleNoteArea()">Write A Note</button>
+	<section id="note_entry_area" class="take_notes show">
+		Description: <input id="description_input"></input>
+		<textarea id="note_editor" placeholder="Note it down. Don't forget."></textarea>
+		<br>
+		<button onclick="noteController()">Save</button>
+		<br>
+		Desired File Name: <input id="file_name" value="notes.txt"></input>
+		<br>
+		<button onclick="downloadNotes()">Download Notes</button>
+		<p id="copy_area"></p>
+    </section>
+    
+    
+    <section id="all_notes_display"></section>
+    <script src="js/noteModal.js"></script>
+    <script src="js/noteView.js"></script>
+    <script src="js/noteController.js"></script>
+    <script src="js/noteDownload.js"></script>
+	<script src="../js/functionality.js"></script>
+</body>
+
+</html>

@@ -5,7 +5,13 @@ $off-white: #C5C6C7;
 $cyan: #66FCF1;
 $ocean-blue: #45A29E;
 
+
 //font sizes
+$headings: h6 h5 h4 h3 h2 h1;
+$flat-size: 5px;
+$add-scale: 0.5;
+
+
 $titleL: 2rem;
 $titleM: 1.25rem;
 $titleS: .8rem;
@@ -13,6 +19,11 @@ $textL: 1.25rem;
 $textM: .8rem;
 $textS: .4rem;
 
+
 //Font Families
 $title: 'Bangers', cursive;
 $text: 'David Libre', serif;
+
+// breakpoints
+$M: 32.5em;
+$L: 60em;
