@@ -7,6 +7,6 @@ const links = [
 		url:"./team.html"},
 		{label: "Upgraded Note It!",
 		url:"./note-taker.html"},
-		{label: "To Do List: Challeng One",
+		{label: "To Do List: Challenge One In the Making",
 		url:"./todo/index.html"}
 ]

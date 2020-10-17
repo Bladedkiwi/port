@@ -1,4 +1,4 @@
-//Controlls notes by saving/displaying, and calls both noteModal() and noteView()
+//Controls notes by saving/displaying, and calls both noteModal() and noteView()
 //note-taker.js
 
 let allNotes = JSON.parse(localStorage.getItem("all_notes"));
