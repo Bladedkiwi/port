@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Tic Tac Toe</title>
-  <link rel="stylesheet" href="tictactoe.css">
+  <link rel="stylesheet"
+        href="tictactoe.css">
 
 </head>
 
@@ -30,7 +31,7 @@
         <td class="row3"></td>
       </tr>
     </tbody>
-    
+
   </table>
 </body>
 <script>
@@ -42,6 +43,7 @@
 
   document.querySelector('.board').addEventListener('click', turn);
   document.querySelector('button').addEventListener('click', resetGame);
+
   function resetGame() {
     for (row of game.rows) {
       for (cell of row.cells) {
@@ -49,23 +51,22 @@
       }
     }
   }
+
   function turn(e) {
     //console.log('It clicked');
     //document.querySelector(e).innerHTML = "X";
     //Curious if a ternary operator version exists
     //middleMan === kisses ? middleMan = kisses : middleMan = hugs;
-      if (!(e.target.innerHTML)) {
-        e.target.innerHTML = middleMan;
-        if (middleMan === kisses) {
-          middleMan = hugs;
-        }
-        else {
-          middleMan = kisses;
-        }
-      e.target.innerHTML === kisses ? middleMan = hugs : middleMan = kisses; //it exists :D
+    if (!(e.target.innerHTML)) {
+      e.target.innerHTML = middleMan;
+      if (middleMan === kisses) {
+        middleMan = hugs;
+      } else {
+        middleMan = kisses;
       }
+      e.target.innerHTML === kisses ? middleMan = hugs : middleMan = kisses; //it exists :D
+    }
   }
-    
 </script>
 
 </html>

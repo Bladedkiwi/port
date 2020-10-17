@@ -3,11 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="author" content="Kian Hyatt">
-    <meta name="description" content="WDD 330 Portfolio: Week 2">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../styles.css">
+    <meta name="author"
+          content="Kian Hyatt">
+    <meta name="description"
+          content="WDD 330 Portfolio: Week 2">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <link rel="stylesheet"
+          href="../styles.css">
 
     <title>Hyatt Portfolio | Week 2 Notes</title>
 </head>
@@ -26,7 +31,7 @@
         <hr>
         <article class="notebook__note">9/23/2020, 12:36:44 PM--
             <h2>Variables</h2>
-            <div class="note__content">           
+            <div class="note__content">
                 <ul>
                     <li><em>const</em> used when the variable will not be reassigned</li>
                     <li><em>let</em>used if variable
@@ -95,15 +100,17 @@
                     </code>
                 </pre>
             </div>
-        </article> 
+        </article>
         <hr>
         <article class="notebook__note">9/23/2020, 1:04:54 PM--
             <h2>Useful things</h2>
             <div class="note__content">
                 <code>parseInt('23',10); &#8827; 23 </code>
-                If string starts with a number, the parseInt function will use this number and ignore any letters null behaves like zero, used by programmer undefined is not a number, set by JavaScript NaN===NaN returns false, combat this by doing 
-                <code>Number.isNaN(NaN); </code> 
-                Number.isNaN() should always be used to check if value is NaN 
+                If string starts with a number, the parseInt function will use this number and ignore any letters null
+                behaves like zero, used by programmer undefined is not a number, set by JavaScript NaN===NaN returns
+                false, combat this by doing
+                <code>Number.isNaN(NaN); </code>
+                Number.isNaN() should always be used to check if value is NaN
             </div>
         </article>
         <hr>
@@ -192,31 +199,31 @@
                     <li>
                         Declare Function literals, function declarations or function expressions
                     </li>
-                     <li>
+                    <li>
                         Don't repeat yourself - every part of a program only written once
                     </li>
-                     <li>
+                    <li>
                         rest operator - Collects all the arguments entered into an array.
                         <code>
                             function rest(...args) { return args; }
-                       </code>
+                        </code>
                     </li>
-                     <li>
+                    <li>
                         Common to use a for of loop to iterate over each of the arguments entered.
                     </li>
                     <li>
                         Useful for an improved mean function:
                         <code>
-                            function mean(...values) { let total = 0; 
-                            for (const value of values) { total += value; } return total/values.length; } 
+                            function mean(...values) { let total = 0;
+                            for (const value of values) { total += value; } return total/values.length; }
                         </code>
                     </li>
-                        <li>
-                            Default Parameters- Assigning values on default <code>
-                                function hello(name=
-                            'World') { console.log(`Hello ${name}!`); } 
-                            </code>
-                        </li>
+                    <li>
+                        Default Parameters- Assigning values on default <code>
+                            function hello(name=
+                            'World') { console.log(`Hello ${name}!`); }
+                        </code>
+                    </li>
                     <li>
                         -Golden rule: Always put
                         default parameters after all the other parameters Arrow Functions
@@ -265,9 +272,9 @@
                         &#8827; "Color at position 0 is Red" "Color at position 1 is Green" "Color at position 2 is Blue"
                     </code>
                 </pre>
-            </div> 
+            </div>
         </article>
-    </section> 
+    </section>
     <script src="js/wk01-index.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/functionality.js"></script>

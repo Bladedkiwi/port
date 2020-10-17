@@ -3,11 +3,16 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="author" content="Kian Hyatt">
-	<meta name="description" content="WDD 330 Portfolio: Week 1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="../styles.css">
+	<meta name="author"
+		  content="Kian Hyatt">
+	<meta name="description"
+		  content="WDD 330 Portfolio: Week 1">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		  content="ie=edge">
+	<link rel="stylesheet"
+		  href="../styles.css">
 	<title>Hyatt | Week 1 | Note it!</title>
 	<script>
 		//turned into a note taker that provides a file of your notes or the html text for copying 
@@ -33,6 +38,7 @@
 			document.getElementById("description_input").value = null;
 			document.getElementById("note_editor").value = null;
 		}
+
 		function showAllNotes() {
 			//function to display the notes to the user
 			var storedNotesString = localStorage.getItem("all_notes");
@@ -47,6 +53,7 @@
 				}
 			}
 		}
+
 		function downloadNotes() {
 			//function to download all of your stored notes
 			//currently doesn't download all the way, might be settings I have in chrome
@@ -56,7 +63,7 @@
 			var storedNotes = localStorage.getItem('all_notes');
 			var copyNotes = document.getElementById('copy_area');
 			allNotes = JSON.parse(storedNotes);
-			for (var i=0; i < allNotes.length; i++) {
+			for (var i = 0; i < allNotes.length; i++) {
 				var aNote = allNotes[i];
 				aNote = "<hr><p>" + aNote + "</p>";
 				copyNotes.textContent += aNote;
@@ -111,7 +118,8 @@
 			box-shadow: 0px 0px 5px #666666 inset;
 			text-indent: 5px;
 		}
-		.take_notes{
+
+		.take_notes {
 			background-color: gray;
 			display: flex;
 			flex-direction: column;
@@ -130,9 +138,11 @@
 	</nav>
 	<hr>
 	<button onclick="toggleNoteArea()">Write A Note</button>
-	<section id="note_entry_area" class="take_notes show">
+	<section id="note_entry_area"
+			 class="take_notes show">
 		Description: <input id="description_input"></input>
-		<textarea id="note_editor" placeholder="Note it down. Don't forget."></textarea>
+		<textarea id="note_editor"
+				  placeholder="Note it down. Don't forget."></textarea>
 		<br>
 		<button onclick="saveNote()">Save</button>
 		<br>

@@ -1,5 +1,3 @@
-
-
 /*
 WES BOS JS30 DAY 1 - Followed along, and researched things for it in the middle of it
 *
@@ -23,25 +21,25 @@ https://medium.com/@murkrage/javascript-30-day-1-drum-kit-cb3d6e5780ce
 *
 */
 
-function playSound (e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    //console.log(audio);
-    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-    if (!audio) return; //stops function if audio is not on that key
-    audio.currentTime = 0;
-    audio.play();
-    key.classList.add('playing');
+function playSound(e) {
+	const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+	//console.log(audio);
+	const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+	if (!audio) return; //stops function if audio is not on that key
+	audio.currentTime = 0;
+	audio.play();
+	key.classList.add("playing");
 }
 function removeTransition(e) {
-    if (e.propertyName !== 'transform') return; //skip if it's not a transform
-    console.log(e);
-    this.classList.remove('playing'); //remove the playing class
+	if (e.propertyName !== "transform") return; //skip if it's not a transform
+	console.log(e);
+	this.classList.remove("playing"); //remove the playing class
 }
 //Grab all the key div's
-const keys = Array.from(document.querySelectorAll('.key'));
+const keys = Array.from(document.querySelectorAll(".key"));
 //console.log(keys);
 //iterate over nodeList and remove playing class when transform is done
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-// playSound when key is down 
+keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
+// playSound when key is down
 //window.addEventListener('keydown', e => {console.log(e);})
-window.addEventListener('keydown', playSound);
+window.addEventListener("keydown", playSound);

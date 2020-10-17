@@ -1,27 +1,34 @@
 body {
-    background-color: $black;
-    color: $off-white;
+	background-color: $black;
+	color: $off-white;
 }
-h1,h2,h3,h4,h5,h6 {
-    color: $cyan;
-    font-family: $title;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $cyan;
+	font-family: $title;
 }
-p,li,a {
-    color: $off-white;
-    font-family: $text;
+p,
+li,
+a {
+	color: $off-white;
+	font-family: $text;
 }
 em {
-    font-style: italic;
-    color: lighten($off-white, 50%);
+	font-style: italic;
+	color: lighten($off-white, 50%);
 }
 code {
-    color: $cyan;
-    font-family: monospace;
-    border: 1px $ocean-blue solid;
-    background-color: $dgray;
+	color: $cyan;
+	font-family: monospace;
+	border: 1px $ocean-blue solid;
+	background-color: $dgray;
 }
 //note-taker.html
 .take_notes {
-    color: $dgray;
-    padding: 1rem;
+	color: $dgray;
+	padding: 1rem;
 }

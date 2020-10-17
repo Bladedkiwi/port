@@ -1,56 +1,80 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en-us">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Kian Hyatt">
-    <meta name="description" content="WDD 330 Portfolio: ToDo List - Challenge One">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="../../styles.css">
-    <title>Hyatt Portfolio | ToDo List</title>
+	<meta charset="utf-8" />
+	<meta name="author"
+		  content="Kian Hyatt" />
+	<meta name="description"
+		  content="WDD 330 Portfolio: ToDo List - Challenge One" />
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible"
+		  content="ie=edge" />
+	<link rel="stylesheet"
+		  href="../../styles.css" />
+	<title>Hyatt Portfolio | ToDo List</title>
 </head>
+
 <body>
 	<section>
-		<h1>ToDo List</h1>
-		<small>by Kian Hyatt</small>
+		<h1>ToDo List</h1> <small>by Kian Hyatt</small>
 		<nav>
 			<button onclick="backwards()">Go Back</button>
-		</nav>			
+		</nav>
 	</section>
-    <section class="todo">
-        <h2>ToDo List</h2>
-        <form class="todo__list">
-            <label><input class="list__task" data-task="1" type="checkbox">Text for Task Here
-            <button type="button" onclick="remove(this)">&#9587;</button></label>
-            <label><input class="list__task" data-task="2" type="checkbox">Text for Task Here
-                <button type="button" onclick="remove(this)">&#9587;</button></label>
-            <label><input class="list__task" data-task="3" type="checkbox">Text for Task Here
-                    <button type="button" onclick="remove(this)">&#9587;</button></label>
-            <label><input class="list__task" data-task="4" type="checkbox">Text for Task Here
-                        <button type="button" onclick="remove(this)">&#9587;</button></label>
-            
-        </form>
-        <!--total shows all, or tasks found by filter-->
-        <div class="todo__filter">
-            <span id="total"></span>
-            <button type="button">All</button>
-            <button type="button">Active</button>
-            <button type="button">Finished</button>
-        </div>
-    </section>
-    <section class="create">
-        <h2>Add A Task</h2>
-        <form class="create__task">
-            <!--Idea is to generate tasks with a number system involving data-keys. However, the problem might or will occur with deleted tasks. Will it continue to be efficient to use datasets if I will end up having to loop through to find the next unused number? Or, will the deleted dataset number become the new number in created task? Essentially, the tasklist would stay the same size(dataset values) until it had to grow, and then a new number would be added.12345 >> 1245 >> 3 would be saved for next task insertion. Deleted data set keys would become an queue (FIFO).-->
-            <label for="task">Create Task:<input type="text" id="task"><button type="button">Add</button></label>
-
-        </form>
-    </section>
-
-	
-	
-    <script src="../.././js/functionality.js"></script>
-    <script src="js/show.js"></script>
+	<section class="todo">
+		<h2>ToDo List</h2>
+		<form class="todo__list">
+			<label>
+				<input class="list__task"
+					   data-task="1"
+					   type="checkbox">Text for Task Here
+				<button type="button"
+						onclick="remove(this)">&#9587;</button>
+			</label>
+			<label>
+				<input class="list__task"
+					   data-task="2"
+					   type="checkbox" />Text for Task Here
+				<button type="button"
+						onclick="remove(this)">&#9587;</button>
+			</label>
+			<label>
+				<input class="list__task"
+					   data-task="3"
+					   type="checkbox" />Text for Task Here
+				<button type="button"
+						onclick="remove(this)">&#9587;</button>
+			</label>
+			<label>
+				<input class="list__task"
+					   data-task="4"
+					   type="checkbox" />Text for Task Here
+				<button type="button"
+						onclick="remove(this)">&#9587;</button>
+			</label>
+		</form>
+		<!--total shows all, or tasks found by filter-->
+		<div class="todo__filter"> <span id="total"></span>
+			<button type="button">All</button>
+			<button type="button">Active</button>
+			<button type="button">Finished</button>
+		</div>
+	</section>
+	<section class="create">
+		<h2>Add A Task</h2>
+		<form class="create__task">
+			<!--Idea is to generate tasks with a number system involving data-keys. However, the problem might or will occur with deleted tasks. Will it continue to be efficient to use datasets if I will end up having to loop through to find the next unused number? Or, will the deleted dataset number become the new number in created task? Essentially, the tasklist would stay the same size(dataset values) until it had to grow, and then a new number would be added.12345 >> 1245 >> 3 would be saved for next task insertion. Deleted data set keys would become an queue (FIFO).-->
+			<label for="task">Create Task:
+				<input type="text"
+					   id="task" />
+				<button type="button"> Add </button>
+			</label>
+		</form>
+	</section>
+	<script src="../.././js/functionality.js"></script>
+	<script src="js/show.js"></script>
 </body>
+
 </html>
