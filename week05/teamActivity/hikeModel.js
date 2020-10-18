@@ -51,12 +51,19 @@ export default class HikeModel {
   */
 	getHikeByName(hikeName) {
 		try {
-			const name = hikeList.filter((hike) => {
+			//tried some()
+			//for (hike of hikeList) {
+			//	for (element of hikeName) {
+			//		if (hike.name == element.firstChild.innerHTML) {
+			//			console.log(element.firstChild.innerHTML);
+			//		}
+			hikeList.filter((hike) => {
 				if (hike.name == hikeName) {
 					return hike;
 				}
 			});
-			return name;
+			//	}
+			//}
 		} catch (err) {
 			console.log(err.message + " >>hikeModel.js ln 59");
 		}

@@ -10,6 +10,7 @@ export default class HikeController {
 	}
 	showLightHikeList() {
 		let listElement = document.createElement("li");
+		
 		listElement = this.hikesView.renderLightHikeList(
 			this.hikeModel.getAllHikes(),
 			listElement
@@ -20,25 +21,40 @@ export default class HikeController {
 			console.log(err.message + ">>hikeController.js line 18");
 		}
 	}
-	addHikeListener() {
-		//iterate over list items in parent ul, and add event listener to each one with event "touchend" to expand the details of that one hike.
-		//making ul into an array to be able to iterate over it - not working yet
-		const arrParent = Array.from(this.parentElement);
-		for (const hike of arrParent) {
-			console.log(hike);
-			//window.addEventListener('touchend', showOneHike);
-		}
-	}
 	showOneHike(hikeName) {
 		try {
-			this.hikesView.renderHike(
-				this.hikeModel.getHikeByName(hikeName),
-				this.parentElement
-			);
+			
+			const expandedHike = this.getHikeByName(this.firstChild.innerHTML);
+			//const hike = this.getHikeByName(hikeName.path);
+			//console.log(hikeName.path.li);
+			//const currList = hikeName.path;
+			//currList.filter((i) => {
+			//	if (hikeName[i] == ) {
+			//		console.log('yes');
+			//	}
+			//});
+			//this.hikesView.renderExpandedHike(
+			//	this.hikeModel.getHikeByName(hikeName),
+			//	this.parentElement
+			//);
 		} catch (err) {
-			console.log(err.message + " " + err.log);
+			alert(err.message + " " + err.log);
 		}
 	}
+	addHikeListener() {
+		//iterate over list items in parent ul, and add event listener to each one with event "click" to expand the details of that one hike.
+		//making ul into an array to be able to iterate over it - not working yet
+		const arrParent = Array.from(this.parentElement.querySelectorAll('li'));
+		const that = this;
+		//for (const hike of arrParent) {
+		//	console.log(hike);
+		//	hike.addEventListener('click', this.parentElement.showOneHike);
+		//}
+		//arrParent.forEach(hike => that.hike.addEventListener('click', this.showOneHike));
+		//after solution:
+		arrParent.forEach(hike => that.hike.addEventListener('click', e => { this.showOneHike(e.currentTarget.dataset.name) }));
+	}
+
 	//
 	// idea - that we ran out of time on
 	//showDifficultyHikes(diff) {

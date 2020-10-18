@@ -4,7 +4,7 @@ export default class HikesView {
 	}
 	renderHikeList(hikeList, listElement) {
 		for (const hike of hikeList) {
-			listElement.innerHTML += `<li><h2>${hike.name}</h2>
+			listElement.innerHTML += `<h2>${hike.name}</h2>
             <div class="image">
             <img src="${this.imageBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
             <div>
@@ -22,7 +22,7 @@ export default class HikesView {
             <div>
             <h3>Directions</h3>
             <p>${hike.directions}</p>
-            </div></li>`;
+            </div>`;
 		}
 		return listElement;
 	}
