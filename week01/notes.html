@@ -17,29 +17,38 @@
 </head>
 
 <body>
-    <section>
-        <h1>Week 1</h1>
-        <small>by Kian Hyatt</small>
-        <nav>
-            <button onclick="backwards()">Go Back</button>
-        </nav>
-    </section>
-    <ol id="index"></ol>
+
+    <header>
+        <div>
+            <h1>Week 1</h1>
+            <small>by Kian Hyatt</small>
+
+        </div>
+    </header>
+    <nav>
+        <ol id="index">
+            <li class="index__btn"
+                onclick="backwards()">Back</li>
+        </ol>
+    </nav>
     <section class="notebook">
         <h2>Notes</h2>
         <hr>
         <article class="notebook__note">9/19/2020, 2:09:12 PM--
             <h2>Mobile First</h2>
-            <div class="note__content">Small/Mobile First. Definitely not changing anytime soon or ever.
+            <div class="note__content">
+                <p>Small/Mobile First. Definitely not changing anytime soon or ever.</p>
             </div>
         </article>
         <hr>
         <article class="notebook__note">9/19/2020, 2:13:15 PM--
             <h2>Keep things light and Quick</h2>
-            <div class="note__content">People don't have attention spans anymore, hah! It's sad that this is true.
-                Interesting to make things
-                accessible for one handed grip. Key items must be placed in strategic places. Keep web pages light for
-                loading speed.
+            <div class="note__content">
+                <p>People don't have attention spans anymore, hah! It's sad that this is true.
+                    Interesting to make things
+                    accessible for one handed grip. Key items must be placed in strategic places. Keep web pages light
+                    for
+                    loading speed.</p>
                 <ul>
                     <li>Reduce image usage</li>
                     <li>SVG/Webfonts are lower bandwidth</li>
@@ -50,8 +59,9 @@
         <hr>
         <article class="notebook__note">9/19/2020, 2:17:13 PM--
             <h2>Mobile Menus</h2>
-            <div class="note__content">Nav bar on bottom for ease of reach for mobile -aids in usability because it's
-                easy to reach Menu with border turns out to be the easiest for users to understand. Makes sense.
+            <div class="note__content">
+                <p>Nav bar on bottom for ease of reach for mobile -aids in usability because it's
+                    easy to reach Menu with border turns out to be the easiest for users to understand. Makes sense.</p>
             </div>
         </article>
         <hr>
@@ -102,7 +112,7 @@
 
     </section>
     <script src="js/wk01-index.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/buildNav.js"></script>
     <script src="../js/functionality.js"></script>
 </body>
 

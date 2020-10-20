@@ -17,129 +17,147 @@
 </head>
 
 <body>
-    <section>
-        <h1>Week 3</h1>
-        <small>by Kian Hyatt</small>
-        <nav>
-            <button onclick="backwards()">Go Back</button>
-        </nav>
-    </section>
-    <ol id="index"></ol>
-    <section>
+    <header>
+        <div>
+            <h1>Week 3</h1>
+            <small>by Kian Hyatt</small>
+        </div>
+    </header>
+    <nav>
+        <ol id="index">
+            <li class="index__btn"
+                onclick="backwards()">Back</li>
+        </ol>
+    </nav>
+
+    <section class="notebook">
+        <h2>Notes</h2>
         <hr>
         <article class="notebook__note">10/2/2020, 11:31:14 AM--
-            <h2>
-                <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Data
-                    Attributes</a>
-            </h2>
+            <h2>Data Attributes</h2>
             <div class="note__content">
-                Allows for storing extra information on standard HTML Elements.
-                <br>
-                Can use getAttribute() to read them
-                <br>
-                Simpler way: DOMStringMap reading via a dataset property
-                <br>
+                <p>
+                    Allows for storing extra information on standard HTML Elements.
+
+                    Can use getAttribute() to read them
+
+                    Simpler way: DOMStringMap reading via a <a
+                       href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">dataset
+                        property.</a>
+
+                </p>
                 <code>
                     data-key-number = dataset.keyNumber
                 </code>
-                the dashes are converted to CamelCase in JavaScript.
+                <p>The dashes are converted to CamelCase in JavaScript.</p>
             </div>
         </article>
         <hr>
         <article class="notebook__note">10/2/2020, 11:40:06 AM--
             <h2>KeyBoard Events</h2>
-            <div class="note__content">Event occurs in three ways:
-                <br>
-                -keydown: key pressed, event will continually occur if key is held down
-                <br>
-                -keypress: useful for finding what key was pressed
-                <br>
-                -keyup: occurs when released For older browsers: <a
-                   href="https://github.com/nostrademons/keycode.js/blob/master/keycode.js">keycode.js</a> is a
-                normalizer for key codes returned
+            <div class="note__content">
+                <p>Event occurs in three ways:</p>
+                <ul>
+                    <li>Keydown: key pressed, event will continually occur if key is held down</li>
+
+                    <li>Keypress: useful for finding what key was pressed</li>
+
+                    <li>Keyup: occurs when released For older browsers: <a
+                           href="https://github.com/nostrademons/keycode.js/blob/master/keycode.js">keycode.js</a> is a
+                        normalizer for key codes returned</li>
+                </ul>
+
             </div>
         </article>
         <hr>
         <article class="notebook__note">10/2/2020, 11:47:23 AM--
             <h2>Query Selectors</h2>
-            <div class="note__content">QuerySelector - finds first element in doc that matches up
-                <br>
-                QuerySelectorAll - finds them all that match Reasons why Query Selectors are popular:
-                <br>
-                -Very precise on selections like:
-                <br>
-                <code>
-                    const wonderWoman = document.querySelector('ul ~ p:empty');
-                </code>
-                <br>
-                -Called on <em>any</em>
-                element. <em>IE before ver.8 doesn't support complex css3 notations like above.</em>
+            <div class="note__content">
+                <ul>
+                    <li>
+                        QuerySelector - finds first element in doc that matches up
+                    </li>
+                    <li>
+                        QuerySelectorAll - finds them all that match
+                    </li>
+                </ul>
+                <div>
+                    <h3>Why they're popular:</h3>
+                    <ul>
+                        <li>Called on <em>any</em>
+                            element.</li>
+                        <li>Customizable ease in precisely selecting items like:</li>
+                    </ul>
+                    <code>
+                        const wonderWoman = document.querySelector('ul ~ p:empty');
+                    </code>
+                </div>
+                <em>IE before ver.8 doesn't support complex css3 notations like in example.</em>
             </div>
         </article>
         <hr>
         <article class="notebook__note">10/2/2020, 12:14:20 PM--
             <h2>ClassList Property</h2>
-            <div class="note__content"></div>List of all classes an element has.
-            <br><br>
-            add() -adds classes
-            to an element without overwriting
-            <br>
-            remove() -removes classes specified from element<br>
-            toggle() -<em>Useful</em>adds class if it doesn't have that class, and removes it if it does
-            <br>
-            contains() -checks if an element has class
-            <br><br>
-            For before IE ver.10:
-            <br> Creating a function for adding a
-            class is the workaround.
+            <div class="note__content"></div>
+            <p>The ClassList is a List of all classes an element has.</p>
+            <ul>
+                <li>add() adds classes to an element without overwriting</li>
+                <li>
+                    remove() removes classes specified from element
+                </li>
+                <li>
+                    toggle() adds class if it doesn't have that class, and removes it if it does
+                </li>
+                <li>
+                    contains() checks if an element has class
+                </li>
+            </ul>
+
+            <p>For before IE ver.10: Creating a function for adding a
+                class is the workaround. As seen here: </p>
             <pre>
                 <code>
-                    function addClass(element,newClass) {
-                        if (element.className) {
-                            element.className = element.className + ' ' + newClass;
-                    } else {
-                        element.className = newClass;
-                    }
-                    return element.className;
-                    }
+    function addClass(element,newClass) {
+        if (element.className) {
+            element.className = element.className + ' ' + newClass;
+    } else {
+        element.className = newClass;
+    }
+    return element.className;
+    }
                 </code>
                 </pre>
-            </div>
         </article>
         <hr>
         <article class="notebook__note">10/2/2020, 4:35:46 PM--
             <h2>
-                <a href="https://www.w3schools.com/js/js_window.asp">Window Object</a>
+                Window Object
             </h2>
-            <div class="note__content">All global JavaScript objects, functions, and variables automatically become
-                members of the window
-                object. ~Naturally
-                <br><br>
-                Surprisingly:
-                <br>
-                window (the browser viewport) is NOT including toolbars
-                and scrollbars.
+            <div class="note__content">
+                <p>All global JavaScript objects, functions, and variables automatically become
+                    members of the <a href="https://www.w3schools.com/js/js_window.asp">window
+                        object.</a> ~Naturally.</p>
+                <p>Surprisingly:<br>
+                    <em>window</em> (the browser viewport) is NOT including toolbars
+                    and scrollbars.</p>
                 <pre><code>
-                window.open() //opens in a new window
-                window.close() //closes current window
-                window.moveTo() //move current window
-                window.resizeTo() //resize current window
+    window.open() //opens in a new window
+    window.close() //closes current window
+    window.moveTo() //move current window
+    window.resizeTo() //resize current window
                 </code></pre>
             </div>
         </article>
         <hr>
         <article class="notebook__note">
             10/2/2020, 5:42:07 PM--
-            <h2>
-                <a href="http://keycode.info/">Keyboard KeyCodes</a>
-            </h2>
+            <h2>Keyboard KeyCodes</h2>
+            <p><a href="http://keycode.info/">Link to Reference</a></p>
         </article>
-
-
     </section>
-    <script src="js/wk01-index.js"></script>
-    <script src="../js/main.js"></script>
+
+    <script src="js/wk03-index.js"></script>
+    <script src="../js/buildNav.js"></script>
     <script src="../js/functionality.js"></script>
 </body>
-
 </html>

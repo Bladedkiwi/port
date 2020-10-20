@@ -3,12 +3,24 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
   <title>JS + CSS Clock</title>
 </head>
 
 <body>
 
-
+  <header>
+    <div>
+        <h1>Week 4</h1>
+        <small>by Kian Hyatt</small>
+    </div>
+</header>
+<nav>
+    <ol id="index">
+        <li class="index__btn"
+            onclick="backwards()">Back</li>
+    </ol>
+</nav>
   <div class="clock">
     <div class="clock-face">
       <div class="hand hour-hand"></div>
@@ -62,7 +74,7 @@
     .hand {
       width: 50%;
       height: 6px;
-      background: black;
+      background: white;
       position: absolute;
       top: 50%;
       transform-origin: 100%;
@@ -96,6 +108,9 @@
     }
     setInterval(setDate, 1000);
   </script>
+  <script src="js/wk04-index.js"></script>
+  <script src="../js/buildNav.js"></script>
+  <script src="../js/functionality.js"></script>
 </body>
 
 </html>

@@ -10,50 +10,109 @@ Base Styles
 }
 img {
 	width: 100%;
+	padding: 1.5em;
 }
 
-html {
-	font-size: 16px;
+body {
+	
+	h1
+	 {
+		padding: .8rem  
+	}
+	ul,
+	li,
+	a {
+		padding: 0.2rem;
+	}
+	ul li {
+		list-style-type: circle;
+	}
+	a {
+		text-decoration: none;
+	}
+	p {
+		padding: .2rem;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	header {
+		width: 100%;
+		top: 0;
+		display: flex;
+		justify-content: flex-end;
+	}
+	nav ol li {
+		position: fixed;
+		z-index: 100;	
+		top: 4em;
+		right: -180px;
+		padding: 15px;
+		width: 200px;
+		border-radius: 0 0 0 100%;
+		box-shadow: -1px 5px 1px $ocean-blue;
+	}
+	ol li a {
+		display: block;
+	}
+	nav ol li:hover {
+		transition: .8s;
+		right: 0;
+		box-shadow: -5px 5px 29px $ocean-blue;
+		border-radius: 10% 0 0 0;
+		animation: tabWiggle 1.3s ease-in-out infinite;
+		background-image: linear-gradient(-7deg,
+		  rgba($black, 0.9) 25%,
+		  rgba($black, .1) 50%,
+		  rgba($black, .9) 75%);			
+	}
 	@include MQ(M) {
-		font-size: calc(12px + 0.2vw);
+		p,
+		li,
+		a {
+			font-size: calc(1rem + 0.4vw);
+		}
+		p {
+			padding: 1rem;
+		}
 	}
+	/*
 	@include MQ(L) {
-		font-size: calc(12px + 0.4vw);
-	}
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: 1.5rem;
-}
-p,
-li,
-a {
-	font-size: 1rem;
-	padding: 1em;
-	@include MQ(M) {
-		font-size: $textM;
-	}
-	@include MQ(L) {
-		font-size: $textL;
-	}
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-size: calc(1rem + 1.4vw);
+		}
+		p,
+		li,
+		a {
+			font-size: calc(1rem + 0.8vw);
+			
+		}
+	}*/
 }
 
 // an idea from: https://codepen.io/jinukurian7/pen/grvwdb
-//@each $heading in $headings {
-//  #{$heading} {
-//    font-size: $flat-size * $add-scale;
-//    $add-scale: $add-scale + 1;
-//  }
-//}
+//grabs each heading, and scales them accordingly
+@each $heading in $headings {
+  #{$heading} {
+    font-size: $font-base * $add-scale;
+    $add-scale: $add-scale + .4;
+  }
+}
 
 code {
 	padding: 0.3rem;
 	display: block;
 	margin: 1rem;
+}
+.index__btn {
+	background-color: #1f2839;
+	padding: 1.5rem;
+	cursor: pointer;
 }
 //Taken from note-taker.html - might need to alter in future
 input {
@@ -98,4 +157,27 @@ textarea {
 .show {
 	display: none;
 }
-//end of note-taker.html styles
+//notes.html
+.notebook {
+	margin: 0 1rem 0 1rem;
+	width: 80vw;
+	@include MQ(M) {
+		margin: 0 3rem 0 3rem;
+	}
+	@include MQ(L) {
+		margin: 0 6rem 0 6rem;
+	}
+}
+.notebook__note {
+	margin-top: calc(1.5rem + .5vh);
+	padding: 1rem;
+	h2 {
+		margin-top: calc(.5rem + .2vh);
+		margin-bottom: .8rem;
+		padding-left: 0.2rem;
+		border-bottom: 25px $dgray double;
+		border-radius: 0 100% 0 0;
+		box-shadow: 1px 6px 2px $ocean-blue;
+	}
+}
+

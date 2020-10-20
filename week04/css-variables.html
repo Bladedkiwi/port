@@ -3,10 +3,23 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
   <title>Scoped CSS Variables and JS</title>
 </head>
 
 <body>
+  <header>
+  <div>
+      <h1>Week 4</h1>
+      <p>by Kian Hyatt</p>
+  </div>
+</header>
+<nav>
+  <ol id="index">
+      <li class="index__btn"
+          onclick="backwards()">Back</li>
+  </ol>
+</nav>
   <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
 
   <div class="controls">
@@ -106,7 +119,9 @@
       inputs.forEach(input => input.addEventListener('change', handleUpdate));
       inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
     </script>
-
+<script src="js/wk04-index.js"></script>
+<script src="../js/buildNav.js"></script>
+<script src="../js/functionality.js"></script>
 </body>
 
 </html>

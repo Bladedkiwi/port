@@ -22,13 +22,21 @@ em {
 	color: lighten($off-white, 50%);
 }
 code {
-	color: $cyan;
+	color: lighten($ocean-blue, 20%);
 	font-family: monospace;
 	border: 1px $ocean-blue solid;
 	background-color: $dgray;
+}
+hr:nth-of-type(1) {
+	background-color: $off-white;
 }
 //note-taker.html
 .take_notes {
 	color: $dgray;
 	padding: 1rem;
+}
+//notes.html
+.notebook__note h2 {
+	color: lighten($ocean-blue, 15%);
+	text-shadow: -15px 20px 90px $cyan;
 }

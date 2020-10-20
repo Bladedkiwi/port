@@ -132,11 +132,23 @@
 </head>
 
 <body onload="showAllNotes()">
+	<header>
+        <div>
+            <h1>Week 1</h1>
+            <small>by Kian Hyatt</small>
+
+        </div>
+    </header>
+    <nav>
+        <ol id="index">
+            <li class="index__btn"
+                onclick="backwards()">Back</li>
+        </ol>
+    </nav>
 	<h1>Note It! <em>altered</em></h1>
 	<nav>
 		<button onclick="backwards()">Go Back</button>
 	</nav>
-	<hr>
 	<button onclick="toggleNoteArea()">Write A Note</button>
 	<section id="note_entry_area"
 			 class="take_notes show">
@@ -152,6 +164,9 @@
 		<p id="copy_area"></p>
 	</section>
 	<section id="all_notes_display"></section>
+
+	<script src="js/wk01-index.js"></script>
+    <script src="../js/buildNav.js"></script>
 	<script src="../js/functionality.js"></script>
 </body>
 

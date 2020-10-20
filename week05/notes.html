@@ -1,152 +1,194 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en-us">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Kian Hyatt" />
+		<meta name="description" content="WDD 330 Portfolio: Week 5: Notes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../styles.css" />
+		<title>Hyatt Portfolio | Week 5: Notes</title>
+	</head>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="author"
-          content="Kian Hyatt">
-    <meta name="description"
-          content="WDD 330 Portfolio: Week 5: Notes">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible"
-          content="ie=edge">
-    <link rel="stylesheet"
-          href="../styles.css">
-    <title>Hyatt Portfolio | Week 5: Notes</title>
-</head>
+	<body>
+		<header>
+			<div>
+				<h1>Week 5</h1>
+				<small>by Kian Hyatt</small>
+			</div>
+		</header>
+		<nav>
+			<ol id="index">
+				<li class="index__btn"
+					onclick="backwards()">Back</li>
+			</ol>
+		</nav>
+		<section class="notebook">
+            <h2>Prototypes, Modules, and Legos</h2>
+			<hr />
+			<article class="notebook__note">
+				10/15/2020, 11:27:06 PM--
+				<h2>Modules</h2>
+				<div class="note__content">
+					<p>
+						The JavaScript Module is basically a small unit that's
+						<em>independent</em>, and <em>reusable</em>. In other words, it's
+						like one lego among the entire set of legos for the Millennium
+						Falcon
+					</p>
+					<img src="img/mfalcon-lego.jpg" alt="Millennium Falcon Lego Set" />
+					<pre><code>
+function Rectangle()  
+{  
+    var length, width;  
 
-<body>
-    <section>
-        <h1>Week 5</h1>
-        <small>by Kian Hyatt</small>
-        <nav>
-            <button onclick="backwards()">Go Back</button>
-        </nav>
-    </section>
-    <ol id="index"></ol>
-    <section class="notebook">
-        <hr>
-        <article class="notebook__note">10/15/2020, 11:27:06 PM--
-            <h2>Modules</h2>
-            <div class="note__content">The JavaScript Module is basically a small unit that's <em>independent</em>, and
-                <em>reusable</em>. In other words, it's like one lego among the entire set of legos for the Millennium
-                Falcon <img src="img/mfalcon-lego.jpg"
-                     alt="Millennium Falcon Lego Set"><br><br>
-                <pre><code>
-        function Rectangle()  
-        {  
-            var length, width;  
-        
-            function create(l, w)  
-            {  
-                length = l;  
-                width = w;  
-            }  
-            
-            function getArea()  
-            {  
-                return (length * width);  
-            }  
-            
-            function getPerimeter()  
-            {  
-                return (2 * (length + width));  
-            } 
+    function create(l, w)  
+    {  
+        length = l;  
+        width = w;  
+    }  
+    
+    function getArea()  
+    {  
+        return (length * width);  
+    }  
+    
+    function getPerimeter()  
+    {  
+        return (2 * (length + width));  
+    } 
             </code></pre>
-                From this, we can see how this Rectangle Module is the makeup for a simple rectangle.
-            </div>
-        </article>
-        <hr>
-        <article class="notebook__note">10/15/2020, 11:37:57 PM--
-            <h2>What is export, and what is its purpose?</h2>
-            <div class="note__content">Simply put, export allows that modules/variables/objects/etc. to be used in other
-                programs with the usage of import.
-                <pre><code>
-            //file math.js 
-            function square(x) { 
-              return x * x; 
-            } 
-            function cube(x) { 
-              return x * x; 
-            } 
-            export { square, cube }; 
-              
-               
-            //while importing square function in test.js 
-            import { square, cube } from './math; 
-            console.log(square(8)) //64 
-            console.log(cube(8)) //512 
-            </pre></code>
-                <br><br>
-                <h3>Named Exports</h3>
-                <ul>
-                    <li>Useful for exporting several values</li>
-                    <li>With Import - Mandatory: Use same name of the corresponding object.</li>
-                </ul>
-                <h3>Default Exports</h3>
-                <ul>
-                    <li>Useful for exporting only a single object, function, or variable.</li>
-                    <li>With Import - use any name to import</li>
-                </ul>
-                <em><a href="https://www.geeksforgeeks.org/what-is-export-default-in-javascript/">Read from
-                        GeeksforGeeks</a></em>
-            </div>
-        </article>
-        <hr>
-        <article class="notebook__note">10/16/2020, 5:33:04 PM--
-            <h2>What are Prototypes, are they objects or pretend objects?</h2>
-            <div class="note__content">JavaScript is a prototype based language - essentially meaning they are
-                important.
-                <pre><code>
-             // function constructor 
-            function Person(name, job, yearOfBirth){   
-                this.name= name; 
-                this.job= job; 
-                this.yearOfBirth= yearOfBirth; 
-            } 
-            // adding calculateAge() method to the Prototype property 
-            Person.prototype.calculateAge= function(){  
-                console.log('The current age is: '+(2019- this.yearOfBirth)); 
-            } 
-            console.log(Person.prototype); 
-              
-            // creating Object Person1 
-            let Person1= new Person('Jenni', 'clerk', 1986);  
-            console.log(Person1) 
-            let Person2= new Person('Madhu', 'Developer', 1997); 
-            console.log(Person2) 
-              
-            Person1.calculateAge(); 
-            Person2.calculateAge(); 
+					<p>
+						From this, we can see how this Rectangle Module is the makeup for a
+						simple rectangle.
+					</p>
+				</div>
+			</article>
+			<hr />
+			<article class="notebook__note">
+				10/15/2020, 11:37:57 PM--
+				<h2>What is export, and what is its purpose?</h2>
+				<div class="note__content">
+					<p>
+						Simply put, export allows that modules/variables/objects/etc. to be
+						used in other programs with the usage of import.
+					</p>
+					<pre><code>
+//file math.js 
+function square(x) { 
+    return x * x; 
+} 
+function cube(x) { 
+    return x * x; 
+} 
+export { square, cube }; 
+    
+    
+//while importing square function in test.js 
+import { square, cube } from './math; 
+console.log(square(8)) //64 
+console.log(cube(8)) //512 
             </code></pre>
-                Probably the only example that made things click.
-                <h3>Essentially</h3>
-                <ul>
-                    <li>The special constructor function is like the __init__ function inside classes from python
-                        because it acts like the base template for that object and initializes in a similar way.</li>
-                    <li>Classes in JavaScript act like special functions that simply allow for easy grouping/reading
-                    </li>
-                    <li>Every Function has the prototype property</li>
-                    <li>Prototype property is basically an object that we attach additional methods/properties to the
-                        base Object.</li>
-                    <li>The base object is the initial setup of the class or function.</li>
-                    <li><em>Why not just alter the class instead of use Prototype?</em> Prototype allows for altering
-                        default classes when you don't have access to that class declaration, which makes them useful in
-                        that way</li>
-                    <li>In the declaration of calculateAge() prototype property, the Person will now always have
-                        calculate age a method attached to it. In fact, it becomes the new default.</li>
-                </ul>
-                <pre><code>
-            raph.constructor.prototype;<< Turtle { attack: [Function], weapon: 'Hands' }
-            </code></pre>
-                ^^Useful way to find the prototype of an object.
-            </div>
-        </article>
-    </section>
-    <script src="js/wk05-index.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/functionality.js"></script>
-</body>
-
+            <div>
+					<h3>Named Exports</h3>
+					<ul>
+						<li>Useful for exporting several values</li>
+						<li>
+							With Import - Mandatory: Use same name of the corresponding
+							object.
+						</li>
+                    </ul>
+                </div>
+                <div>
+					<h3>Default Exports</h3>
+					<ul>
+						<li>
+							Useful for exporting only a single object, function, or variable.
+						</li>
+						<li>With Import - use any name to import</li>
+					</ul>
+                    </div>
+				</div>
+			</article>
+			<hr />
+			<article class="notebook__note">
+				10/16/2020, 5:33:04 PM--
+				<h2>What are Prototypes, are they objects or pretend objects?</h2>
+				<div class="note__content">
+					<p>
+						JavaScript is a prototype based language - essentially meaning they
+						are important.
+					</p>
+					<pre><code>
+    // function constructor 
+function Person(name, job, yearOfBirth){   
+    this.name= name; 
+    this.job= job; 
+    this.yearOfBirth= yearOfBirth; 
+} 
+// adding calculateAge() method to the Prototype property 
+Person.prototype.calculateAge= function(){  
+    console.log('The current age is: '+(2019- this.yearOfBirth)); 
+} 
+console.log(Person.prototype); 
+    
+// creating Object Person1 
+let Person1= new Person('Jenni', 'clerk', 1986);  
+console.log(Person1) 
+let Person2= new Person('Madhu', 'Developer', 1997); 
+console.log(Person2) 
+    
+Person1.calculateAge(); 
+Person2.calculateAge(); 
+                </code></pre>
+                <div class="content__item--2cols">
+					<h3>Essentially</h3>
+					<ul>
+						<li>
+							The special constructor function is like the __init__ function
+							inside classes from python because it acts like the base template
+							for that object and initializes in a similar way.
+						</li>
+						<li>
+							Classes in JavaScript act like special functions that simply allow
+							for easy grouping/reading
+						</li>
+						<li>Every Function has the prototype property</li>
+						<li>
+							Prototype property is basically an object that we attach
+							additional methods/properties to the base Object.
+						</li>
+						<li>
+							The base object is the initial setup of the class or function.
+						</li>
+						<li>
+							<em>Why not just alter the class instead of use Prototype?</em>
+							Prototype allows for altering default classes when you don't have
+							access to that class declaration, which makes them useful in that
+							way
+						</li>
+						<li>
+							In the declaration of calculateAge() prototype property, the
+							Person will now always have calculate age a method attached to it.
+							In fact, it becomes the new default.
+						</li>
+                    </ul>
+                    </div>
+					<p>This is a useful way to find the prototype of an object.</p>
+					<pre><code>
+raph.constructor.prototype; 
+&lt;&lt; Turtle { 
+    attack: [Function], weapon:'Hands' 
+}
+					</code></pre>
+                </div>
+                
+            </article>
+			<em><a href="https://www.geeksforgeeks.org/">Aquired from GeeksforGeeks</a></em>
+			<hr>
+		</section>
+		<script src="js/wk05-index.js"></script>
+		<script src="../js/buildNav.js"></script>
+		<script src="../js/functionality.js"></script>
+	</body>
 </html>

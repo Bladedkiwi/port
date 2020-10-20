@@ -12,51 +12,107 @@
 	}
 }
 
+//keyframes
+@keyframes tabWiggle {
+	0% {
+		border-radius: 5% 0 0 25%;
+	}
+	10% {
+		border-radius: 10% 0 0 30%;
+	}
+	20% {
+		border-radius: 15% 0 0 45%;
+	}
+	30% {
+		border-radius: 20% 0 0 45%;
+	}
+	40% {
+		border-radius: 25% 0 0 30%;
+	}
+	50% {
+		border-radius: 25% 0 0 25%;
+	}
+	60% {
+		border-radius: 20% 0 0 20%;
+	}
+	70% {
+		border-radius: 15% 0 0 15%;
+	}
+	80% {
+		border-radius: 10% 0 0 10%;
+	}
+	90% {
+		border-radius: 5% 0 0 5%;
+	}
+	95% {
+		border-radius: 8% 0 0 10%;
+	}
+	100% {
+		border-radius: 10% 0 0 15%;
+	}
+}
 body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-content: center;
-	text-align: justify;
-	padding: 2em;
 }
+code {
+	overflow: auto;
+}
+hr:nth-of-type(1) {
+	position: absolute;
+	width: 45vw;
+	height: 0.4rem;
+	left: 0;
+	box-shadow: -1px 1px 0px $off-white, -3px 5px 5px $dgray,
+		-6px 10px 0px $off-white, -9px 15px 5px $dgray, -11px 20px 0px $off-white,
+		-13px 25px 5px lighten($dgray, 10%);
+}
+.hidden {
+	display: none;
+}
+//Sliding Panel opening index
 .drapes {
-	width: 100%;
-	height: 100vh;
+	//width: 100%;
+	//height: 100vh;
 	overflow: hidden;
 }
 .drapes__lining {
 	width: 100%;
-	height: 100%;
+	//height: 100%;
 }
 .lining__panel {
 	background-color: $black;
 	height: 100vh;
 	position: relative;
 	float: left;
-	z-index: 2;
+	z-index: 3;
 	transition: all 1s ease-out;
 }
 .lining__panel--left {
-	width: 75%;
-	border-radius: 0 0% 40% 0;
+	width: 85%;
+	border-radius: 0 0% 30% 0;
 	text-align: center;
-}
-.lining__panel--left {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+}
+.lining__panel {
 	h1 {
-		font-size: 5rem;
+		font-size: calc(3rem + 2vw);
 		transform: rotate(-4.5deg);
 		letter-spacing: 3px;
-		text-shadow: 2px 2px 7px $ocean-blue;
+		text-shadow: 2px 2px 40px $ocean-blue;
 		margin: 0.4rem;
+		color: #85a9ff;
 	}
-	small {
-		font-size: 2rem;
+	@include MQ(M) {
+		small {
+			font-size: 2rem;
+		}
 	}
 }
 .panel__toggle {
@@ -72,32 +128,105 @@ body {
 	background-color: $off-white;
 	content: "";
 	position: absolute;
-	right: 21rem;
-	width: 6em;
-	top: 15vh;
+	right: 14vw;
+	width: calc(3rem + 2vh);
+	top: calc(8rem + 4vh);
 	z-index: 100;
 	height: 1.5em;
 	margin: 2em 0;
 	transform: rotate(40deg);
+	//@include MQ(L) {
+	//	right: 21rem;
+	//	width: 6em;
+	//	top: 15vh;
+	//}
 }
 .panel__toggle::after {
 	transform: rotate(10deg);
-	background-color: $cyan;
-	box-shadow: 2px 2px 4px $ocean-blue;
+	background-color: #85a9ff;
+	box-shadow: -15px 25px 85px $ocean-blue;
 }
-.lining__content {
-	background: $dgray;
+.lining__cover {
+	background-color: $dgray;
 	position: absolute;
 	z-index: 1;
 	width: 100%;
 	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
+.lining__content {
+	background: $dgray;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	//height: 100vh;
+	display: flex;
+	transition: 2s ease-in;
+	flex-direction: row;
+	//justify-content: center;
+	//align-items: center;
+	div {
+		margin: auto;
+		margin-left: 1rem;
+		h1 {
+			padding: 0;
+		}
+	}
+}
+.content__index--special {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	//margin: auto;
+	//margin-right: 0;
+	//margin-top: 0;
+	width: 70vw;
+	//height: 100vh;
+	z-index: 3;
+	li {
+		position: relative;
+		//top: 0;
+		//left: 0;
+		cursor: pointer;
+		padding: 0.7rem;
+	}
+	li:hover {
+		box-shadow: -5px 5px 29px $ocean-blue;
+		border-radius: 10% 0 0 0;
+		animation: tabWiggle 1.3s ease-in-out infinite;
+		background-image: linear-gradient(
+			-7deg,
+			rgba($black, 0.9) 25%,
+			rgba($black, 0.1) 50%,
+			rgba($black, 0.9) 75%
+		);
+	}
+}
+.content__index--txtr {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	justify-content: center;
+}
+
 .lining__panel--left {
 	transform: translateX(0);
 }
+
 .slide {
-	transform: translateX(-100%);
+	transform: translateX(-120%);
+}
+//note.html styles
+.note__content {
+	display: grid;
+	@include MQ(M) {
+		grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
+		align-items: center;
+		.content__item--2cols {
+			grid-column: span 2;
+		}
+	}
+	@include MQ(L) {
+		grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr);
+	}
 }

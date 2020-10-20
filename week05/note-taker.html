@@ -21,11 +21,22 @@
 </head>
 
 <body onload="noteView()">
+	<header>
+		<div>
+			<h1>Week 5</h1>
+			<small>by Kian Hyatt</small>
+		</div>
+	</header>
+	<nav>
+		<ol id="index">
+			<li class="index__btn"
+				onclick="backwards()">Back</li>
+		</ol>
+	</nav>
 	<h1>Note It! <em>Upgraded</em></h1>
 	<nav>
 		<button onclick="backwards()">Go Back</button>
 	</nav>
-	<hr>
 	<button onclick="toggleNoteArea()">Write A Note</button>
 	<section id="note_entry_area"
 			 class="take_notes show">
@@ -48,6 +59,8 @@
 	<script src="js/noteView.js"></script>
 	<script src="js/noteController.js"></script>
 	<script src="js/noteDownload.js"></script>
+	<script src="js/wk05-index.js"></script>
+	<script src="../js/buildNav.js"></script>
 	<script src="../js/functionality.js"></script>
 </body>
 

@@ -17,22 +17,24 @@
 </head>
 
 <body>
-    <section>
-        <h1>Week 4</h1>
-        <small>by Kian Hyatt</small>
-        <nav>
-            <button onclick="backwards()">Go Back</button>
-        </nav>
-    </section>
-    <ol id="index"></ol>
-    <section>
-        <hr>
+    <header>
+        <div>
+            <h1>Week 4</h1>
+            <small>by Kian Hyatt</small>
+        </div>
+    </header>
+    <nav>
+        <ol id="index">
+            <li class="index__btn"
+                onclick="backwards()">Back</li>
+        </ol>
+    </nav>
+    <section class="notebook">
         <h2>Other Notes inside examples</h2>
+        <hr>
         <article class="notebook__note">10/10/2020, 9:02:34 PM--<h2>Date Object</h2>
-            <div class="note__content">Date is an object with various getter methods for returning information
-                about time like timezone, year, month, etc.
-                <br><br>
-                Returns information in local time or Coordinated Universal Time (UTC). <br> <br>
+            <div class="note__content"><p>Date is an object with various getter methods for returning information
+                about time like timezone, year, month, etc.</p> <p>Returns information in local time or Coordinated Universal Time (UTC).</p>
                 <h3>Methods using index start at 1 not 0:</h3>
                 <ul>
                     <li>getDate(): day of month</li>
@@ -61,15 +63,15 @@
                     <li>getMiliseconds()/getUTCMilliseconds()</li>
                     <li>getTime()</li>
                 </ul>
-                <br> GetTime() returns a timestamp representing the number in milliseconds <br>A day can
-                be represented by 1000 * 60 * 60 * 24 milliseconds
+                <p> GetTime() returns a timestamp representing the number in milliseconds.<br><br>A day can
+                be represented by 1000 * 60 * 60 * 24 milliseconds</p>
                 <pre>
                     <code> 
-            const christmasEve = new
-            Date(christmas.getTime()
-            << 1000 *➥ 60 * 60 * 24) // one day before 
-            ChristmaschristmasEve.toString();
-            << Fri Dec 26 2014 00:00:00 GMT+0000 (GMT) 
+    const christmasEve = new
+    Date(christmas.getTime()
+    &lt;&lt; 1000 *➥ 60 * 60 * 24) // one day before 
+    ChristmaschristmasEve.toString();
+    &lt;&lt; Fri Dec 26 2014 00:00:00 GMT+0000 (GMT) 
                     </code>
                 </pre>
             </div>
@@ -78,13 +80,10 @@
         <article class="notebook__note">10/10/2020, 9:35:09 PM--
             <h2>This and That</h2>
             <div class="note__content">
-                This points to the object calling a method
-                <br>
-                -allows for generalized methods <br> -Careful with losing scope of this with
-                functions
-                inside functions <br> <em>That</em> solves this problem by referencing outside
-                of
-                current scope
+                <p><em>This</em> points to the object calling a method and allows for generalized methods. Careful with losing scope of <em>this</em> with functions inside functions
+                </p>
+            <p><em>That</em> can solve this problem by referencing outside of current scope
+            </p>
             </div>
         </article>
         <hr>
@@ -104,16 +103,14 @@
         <hr>
         <article class="notebook__note">10/10/2020, 9:42:14 PM--
             <h2>Arrow Functions</h2>
-            <div class="note__content">Useful because they don't have their own
+            <div class="note__content"><p>Useful because they don't have their own
                 <em>this</em> context. Meaning, this will stay in scope when the function is
-                called.
+                called.</p>
             </div>
         </article>
-
-
     </section>
-    <script src="js/wk01-index.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="js/wk04-index.js"></script>
+    <script src="../js/buildNav.js"></script>
     <script src="../js/functionality.js"></script>
 </body>
 

@@ -6,28 +6,31 @@
 	<meta name="author"
 		  content="Kian Hyatt">
 	<meta name="description"
-		  content="WDD 330 Portfolio: Week 1">
+		  content="WDD 330 Portfolio: Week 9">
 	<meta name="viewport"
 		  content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible"
 		  content="ie=edge">
 	<link rel="stylesheet"
-		  href=".././main.css">
-	<title>Hyatt Portfolio | Week 1</title>
+		  href=".././styles.css">
+	<title>Hyatt Portfolio | Week 9</title>
 </head>
 
 <body>
-	<section>
-		<h1>Week 9</h1>
-		<small>by Kian Hyatt</small>
-		<nav>
-			<button onclick="backwards()">Go Back</button>
-		</nav>
-	</section>
-	<ol id="index"></ol>
+	<header class="lining__content">
+		<div class="content__index--txtr">
+			<h1>Week 9</h1>
+			<small>by Kian Hyatt</small>
+			<ol id="index"
+				class="content__index--special">
+				<li class="index__btn"
+					onclick="backwards()">Back</li>
+			</ol>
+		</div>
+	</header>
 
 	<script src="./js/wk09-index.js"></script>
-	<script src=".././js/main.js"></script>
+	<script src=".././js/buildIndex.js"></script>
 	<script src=".././js/functionality.js"></script>
 </body>
 

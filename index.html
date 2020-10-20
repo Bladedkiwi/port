@@ -23,24 +23,26 @@
 <body>
 	<header class="drapes">
 		<div class="drapes__lining">
-			<div class="lining__panel lining__panel--left"
-				 onclick="toggleDrapes()">
+			<div class="lining__panel lining__panel--left">
 				<span class="panel__toggle"></span>
 				<h1>My WDD 330 Portfolio</h1>
 				<small>by Kian Hyatt</small>
 			</div>
-			<div class="lining__content">
-				<ol id="index">
-					<h1>My WDD 330 Portfolio</h1>
-					<small>by Kian Hyatt</small>
-					<ol id="index"></ol>
+			<div class="lining__cover"></div>
+			<div class="lining__content show">
+				<div>
+				<h1>Welcome to my Portfolio</h1>
+				<small>by Kian Hyatt</small>
+				<p>Come in and stay a while.. </p>
+				</div>
+				<ol id="index" class="content__index--special"></ol>
 
 			</div>
 		</div>
 	</header>
 
 	<script src="./js/main-index.js"></script>
-	<script src="./js/main.js"></script>
+	<script src="./js/buildIndex.js"></script>
 	<script src="js/classToggle.js"></script>
 
 </body>

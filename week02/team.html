@@ -18,12 +18,18 @@
 
 <body>
 	<header>
-		<h1>Team 4 Activity</h1>
-		<nav>
-			<button onclick="backwards()">Go Back</button>
-		</nav>
-	</header>
-	<h2>Input Text or Numbers</h2>
+        <div>
+            <h1>Week 2</h1>
+            <small>by Kian Hyatt</small>
+        </div>
+    </header>
+    <nav>
+        <ol id="index">
+            <li class="index__btn"
+                onclick="backwards()">Back</li>
+        </ol>
+	</nav>
+	<h2>Team Activity</h2>
 	<section>
 		<p>Add any text to display and numbers to find the sum!</p>
 		<p>Box 1: Insert text or number to find the sum up to the integer.</p>
@@ -73,5 +79,8 @@
 		document.getElementById('inputText2').innerHTML = total;
 	}
 </script>
+<script src="js/wk02-index.js"></script>
+<script src="../js/buildNav.js"></script>
+<script src="../js/functionality.js"></script>
 
 </html>
