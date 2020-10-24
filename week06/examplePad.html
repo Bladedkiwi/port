@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author"
+          content="Kian Hyatt">
+    <meta name="description"
+          content="WDD 330 Portfolio: Week 6: Interactive Examples Note Pad">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <link rel="stylesheet"
+          href="../styles.css">
+    <title>Hyatt | Week 6: ExamplePad</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Week 6</h1>
+            <small>by Kian Hyatt</small>
+        </div>
+    </header>
+    <nav>
+        <ol id="index">
+            <li class="index__btn"
+                onclick="backwards()">Back</li>
+        </ol>
+    </nav>
+    <section class="notebook">
+        <h2>Script Notepad</h2>
+        <hr>
+        <article class="notebook__note">
+            <h3>Function.prototype.bind()</h3>
+            <p>It's purpose is to take the original object's
+                properties and bind them so you can access them. Time to break this down: Example from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind">MDN</a></p>
+            <pre><code>
+this.x = 9; // 'this' refers to global 'window' object here in a browser
+const module = {
+    x: 81,
+    getX: function () {
+        return this.x;
+    }
+};
+module.getX();
+//returns 81
+            </code></pre>
+            <p>Running the code:</p>
+            <code id="ex1"></code>
+            <p><em>this.x</em> is a global object. <br> The object <em>module</em> changes x locally, but not globally.
+                Then uses the getX function to define the new global x from the already local x.</p>
+            <pre><code>
+const retrieveX = module.getX;
+retrieveX();
+//  returns 9; the function gets invoked at the global scope
+            </code></pre>
+            <p>Running the code:</p>
+            <code id="ex2"></code>
+            <p>This is confusing, because one would think that this.x is now 81, but only in the module's scope.
+                <em>module.getX()</em> returns 81 because it initializes the function right away because of the ().</p>
+            <p>Reminds me of the Immediately Invoked Function Expressions (IFFE), that place () around the function just
+                to get it to activate right away. They are also useful for keeping any variables wrapped up with the
+                scope of the function. With that knowledge, this.x is defined globally and module.getX provides the
+                global version of the already defined this.x. While, module.getX() stops in its tracks and defines x,
+                and returns this.x</p>
+            <pre><code>
+//  Create a new function with 'this' bound to module
+//  New programmers might confuse the
+//  global variable 'x' with module's property 'x'
+const boundGetX = retrieveX.bind(module);
+boundGetX();
+//  returns 81
+            </code></pre>
+            <p>Running the code:</p>
+            <code id="ex3"></code>
+            <p>Now, we are passing in the module instance of this.x as 81. <em>module</em> is the original object, and
+                we could have called module.getX(). However, what about when we call an event? Initializing the object
+                over sounds like a waste of resources. Below, I'm testing this theory. Can we click the button and find
+                x to still be 81? Or, will it be 9?</p>
+            <button id="ex4">Transfer X</button>
+            <code id="ex5"></code>
+            <pre><code>
+const output2 = function () {
+    //output('ex5').innerHTML = module.getX();
+    //above works naturally - because it initialized it
+    const pop = module.getX;
+    const up = pop.bind(module);
+    //output('ex5').innerHTML = up;
+    output('ex5').innerHTML = up();
+    //I did it! 
+}
+const trial1 = output('ex4'); //translates to: document.getElementById(idHere)
+trial1.addEventListener('click', output2);
+            </code></pre>
+            <p>Above is behind the scenes, and the fails that occured. Although, there were actually quite a few more fails before doing that trial run with a function call that creates the object and modifies it. <!--Essentially, the trick is to have the object initialized in the same function when the eventlistener is called.--></p>
+            <h3>Creating the Object Binder and Event Listener:</h3>
+            <ul>
+                <li>Create your object</li>
+                <!--<li>Use a seperate function to initialize globally (no "()") and bind your object</li>-->
+                <li>Call an instance of the object globally (no "()")</li>
+                <li>The confusing part: Because you called the instance of the object globally, it doesn't initiate or set the variables up for that object. It works with what is already defined globally. In fact, from our example, we defined this.x to be 9. If we don't define that it will return undefined, because the object has not been set globally.</li>
+                <li>Save your globally called instance with bind() including the original object or <em>module</em> from our example</li>
+                <li>The event listener can be the tricky part. In my cases, mostly due misunderstandings in scope and how objects travel via JavaScript. However, the event Listener can be defined anywhere, as long as it's bound correctly like above.</li>
+                <li>The event listener's function calls the bound function</li>
+                <li>With this function, recognize that <em>const up</em> (from above) is referring to a function and not the output of it. Up still needs to run, and outputting it would actually give native code. It displays this because the object is callable, but not in the current state. It's essentially like asking for a cake, but what you actually asked for was the batter that isn't a cake yet by any means. <a href="https://tc39.es/ecma262/#sec-function.prototype.tostring"><em>The ECMA Standard</em></a></li>
+                <!--<li>Add an event listener outside of the object and the function used to initialize globally</li>-->
+                <li>Then, when the event is activated it will grab everything it needs.</li>
+            </ul>
+            <p>Also, after understanding how bind works and how to manipulate it further, we realize we can change our output2 function to only call our original constant <em>boundGetX</em> variable. Which means, there's no need for the object to be initialized in that function to begin with.</p>
+            <pre><code>
+const output2 = function () {
+    output('ex5').innerHTML = boundGetX();
+}
+            </code></pre>
+            <p>An alternate version is to add the event listeners inside the object to start off with like <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">below from MDN:</a></p>
+            <pre><code>
+const Something = function (element) {
+    this.name = "Something Good";
+    this.onclick1 = function (event) {
+        console.log(this.name);
+    };
+    this.onclick2 = function (event) {
+        console.log(this.name);
+    }
+    element.addEventListener('click', this.onclick1, false);
+    element.addEventListener('click', this.onclick2.bind(this), false);
+}
+const s = new Something(document.body);
+            </code></pre>
+            
+        </article>
+
+    </section>
+    <script>
+        function output(name) {
+            return document.getElementById(name)
+        };
+        this.x = 9; // 'this' refers to global 'window' object here in a browser
+        const module = {
+            x: 81,
+            getX: function () {
+                return this.x;
+            },          
+        };
+        output('ex1').innerHTML = module.getX();
+        //  returns 81
+
+        const retrieveX = module.getX;
+        output('ex2').innerHTML = retrieveX();
+        output('ex2').innerHTML += ` //or with () >> ${module.getX()}`;
+        //  returns 9; the function gets invoked at the global scope
+
+        //  Create a new function with 'this' bound to module
+        //  New programmers might confuse the
+        //  global variable 'x' with module's property 'x'
+        const boundGetX = retrieveX.bind(module);
+        output('ex3').innerHTML = boundGetX();
+        //  returns 81
+        const trial1 = output('ex4');
+        //trial1.addEventListener('click', retrieveX.bind(module));
+        //Doesn't work due to it only calling the function and not being able to do anything with it
+        //trial1.addEventListener('click', function () {document.getElementById('ex5').innerHTML = retrieveX.bind(module);});
+        //returned: function () { [native code]}
+        const output2 = function () {
+            //output('ex5').innerHTML = module.getX();
+            //above works naturally - because it initialized it
+            const pop = module.getX;
+            const up = pop.bind(module);
+            //output('ex5').innerHTML = up;
+            output('ex5').innerHTML = boundGetX();
+            //I did it! 
+        }
+        trial1.addEventListener('click', output2);
+        const Something = function (element) {
+            this.name = "Something Good";
+            this.onclick1 = function (event) {
+                console.log(this.name);
+            };
+            this.onclick2 = function (event) {
+                console.log(this.name);
+            }
+            element.addEventListener('click', this.onclick1, false);
+            element.addEventListener('click', this.onclick2.bind(this), false);
+        }
+        const s = new Something(document.body);
+        //trial1.addEventListener('click', (e) => {
+                    //retrieveX.bind(module)});
+    </script>
+    <script src="js/wk06-index.js"></script>
+    <script src="../js/buildNav.js"></script>
+    <script src="../js/functionality.js"></script>
+</body>
+
+</html>

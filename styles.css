@@ -414,6 +414,20 @@ hr:nth-of-type(1) {
           transform: translateX(-120%);
 }
 
+.take_notes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.show {
+  display: none;
+}
+
 .note__content {
   display: -ms-grid;
   display: grid;
@@ -437,6 +451,115 @@ hr:nth-of-type(1) {
     -ms-grid-columns: minmax(350px, 1fr) minmax(350px, 1fr);
         grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr);
   }
+}
+
+.todo {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem;
+  width: 3rem;
+  border: 3px #1f2833 outset;
+}
+
+.todo * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo .todo__list {
+  background-color: #c5c6c7;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr .1fr;
+      grid-template-columns: 1fr .1fr;
+}
+
+.todo .todo__list * {
+  border-bottom: 3px #45a29e outset;
+}
+
+.todo .todo__list button {
+  width: 30px;
+  margin-right: .2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #45a29e;
+  background-color: #1f2833;
+  border-bottom: 3px #45a29e outset;
+}
+
+.todo input[type="checkbox"] {
+  height: 25px;
+  width: 25px;
+}
+
+.todo .todo__filter {
+  padding: .2rem;
+  padding-top: .6rem;
+  background-color: #c5c6c7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todo .todo__filter div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.todo .todo__create {
+  border-bottom: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin: .7rem 0 0 0;
+}
+
+.todo .todo__create * {
+  border-bottom: none;
+  height: 25px;
+}
+
+.todo .todo__create label, .todo .todo__create label input {
+  width: 100%;
+  margin-right: 2px;
+}
+
+.todo .todo__create input[type="button"] {
+  color: #45a29e;
+  background-color: #1f2833;
 }
 
 body {
@@ -479,12 +602,43 @@ hr:nth-of-type(1) {
 
 .take_notes {
   color: #1f2833;
-  padding: 1rem;
+}
+
+.take_notes input {
+  background-color: #c5c6c7;
+  text-indent: 5px;
+}
+
+.take_notes input textarea {
+  background-color: #c5c6c7;
+  text-indent: 5px;
+  resize: none;
+  overflow: scroll;
+}
+
+#note_entry_area {
+  text-indent: 5px;
+}
+
+.take_notes {
+  background-color: #45a29e;
 }
 
 .notebook__note h2 {
   color: #71c3bf;
   text-shadow: -15px 20px 90px #7488EC;
+}
+
+.todo * {
+  color: #0b0c10;
+}
+
+.todo .todo__list {
+  background-color: #c5c6c7;
+}
+
+.todo .todo__filter {
+  background-color: #c5c6c7;
 }
 
 /*
@@ -587,6 +741,27 @@ body nav ol li:hover {
   background-image: linear-gradient(-7deg, rgba(11, 12, 16, 0.9) 25%, rgba(11, 12, 16, 0.1) 50%, rgba(11, 12, 16, 0.9) 75%);
 }
 
+body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body form li {
+  list-style-type: none;
+}
+
+body form button {
+  height: 100%;
+}
+
 @media only screen and (min-width: 600px) {
   body p,
   body li,
@@ -634,35 +809,29 @@ code {
   cursor: pointer;
 }
 
-input {
+.take_notes input {
   margin-top: 5px;
   border: none;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 5px #1f2833 inset;
           box-shadow: 0px 0px 5px #1f2833 inset;
-  background-color: #c5c6c7;
   height: 25px;
   width: 200px;
-  text-indent: 5px;
 }
 
-input:focus {
+.take_notes input input:focus {
   outline: none;
 }
 
-textarea {
+.take_notes input textarea {
   margin-top: 10px;
   border: none;
   border-radius: 5px;
   padding: 5px;
   -webkit-box-shadow: 0px 0px 5px #1f2833 inset;
           box-shadow: 0px 0px 5px #1f2833 inset;
-  background-color: #c5c6c7;
   width: 90%;
   height: 150px;
-  text-indent: 5px;
-  resize: none;
-  overflow: scroll;
 }
 
 #note_entry_area {
@@ -672,22 +841,10 @@ textarea {
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 5px #1f2833 inset;
           box-shadow: 0px 0px 5px #1f2833 inset;
-  text-indent: 5px;
 }
 
 .take_notes {
-  background-color: #45a29e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.show {
-  display: none;
+  padding: 1rem;
 }
 
 .notebook {
@@ -720,5 +877,37 @@ textarea {
   border-radius: 0 100% 0 0;
   -webkit-box-shadow: 1px 6px 2px #45a29e;
           box-shadow: 1px 6px 2px #45a29e;
+}
+
+.todo h2 {
+  color: #7488EC;
+}
+
+.todo {
+  width: calc(260px + .8vw);
+}
+
+.todo .todo__list button {
+  width: 30px;
+  margin-right: .2rem;
+  padding-bottom: 5px;
+}
+
+.todo .todo__list .hide {
+  display: none;
+}
+
+.todo input[type="checkbox"] {
+  height: 25px;
+  width: 25px;
+}
+
+.todo .todo__filter {
+  padding: .2rem;
+  padding-top: .6rem;
+}
+
+.todo .completed {
+  text-decoration: line-through;
 }
 /*# sourceMappingURL=styles.css.map */

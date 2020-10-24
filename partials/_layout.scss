@@ -11,7 +11,6 @@
 		}
 	}
 }
-
 //keyframes
 @keyframes tabWiggle {
 	0% {
@@ -216,6 +215,14 @@ hr:nth-of-type(1) {
 .slide {
 	transform: translateX(-120%);
 }
+//note_taker.html 
+.take_notes {
+	display: flex;
+	flex-direction: column;
+}
+.show {
+	display: none;
+}
 //note.html styles
 .note__content {
 	display: grid;
@@ -230,3 +237,71 @@ hr:nth-of-type(1) {
 		grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr);
 	}
 }
+//todo Challenge One styles
+.todo {
+	flex-direction: column;
+	margin: 1rem;
+	width: 3rem;
+	border: 3px $dgray outset;
+	* {
+		display: flex;
+		align-items:center;
+		//border-bottom: 3px $ocean-blue outset;
+	}
+	.todo__list {
+		background-color: $off-white;
+		display: grid;
+		grid-template-columns: 1fr .1fr;
+		* {
+			border-bottom: 3px $ocean-blue outset;
+		}
+		button {
+			width: 30px;
+			margin-right: .2rem;
+			display: flex;
+			align-items:center;
+			justify-content: center;
+			color: $ocean-blue;
+			background-color: $dgray;
+			border-bottom: 3px $ocean-blue outset;
+		}
+	}
+	input[type="checkbox"] {
+		height: 25px;
+		width: 25px;
+	}
+	.todo__filter {
+		padding: .2rem;
+		padding-top: .6rem;
+		background-color: $off-white;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		div {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+	.todo__create {
+		border-bottom: none;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin: .7rem 0 0 0;
+		* {
+			border-bottom: none;
+			height: 25px;
+		}
+		label, label input {
+			width: 100%;
+			margin-right: 2px;
+		}
+		input[type="button"] {
+			color: $ocean-blue;
+			background-color: $dgray;
+		}
+	}
+}
+
+

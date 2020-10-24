@@ -17,64 +17,87 @@
 </head>
 
 <body>
-	<section>
-		<h1>ToDo List</h1> <small>by Kian Hyatt</small>
-		<nav>
-			<button onclick="backwards()">Go Back</button>
-		</nav>
-	</section>
+	<header>
+		<div>
+			<h1>Week 6</h1>
+			<small>by Kian Hyatt</small>
+		</div>
+	</header>
+	<nav>
+		<ol id="index">
+			<li class="index__btn"
+				onclick="backwards()">Back</li>
+		</ol>
+	</nav>
 	<section class="todo">
 		<h2>ToDo List</h2>
-		<form class="todo__list">
-			<label>
-				<input class="list__task"
-					   data-task="1"
-					   type="checkbox">Text for Task Here
-				<button type="button"
-						onclick="remove(this)">&#9587;</button>
-			</label>
-			<label>
-				<input class="list__task"
-					   data-task="2"
-					   type="checkbox" />Text for Task Here
-				<button type="button"
-						onclick="remove(this)">&#9587;</button>
-			</label>
-			<label>
-				<input class="list__task"
-					   data-task="3"
-					   type="checkbox" />Text for Task Here
-				<button type="button"
-						onclick="remove(this)">&#9587;</button>
-			</label>
-			<label>
-				<input class="list__task"
-					   data-task="4"
-					   type="checkbox" />Text for Task Here
-				<button type="button"
-						onclick="remove(this)">&#9587;</button>
-			</label>
+		<form class="todo__list"
+			  id="todoList">
+			<!--List where tasks show up-->
 		</form>
 		<!--total shows all, or tasks found by filter-->
-		<div class="todo__filter"> <span id="total"></span>
-			<button type="button">All</button>
-			<button type="button">Active</button>
-			<button type="button">Finished</button>
+		<div class="todo__filter">
+			<div><span id="total"></span></div>
+			<div>
+				<input type="button"
+					   value="All."
+					   onclick="displayTaskList('default')" />
+				<input type="button"
+					   value="Activated."
+					   onclick="displayTaskList('active')" />
+				<input type="button"
+					   value="Completed."
+					   onclick="displayTaskList('completed')" />
+			</div>
+
+
+		</div>
+
+		<div class="todo__create">
+			<!--
+				Idea is to generate tasks with a number system involving data-keys. However, the problem might or will occur with deleted tasks. Will it continue to be efficient to use datasets if I will end up having to loop through to find the next unused number? Or, will the deleted dataset number become the new number in created task? Essentially, the tasklist would stay the same size(dataset values) until it had to grow, and then a new number would be added.12345 >> 1245 >> 3 would be saved for next task insertion. Deleted data set keys would become an queue (FIFO).
+			-->
+			<!--
+				After further thought and contemplation, I've realized I don't need a dataset value for each task. It's an interesting idea and could be used to add search functionality to the tasklist. I'm imagining, I could save the tasks' valued word as the dataset. Then, it would become a tag of some sort for all notes in that category. So, pulling up 'cleaning' would pull all the tasks with that valued key and display them. This could be better than using a filter function because the task wouldn't have to contain the word cleaning, and would be customizable by the user which could add intrigue.
+			-->
+			<!--
+			New Idea:
+				-Grab past stored tasks, display them onload 
+					>If no tasks found - create default task of "create new task below"
+				-List Filter >>
+					>>Filters tasks based on dataset values! 
+						(I don't need unique identifier's for the tasks, like I said above but didn't realize it until just now.)
+					-completed
+					-default
+					-activated
+				-Add Task >>
+					>>Appends new task to localStorage, sets dataset value, and displays added task
+			-->
+			<!--
+				Well, things definitely changed in development. I think I combined both ideas, except the FIFO queue. Plus, adding in the functionality of creating customizable "tags" really wouldn't be hard with my set up. Although I say that, and it ends up being more problematic than I realize. Overall, I feel I could have taken an easier route with this app. I could have avoided classes alltogether, and in turn missed out on the pain and suffering caused by the bind() function. That's no fun though, better now than on a job. 
+			-->
+			<label for="task">
+				<input type="text" /></label>
+			<input type="button"
+				   value="&#9535;"
+				   id="task" />
+
 		</div>
 	</section>
-	<section class="create">
-		<h2>Add A Task</h2>
-		<form class="create__task">
-			<!--Idea is to generate tasks with a number system involving data-keys. However, the problem might or will occur with deleted tasks. Will it continue to be efficient to use datasets if I will end up having to loop through to find the next unused number? Or, will the deleted dataset number become the new number in created task? Essentially, the tasklist would stay the same size(dataset values) until it had to grow, and then a new number would be added.12345 >> 1245 >> 3 would be saved for next task insertion. Deleted data set keys would become an queue (FIFO).-->
-			<label for="task">Create Task:
-				<input type="text"
-					   id="task" />
-				<button type="button"> Add </button>
-			</label>
-		</form>
-	</section>
-	<script src="../.././js/functionality.js"></script>
+
+	<script src="../../js/functionality.js"></script>
+	<script src="js/utilities.js"></script>
+	<script src="js/ls.js"></script>
 	<script src="js/show.js"></script>
+	<script src="js/todoModel.js"
+			type="module"></script>
+	<script src="js/todoView.js"
+			type="module"></script>
+	<script src="js/todoController.js"
+			type="module"></script>
+	<script src="js/todo.js"
+			type="module"></script>
+
 </body>
 
 </html>

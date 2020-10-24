@@ -33,10 +33,38 @@ hr:nth-of-type(1) {
 //note-taker.html
 .take_notes {
 	color: $dgray;
-	padding: 1rem;
+}
+.take_notes input {
+	background-color: $off-white;
+	text-indent: 5px;
+	textarea {
+		background-color: $off-white;
+		text-indent: 5px;
+		resize: none;
+		overflow: scroll;
+	}
+}
+#note_entry_area {
+	text-indent: 5px;
+}
+.take_notes {
+	background-color: $ocean-blue;
 }
 //notes.html
 .notebook__note h2 {
 	color: lighten($ocean-blue, 15%);
 	text-shadow: -15px 20px 90px $cyan;
 }
+//todo challenge one
+.todo {
+	* {
+		color: $black;
+	}
+	.todo__list {
+		background-color: $off-white;
+	}
+	.todo__filter {
+		background-color: $off-white;	
+	}
+}
+

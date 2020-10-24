@@ -66,6 +66,18 @@ body {
 		  rgba($black, .1) 50%,
 		  rgba($black, .9) 75%);			
 	}
+	form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;		
+		li {
+			list-style-type: none;
+		}
+		button {
+			height: 100%;
+		}
+
+	}
 	@include MQ(M) {
 		p,
 		li,
@@ -115,47 +127,36 @@ code {
 	cursor: pointer;
 }
 //Taken from note-taker.html - might need to alter in future
-input {
+.take_notes input {
 	margin-top: 5px;
 	border: none;
 	border-radius: 5px;
 	box-shadow: 0px 0px 5px $dgray inset;
-	background-color: $off-white;
 	height: 25px;
 	width: 200px;
-	text-indent: 5px;
+	input:focus {
+		outline: none;
+	}
+	textarea {
+		margin-top: 10px;
+		border: none;
+		border-radius: 5px;
+		padding: 5px;
+		box-shadow: 0px 0px 5px $dgray inset;
+		width: 90%;
+		height: 150px;
+	}
 }
-input:focus {
-	outline: none;
-}
-textarea {
-	margin-top: 10px;
-	border: none;
-	border-radius: 5px;
-	padding: 5px;
-	box-shadow: 0px 0px 5px $dgray inset;
-	background-color: $off-white;
-	width: 90%;
-	height: 150px;
-	text-indent: 5px;
-	resize: none;
-	overflow: scroll;
-}
+
 #note_entry_area {
 	width: 500px;
 	padding-left: 5px;
 	border: none;
 	border-radius: 5px;
 	box-shadow: 0px 0px 5px $dgray inset;
-	text-indent: 5px;
 }
 .take_notes {
-	background-color: $ocean-blue;
-	display: flex;
-	flex-direction: column;
-}
-.show {
-	display: none;
+	padding: 1rem;
 }
 //notes.html
 .notebook {
@@ -179,5 +180,39 @@ textarea {
 		border-radius: 0 100% 0 0;
 		box-shadow: 1px 6px 2px $ocean-blue;
 	}
+}
+//todo challenge one
+.todo {
+	h2 {
+		color:$cyan;
+	}
+}
+.todo {
+	width: calc(260px + .8vw);
+	//* {
+		//color: $black;
+	//}
+	.todo__list {
+		button {
+			width: 30px;
+			margin-right: .2rem;
+			padding-bottom: 5px;
+		}
+		.hide {
+			display: none;
+		}
+	}
+	input[type="checkbox"] {
+		height: 25px;
+		width: 25px;
+	}
+	.todo__filter {
+		padding: .2rem;
+		padding-top: .6rem;	
+	}
+	.completed {
+		text-decoration: line-through;
+	}
+	
 }
 
