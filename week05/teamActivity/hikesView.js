@@ -47,12 +47,11 @@ export default class HikesView {
 		//parentElement is the li item that we are attaching the added info to
 		parentElement.innerHTML += `<div>
         <h3>Description</h3>
-        <p>${hike.description}</p>
+        <p>${hike[0].description}</p>
         </div>
         <div>
         <h3>Directions</h3>
-        <p>${hike.directions}</p>
+        <p>${hike[0].directions}</p>
         </div>`;
-		return parentElement;
 	}
 }

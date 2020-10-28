@@ -57,7 +57,7 @@ export default class HikeModel {
 			//		if (hike.name == element.firstChild.innerHTML) {
 			//			console.log(element.firstChild.innerHTML);
 			//		}
-			hikeList.filter((hike) => {
+			return hikeList.filter((hike) => {
 				if (hike.name == hikeName) {
 					return hike;
 				}

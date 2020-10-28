@@ -21,10 +21,9 @@ export default class HikeController {
 			console.log(err.message + ">>hikeController.js line 18");
 		}
 	}
-	showOneHike(hikeName) {
+	showOneHike(e) {
 		try {
-			
-			const expandedHike = this.getHikeByName(this.firstChild.innerHTML);
+			//const expandedHike = this.getHikeByName(this.firstChild.innerHTML);
 			//const hike = this.getHikeByName(hikeName.path);
 			//console.log(hikeName.path.li);
 			//const currList = hikeName.path;
@@ -37,22 +36,51 @@ export default class HikeController {
 			//	this.hikeModel.getHikeByName(hikeName),
 			//	this.parentElement
 			//);
+
+			//added during wk7
+			//console.log(e.srcElement.parentElement);
+			/*
+			if (anything but hikename)
+				e.srcElement.parentElement.parentElement gives li item
+			if (hikename)
+				e.srcElement.parentElement gives li item
+			
+			*/
+			let parent = e.srcElement.parentElement;
+			if (parent.nodeName != "LI") {
+				//console.log(e.srcElement.parentElement.parentElement);
+				let name = parent.parentElement.firstChild.textContent;
+				//console.log(this.hikeModel.getHikeByName(name));
+				this.hikesView.renderExpandedHike(this.hikeModel.getHikeByName(name), parent.parentElement);
+			}
+			else {
+				//console.log(e.srcElement.parentElement);
+				let name = parent.firstChild.textContent;
+				console.log(this.hikeModel.getHikeByName(name));
+				this.hikesView.renderExpandedHike(this.hikeModel.getHikeByName(name), parent);
+			}
 		} catch (err) {
 			alert(err.message + " " + err.log);
 		}
 	}
-	addHikeListener() {
+	addHikeListener(list) {
 		//iterate over list items in parent ul, and add event listener to each one with event "click" to expand the details of that one hike.
 		//making ul into an array to be able to iterate over it - not working yet
 		const arrParent = Array.from(this.parentElement.querySelectorAll('li'));
-		const that = this;
+		//const that = this.showOneHike.bind(this);
+
 		//for (const hike of arrParent) {
 		//	console.log(hike);
 		//	hike.addEventListener('click', this.parentElement.showOneHike);
 		//}
 		//arrParent.forEach(hike => that.hike.addEventListener('click', this.showOneHike));
 		//after solution:
-		arrParent.forEach(hike => that.hike.addEventListener('click', e => { this.showOneHike(e.currentTarget.dataset.name) }));
+		//arrParent.forEach(hike => this.hike.addEventListener('click', e => { that.showOneHike(e.currentTarget.dataset.name) }));
+
+
+		//updated during wk7
+		arrParent.forEach((element) => element.addEventListener('click', list.showOneHike.bind(list)));
+
 	}
 
 	//
