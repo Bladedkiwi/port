@@ -38,7 +38,7 @@ export default class HikeController {
 			//);
 
 			//added during wk7
-			//console.log(e.srcElement.parentElement);
+			//console.log(e);
 			/*
 			if (anything but hikename)
 				e.srcElement.parentElement.parentElement gives li item
@@ -46,7 +46,7 @@ export default class HikeController {
 				e.srcElement.parentElement gives li item
 			
 			*/
-			let parent = e.srcElement.parentElement;
+			const parent = e.srcElement.parentElement;
 			if (parent.nodeName != "LI") {
 				//console.log(e.srcElement.parentElement.parentElement);
 				let name = parent.parentElement.firstChild.textContent;
@@ -67,6 +67,7 @@ export default class HikeController {
 		//iterate over list items in parent ul, and add event listener to each one with event "click" to expand the details of that one hike.
 		//making ul into an array to be able to iterate over it - not working yet
 		const arrParent = Array.from(this.parentElement.querySelectorAll('li'));
+		
 		//const that = this.showOneHike.bind(this);
 
 		//for (const hike of arrParent) {
