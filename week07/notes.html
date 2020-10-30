@@ -23,6 +23,71 @@
 					onclick="backwards()">Back</li>
 			</ol>
 		</nav>
+		<section class="notebook">
+			<h2>Notes</h2>
+			<hr><article class="notebook__note">10/30/2020, 5:22:04 PM--<h2>CORS</h2><div class="note__content"><p>Cross Origin Resource Sharing or CORS is a mechanism that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin.<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">MDN CORS</a></p>
+				<p>Let's say, while living at your house, you order food to be delivered. In order to do that, we "request" food from the vendor. Now, would we just get this food if we asked for it? No. We would have to have the right "headers" or money to pay for the food so we could receive it. This is CORS, enabling resource sharing between outside resources as long as you have the right HTTP headers. </p><img src="img/pexels-pixabay-259588.jpg" alt="House with a forest background">
+				<h3>Simple Requests meet these conditions</h3>
+				<ul>
+				<li>One of the allowed methods:</li>
+				<ul><li>GET</li>
+				<li>HEAD</li>
+				<li>POST</li></ul>
+				<li>Other than the headers that are automatically set by the user agent like:</li>
+				<ul><li>Connection header: a header that controls whether or not the network connection stays open after the current task finishes.</li>
+				<li>User Agent: a request header that allows servers/network peers to see what application, operating system, vendor, and/or version of the requestor. </li></ul>
+				<li>The only headers that can be manually set are:</li>
+				<ul><li>Accept</li>
+				<li>Accept-Language</li>
+				<li>Content-Language</li>
+				<li>Content-Type</li>
+				<ul><li>The only allowed types are:</li>
+				<li>application/x-www-form-urlencoded</li>
+				<li>multipart/form-data</li>
+				<li>text/plain</li>
+				</ul>
+				<li>DPR</li>
+				<li>Downlink</li>
+				<li>Save-Data</li>
+				<li>Viewport-Width</li>
+				<li>Width</li>
+				</ul>
+				<li>Event listeners are accessed using the XMLHttpRequest.upload property</li>
+				<li>No ReadableStream object, interface of the Streams API that represents a readable stream of data, used in the request</li>
+				</ul>
+				<pre><code>
+				const xhr = new XMLHttpRequest();
+				const url = 'https://bar.other/resources/public-data/';
+				   
+				xhr.open('GET', url);
+				xhr.onreadystatechange = someHandler;
+				xhr.send(); 
+				</code></pre>
+				<p>In this code, we make our new XMLHttpRequest object, and then pass in our method of GET (that enables bookmarking of said data that gets returned) and our created URL. CORS is what handles the header privileges. The origin or our "house" is the header that gets passed. As long as the Access-Control-Allow-Origin accepts our header, we will get the information we requested. In the output from the server, we can see that the request used the origin and checked it against the Access-Control</p>
+				<pre><code>
+				GET /resources/public-data/ HTTP/1.1
+				Host: bar.other
+				User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:71.0) Gecko/20100101 Firefox/71.0
+				Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+				Accept-Language: en-us,en;q=0.5
+				Accept-Encoding: gzip,deflate
+				Connection: keep-alive
+				
+				Origin: https://foo.example
+				
+				HTTP/1.1 200 OK
+				Date: Mon, 01 Dec 2008 00:23:53 GMT
+				Server: Apache/2
+				
+				Access-Control-Allow-Origin: *
+				
+				Keep-Alive: timeout=2, max=100
+				Connection: Keep-Alive
+				Transfer-Encoding: chunked
+				Content-Type: application/xml
+				</code> </pre>
+				<p>Thus far was from a simple request, and other requests like preflighted requests, requests with credentials, credentialed requests and wildcards, third-party cookies, add in different requirements.</p></div></article>
+		</section>
 
 
 		<script src="js/wk07-index.js"></script>
