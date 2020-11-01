@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Great Hikes (dynamic DOM example)</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet"
+        href="hike.css">
+</head>
+
+<body>
+  <main>
+    <h1>Great hikes</h1>
+    <button type="button" class="backButton hide">All Hikes</button>
+    <ul id="hikes"
+        class="hikeStyles">
+      <!-- your hike list should be built here. -->
+    </ul>
+    <section class="comments">
+      <div class="comments__box"></div>
+
+      <form class="comments__input">
+        <legend>Review Hike Below:</legend>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Bob Marley" required>
+        <label for="inputComment"></label>
+        <textarea id="inputComment" placeholder="Blaaaah Blaah"
+        rows="7" cols="50" required></textarea>
+        <button type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+          </svg>
+          </button>
+      </form>
+
+    </section>
+  </main>
+  <script src="js/ultilities.js"></script>
+  <script src="js/commentModel.js" type="module"></script>
+  <script src="js/commentView.js" type="module"></script>
+  <script src="js/hikeModel.js"
+          type="module"></script>
+  <script src="js/hikesView.js"
+          type="module"></script>
+  <script src="js/hikeController.js"
+          type="module"></script>
+  <script src="js/commentController.js" type="module"></script>
+  <script src="js/main.js"
+          type="module"></script>
+
+</body>
+
+</html>
