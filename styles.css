@@ -762,6 +762,15 @@ body form button {
   height: 100%;
 }
 
+body dl {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  list-style-type: circle;
+}
+
 @media only screen and (min-width: 600px) {
   body p,
   body li,

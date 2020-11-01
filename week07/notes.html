@@ -1,97 +1,305 @@
 <!DOCTYPE html>
 <html lang="en-us">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="author" content="Kian Hyatt" />
-		<meta name="description" content="WDD 330 Portfolio: Week 7: Notes" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" href="../styles.css" />
-		<title>Hyatt Portfolio | Week 7: Notes</title>
-	</head>
 
-	<body>
-		<header>
-			<div>
-				<h1>Week 7</h1>
-				<small>by Kian Hyatt</small>
-			</div>
-		</header>
-		<nav>
-			<ol id="index">
-				<li class="index__btn"
-					onclick="backwards()">Back</li>
-			</ol>
-		</nav>
-		<section class="notebook">
-			<h2>Notes</h2>
-			<hr><article class="notebook__note">10/30/2020, 5:22:04 PM--<h2>CORS</h2><div class="note__content"><p>Cross Origin Resource Sharing or CORS is a mechanism that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin.<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">MDN CORS</a></p>
-				<p>Let's say, while living at your house, you order food to be delivered. In order to do that, we "request" food from the vendor. Now, would we just get this food if we asked for it? No. We would have to have the right "headers" or money to pay for the food so we could receive it. This is CORS, enabling resource sharing between outside resources as long as you have the right HTTP headers. </p><img src="img/pexels-pixabay-259588.jpg" alt="House with a forest background">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author"
+		  content="Kian Hyatt" />
+	<meta name="description"
+		  content="WDD 330 Portfolio: Week 7: Notes" />
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible"
+		  content="ie=edge" />
+	<link rel="stylesheet"
+		  href="../styles.css" />
+	<title>Hyatt Portfolio | Week 7: Notes</title>
+</head>
+
+<body>
+	<header>
+		<div>
+			<h1>Week 7</h1>
+			<small>by Kian Hyatt</small>
+		</div>
+	</header>
+	<nav>
+		<ol id="index">
+			<li class="index__btn"
+				onclick="backwards()">Back</li>
+		</ol>
+	</nav>
+	<!--Add keyframe box-shadow increase to nav on right. I think that will add attraction to it, so it isn't missed.-->
+
+	<section class="notebook">
+		<h2>Notes</h2>
+		<hr>
+		<article class="notebook__note">10/30/2020, 5:22:04 PM--<h2>CORS</h2>
+			<div class="note__content">
+				<p style="grid-column: span 2;">Cross Origin Resource Sharing or CORS is a mechanism that uses
+					additional HTTP headers to tell
+					browsers to give a web application running at one origin, access to selected resources from a
+					different origin.<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">MDN CORS</a></p>
+				<img src="img/pexels-pixabay-259588.jpg"
+					 alt="House with a forest background">
+				<p>Let's say, while living at your house, you order food to be delivered. In order to do that, we
+					"request" food from the vendor. Now, would we just get this food if we asked for it? No. We would
+					have to have the right "headers" or money to pay for the food so we could receive it. This is CORS,
+					enabling resource sharing between outside resources as long as you have the right HTTP headers. </p>
+
 				<h3>Simple Requests meet these conditions</h3>
 				<ul>
-				<li>One of the allowed methods:</li>
-				<ul><li>GET</li>
-				<li>HEAD</li>
-				<li>POST</li></ul>
-				<li>Other than the headers that are automatically set by the user agent like:</li>
-				<ul><li>Connection header: a header that controls whether or not the network connection stays open after the current task finishes.</li>
-				<li>User Agent: a request header that allows servers/network peers to see what application, operating system, vendor, and/or version of the requestor. </li></ul>
-				<li>The only headers that can be manually set are:</li>
-				<ul><li>Accept</li>
-				<li>Accept-Language</li>
-				<li>Content-Language</li>
-				<li>Content-Type</li>
-				<ul><li>The only allowed types are:</li>
-				<li>application/x-www-form-urlencoded</li>
-				<li>multipart/form-data</li>
-				<li>text/plain</li>
-				</ul>
-				<li>DPR</li>
-				<li>Downlink</li>
-				<li>Save-Data</li>
-				<li>Viewport-Width</li>
-				<li>Width</li>
-				</ul>
-				<li>Event listeners are accessed using the XMLHttpRequest.upload property</li>
-				<li>No ReadableStream object, interface of the Streams API that represents a readable stream of data, used in the request</li>
+					<li>One of the allowed methods:
+						<ul>
+							<li>GET</li>
+							<li>HEAD</li>
+							<li>POST</li>
+							<li>Other than the headers that are automatically set by the user agent like:
+								<ul>
+									<li>Connection header: a header that controls whether or not the network connection
+										stays
+										open after the current task finishes.</li>
+									<li>User Agent: a request header that allows servers/network peers to see what
+										application,
+										operating system, vendor, and/or version of the requestor. </li>
+								</ul>
+							</li>
+							<li>The only headers that can be manually set are:
+								<ul>
+									<li>Accept</li>
+									<li>Accept-Language</li>
+									<li>Content-Language</li>
+									<li>Content-Type
+										<ul>
+											<li>The only allowed types are:
+												<ul>
+													<li>application/x-www-form-urlencoded</li>
+													<li>multipart/form-data</li>
+													<li>text/plain</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>DPR</li>
+							<li>Downlink</li>
+							<li>Save-Data</li>
+							<li>Viewport-Width</li>
+							<li>Width</li>
+							<li>Event listeners are accessed using the XMLHttpRequest.upload property</li>
+							<li>No ReadableStream object, interface of the Streams API that represents a readable stream
+								of data, used in the request</li>
+						</ul>
+					</li>
 				</ul>
 				<pre><code>
-				const xhr = new XMLHttpRequest();
-				const url = 'https://bar.other/resources/public-data/';
-				   
-				xhr.open('GET', url);
-				xhr.onreadystatechange = someHandler;
-				xhr.send(); 
+const xhr = new XMLHttpRequest();
+const url = 'https://bar.other/resources/public-data/';
+	
+xhr.open('GET', url);
+xhr.onreadystatechange = someHandler;
+xhr.send(); 
 				</code></pre>
-				<p>In this code, we make our new XMLHttpRequest object, and then pass in our method of GET (that enables bookmarking of said data that gets returned) and our created URL. CORS is what handles the header privileges. The origin or our "house" is the header that gets passed. As long as the Access-Control-Allow-Origin accepts our header, we will get the information we requested. In the output from the server, we can see that the request used the origin and checked it against the Access-Control</p>
+				<p>In this code, we make our new XMLHttpRequest object, and then pass in our method of GET (that enables
+					bookmarking of said data that gets returned) and our created URL. CORS is what handles the header
+					privileges. The origin or our "house" is the header that gets passed. As long as the
+					Access-Control-Allow-Origin accepts our header, we will get the information we requested. In the
+					output from the server, we can see that the request used the origin and checked it against the
+					Access-Control</p>
 				<pre><code>
-				GET /resources/public-data/ HTTP/1.1
-				Host: bar.other
-				User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:71.0) Gecko/20100101 Firefox/71.0
-				Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-				Accept-Language: en-us,en;q=0.5
-				Accept-Encoding: gzip,deflate
-				Connection: keep-alive
-				
-				Origin: https://foo.example
-				
-				HTTP/1.1 200 OK
-				Date: Mon, 01 Dec 2008 00:23:53 GMT
-				Server: Apache/2
-				
-				Access-Control-Allow-Origin: *
-				
-				Keep-Alive: timeout=2, max=100
-				Connection: Keep-Alive
-				Transfer-Encoding: chunked
-				Content-Type: application/xml
+GET /resources/public-data/ HTTP/1.1
+Host: bar.other
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:71.0) Gecko/20100101 Firefox/71.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Connection: keep-alive
+
+Origin: https://foo.example
+
+HTTP/1.1 200 OK
+Date: Mon, 01 Dec 2008 00:23:53 GMT
+Server: Apache/2
+
+Access-Control-Allow-Origin: *
+
+Keep-Alive: timeout=2, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: application/xml
 				</code> </pre>
-				<p>Thus far was from a simple request, and other requests like preflighted requests, requests with credentials, credentialed requests and wildcards, third-party cookies, add in different requirements.</p></div></article>
-		</section>
+				<p>Thus far was from a simple request, and other requests like preflighted requests, requests with
+					credentials, credentialed requests and wildcards, third-party cookies, add in different
+					requirements.</p>
+			</div>
+		</article>
+		<hr>
+		<article class="notebook__note">10/29/2020, 11:50:30 PM--<h2>Feature Detection</h2>
+			<div class="note__content">
+				<p>Detecting whether APIs work in certain browsers, a feature check is required. Much like @supports
+					from CSS, checking whether APIs will run in JavaScript is also key to running the right code for the
+					right browser.</p>
+				<pre><code>
+if (window.holoDeck) {
+virtualReality.activate();
+}</code></pre>
+				<p>By using the virtualReality object, we can test if our function is viable for the browser. Feature
+					detection guarantees that the method is only called if it exists and fails without exceptions being
+					thrown if the method doesn't exist. This means, that it's not a great way to test whether something
+					will run because it doesn't throw anything. However, very useful for when it's supported in some
+					browsers, and not in others. There are other libraries that aide in feature detection like Modernizr
+					and Can I Use?</p>
+			</div>
+		</article>
+		<hr>
+		<article class="notebook__note">10/30/2020, 10:52:54 AM--<h2>Debugging In Browser</h2>
+			<div class="note__content">
+				<p>Using the <em>debugger</em> keyword in your code, creates a literal breakpoint like the ones that can
+					be placed in the inspect tools. This can be useful for making sure something works how you want it
+					to without having to find the code again in the browser. Always remember to remove debugger commands
+					after they aren't needed.</p>
+				<pre><code>
+function amIOldEnough(age){
+	debugger;
+	if (age &lt; 12) {
+		debugger;
+		return 'No, sorry.';
+	} else if (age &lt; 18) {
+		debugger;
+		return 'Only if you are accompanied by an adult.';
+	} else {
+		debugger;
+		return 'Yep, come on in!';
+	}
+}
+					</code></pre>
+				<h3>Types of Errors</h3>
+				<ul>
+					<li>EvalError
+						<ul>
+							<li>Not used in current ECMAScript, retained for backwards compatibility. Was used to
+								identify errors when using global eval() function.</li>
+						</ul>
+					</li>
+					<li>RangeError
+						<ul>
+							<li>Number is outside an allowable range of values</li>
+						</ul>
+					</li>
+					<li>ReferenceError
+						<ul>
+							<li>Reference made to an item that doesn't exist or hasn't been defined, or out of scope and
+								therefore not defined.</li>
+						</ul>
+					</li>
+					<li>SyntaxError
+						<ul>
+							<li>Error in code's syntax</li>
+						</ul>
+					</li>
+					<li>TypeError
+						<ul>
+							<li>Wrong type of value used, like when a string is given instead of the wanted number type
+							</li>
+						</ul>
+					</li>
+					<li>URIError
+						<ul>
+							<li>(Uniform Resource Identifier like http, mailto, etc) Problem with the encoding/decoding
+								of URI.</li>
+						</ul>
+					</li>
+					<li>InternalError
+						<ul>
+							<li>Non-standard error thrown when an error occurs in JavaScript engine, like too many
+								causes of recursion.</li>
+						</ul>
+					</li>
+					</ul>
+					<h3>Errors' properties</h3>
+					<ul>
+						<li><code>name</code> Returns the name of the error constructor function as in "ReferenceError".
+						</li>
+						<li><code>message</code> Returns description of error. Also, should be provided as an argument
+							to the Error constructor.</li>
+						<li><code>stack</code> Returns stack trace for that error. Non-standard property and not safe to
+							use in production sites.</li>
+					</ul>
+					<p>The idea is to catch errors with the usage of the above types. Like real life, we expect the
+						worst and plan accordingly. Food storage, car insurance, budgeting, life insurance, planning
+						your day are all examples of what we do to prevent mishaps before they occur. Essentially, we do
+						the same in coding. We make a logical guess what error could occur, and plan for it.</p>
+					<pre><code>
+function squareRoot(number) {
+'use strict';
+	if (number &lt; 0) {
+		throw new RangeError('You cannot find the square root of negative numbers')
+	}
+	return Math.sqrt(number);
+};
+					</code></pre>
+					<h3>Test-driven development(TDD)</h3>
+					<ul>
+						<li>Write tests(that initially fail)</li>
+						<li>Write code to pass the tests</li>
+						<li>Refactor the code</li>
+						<li>Test refactored code</li>
+						<li>Write more tests for new features</li>
+					</ul>
+					<p>Even though TDD is considered best practice, most developers tend to be more pragmatic in their
+						approach and don't always use TDD. Essentially, it depends on the project and time allowed for
+						it. TDD allows for a strong code foundation, but not everyone wants to pay for that kind of
+						quality even if it benefits them more in the long run.</p>
+					<p>Jest is a TDD Framework that makes it easy to create and run tests by providing built-in helper
+						methods.</p>
+			</div>
+		</article>
+		<hr>
+		<article class="notebook__note">10/30/2020, 11:17:55 AM--<h2>then() and Promise</h2>
+			<div class="note__content">
+				<p>Promise object represents either the completion or failure of an action. Like when you order fast
+					food, you order it in promise/hope that you will get exactly what you ordered. When you get to the
+					next window and grab your food, the promise has been complete. However, what if you went to the next
+					window and they didn't give you anything or failed to give you the right order? That is how Promises
+					work.</p>
+				<pre><code>
+const promise = new Promise( (resolve, reject) => {
+// initialization code goes here
+	if (success) {
+		resolve(value);
+	} else {
+		reject(error);
+	}
+});
+					</code></pre>
+				<p>Promise come in three different states, <em>pending, fulfilled, rejected</em>. When these options
+					occur, the next step is the promise's then() method. <em>then()</em> is a Promise's associated
+					handler. <em>catch()</em> can also be used to catch the errors.</p>
+				<pre><code>
+const myPromise = 
+	(new Promise(myExecutorFunc))
+	.then(handleFulfilledA,handleRejectedA)
+	.then(handleFulfilledB,handleRejectedB)
+	.then(handleFulfilledC,handleRejectedC);
+
+// or, perhaps better ...
+
+const myPromise =
+	(new Promise(myExecutorFunc))
+	.then(handleFulfilledA)
+	.then(handleFulfilledB)
+	.then(handleFulfilledC)
+	.catch(handleRejectedAny);
+					</code></pre>
+			</div>
+		</article>
+	</section>
 
 
-		<script src="js/wk07-index.js"></script>
-		<script src="../js/buildNav.js"></script>
-		<script src="../js/functionality.js"></script>
-	</body>
+	<script src="js/wk07-index.js"></script>
+	<script src="../js/buildNav.js"></script>
+	<script src="../js/functionality.js"></script>
+</body>
+
 </html>

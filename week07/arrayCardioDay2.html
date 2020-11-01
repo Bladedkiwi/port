@@ -3,8 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Array Cardio 💪💪</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+  <header>
+    <div>
+      <h1>Week 7</h1>
+      <small>by Kian Hyatt</small>
+    </div>
+  </header>
+  <nav>
+    <ol id="index">
+      <li class="index__btn"
+        onclick="backwards()">Back</li>
+    </ol>
+  </nav>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
   <script>
     // ## Array Cardio Day 2
@@ -25,17 +38,30 @@
     ];
 
     // Some and Every Checks
+    //Some checks if at least one element passes the test
     // Array.prototype.some() // is at least one person 19 or older?
+    const checkAdult = (person) => (new Date()).getFullYear() - person.year >= 19;
+    console.log(people.some(checkAdult));
+    //Every checks if every element passes the test
     // Array.prototype.every() // is everyone 19 or older?
+    console.log(people.every(checkAdult));
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
-
+    const comment = (comment) => comment.id === 823423;
+    const findComment = comments.find(comment);
+    console.log(findComment);
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+    const findCommentIndex = comments.findIndex(comment);
+    comments.splice(findCommentIndex, 1);
+    console.table(comments);
 
   </script>
+  <script src="js/wk07-index.js"></script>
+  <script src="../js/buildNav.js"></script>
+  <script src="../js/functionality.js"></script>
 </body>
 </html>

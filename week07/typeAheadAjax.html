@@ -43,11 +43,66 @@ const cities = [];
 //Opening up the prototype shows the json option
 //fetch(endpoint).then(blob => console.log(blob.json));
 
-//What is .then?
+//What is .then? Basically, a passing method that does what it says Does this, then this, then that
 fetch(endpoint)
+//takes the data and makes it into json
   .then(blob => blob.json())
-  .then(data => cities.push(data))
+  //spread the items into an array, eliminates the unwanted characters like ","
+  .then(data => cities.push(...data))
 
+function findMatches(wordToMatch, cities) {
+  return cities.filter(place => {
+    //check if city or state matches what was searched
+    //passing variables into regexp doesn't work, creating one does
+    //second parameter is g for global (looking through entire string) i for insensitive (match lowercase and uppercase)
+    const regex = new RegExp(wordToMatch, 'gi');
+    //returns place.city if match(regex) is true or is place.state is true
+    return place.city.match(regex) || place.state.match(regex);
+  });
+}
+function numberWithCommas(x) {
+  /*regex >> 
+  \B matches any position between two word characters
+  (?=) positive lookahead. \w+(?=sheet) for Cheatsheet returns Cheat because the lookahead finds the matching group, then returns the match before it.
+  (?!) negative lookahead. Specifies a group that can't match after the main expression, if matched it is discarded. So, with \w(?!\d) for .^%#$ doesn't match, while e344. does. 
+  \B(?=(\d{3})+(?!\d)) is looking for items that match 3 digits or more
+  ".^%#$ 34" would fail because it doesn't have the required 3 digits or more in a row 
+  Which means, the function returns "," every three numbers to make 500,000 possible, and with the negative look ahead place commas after one or two digits like 3,000,000.
+  */
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function displayMatches() {
+  // grabs the value from the event
+  const matchArray = findMatches(this.value, cities);
+  const html = matchArray.map(place => {
+    const regex = new RegExp(this.value, 'gi');
+    const cityName = place.city.replace(regex, `<span class="h1">${this.value}</span>`);
+    const stateName = place.state.replace(regex, `<span class="h1">${this.value}</span>`);
+    
+    return `
+    <li>
+      <span class="name">${place.city}, ${place.state}</span>
+      <span class="population">${numberWithCommas(place.population)}</span>
+      <span class="growth">${place.growth_from_2000_to_2013}</span>
+      </li>
+      `;
+      //Did not know you could just add a .join on the end of the methods that return arrays, but makes sense when you think about it.
+  }).join('');
+  suggestions.innerHTML = html;
+}
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+/*adding the event listener to input area- change occurs only when left focus of element
+curious what's the difference between input event, and keyup event
+---Basically, how the the input is changed. 
+   input event activates when any change occurs to the input
+   keyup event only occurs when the browser registers a keyboard release
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+searchInput.addEvenetListener('input', displayMatches);
+*/
+searchInput.addEventListener('keyup', displayMatches);
 
 </script>
 <script src="js/wk07-index.js"></script>
