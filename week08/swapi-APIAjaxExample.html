@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet"
+        href="style.css">
+  <link rel="stylesheet"
+        href="../styles.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>Week 8</h1>
+      <small>by Kian Hyatt</small>
+    </div>
+  </header>
+  <nav>
+    <ol id="index">
+      <li class="index__btn"
+          onclick="backwards()">Back</li>
+    </ol>
+  </nav>
+  <section class="notebook">
+  <h2>Star Wars Planet Search</h2>
+  <hr>
+  <!--Tested the swapi-api before the team activity to aide in solving things when we meet together. -->
+  <form class="search-form">
+    <input type="text"
+           class="search"
+           placeholder="Planet Name or Terrain">
+    <ul class="suggestions">
+      <li>Filter for a Star Wars Planet</li>
+      <li>or terrain</li>
+    </ul>
+  </form>
+  </section>
+  <script>
+    /*
+    Altered Week 7's typeAheadAjax JS30 example to display a search for planets or terrain.
+    *
+    */
+    //planets json file location
+    const endpoint = 'https://swapi.dev/api/planets/';
+    const planets = [];
+
+    //https://stackoverflow.com/questions/58741697/iterate-through-paginated-api-results-in-javascript
+    //discovered a recursive function for looping through the pages of data. 
+    function fetchAPI(endpoint) {
+      fetch(endpoint) 
+        //turn the data into json files
+        .then(blob => blob.json())
+        .then(data => {
+          //push the data into the planets array
+          planets.push(...data.results)
+          //creates the new endpoint of the following page
+          endpoint=data.next
+          //if the endpoint still has things to return, call the same function over
+          if (endpoint != null && endpoint != '') {
+              fetchAPI(endpoint)
+          }
+      })
+    }
+    fetchAPI(endpoint);
+    
+    //fetch(endpoint)
+      //.then(blob => blob.json()
+      //.then(data => planets.push(...data.results))
+      //.catch((err) => console.log(err));
+
+    function findMatches(wordToMatch, planets) {
+      return planets.filter(planet => {
+        const regex = new RegExp(wordToMatch, 'gi');
+        return planet.name.match(regex) || planet.terrain.match(regex);
+      });
+    }
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    function displayMatches() {
+      const matchArray = findMatches(this.value, planets);
+      const html = matchArray.map(planet => {
+        const regex = new RegExp(this.value, 'gi');
+        const planetName = planet.name.replace(regex, `<span class="h2">${this.value}</span>`);
+        const stateName = planet.terrain.replace(regex, `<span class="h2">${this.value}</span>`);
+
+        return `
+    <li>
+      <span class="name">${planet.name}, ${planet.terrain}</span>
+      <span class="population">${numberWithCommas(planet.population)}</span>
+      <span class="climate">${planet.climate}</span>
+      </li>
+      `;
+      }).join('');
+      suggestions.innerHTML = html;
+    }
+    const searchInput = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions');
+
+    searchInput.addEventListener('keyup', displayMatches);
+  </script>
+  <script src="js/wk08-index.js"></script>
+  <script src="../js/buildNav.js"></script>
+  <script src="../js/functionality.js"></script>
+</body>
+
+</html>

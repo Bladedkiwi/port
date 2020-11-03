@@ -49,7 +49,7 @@ fetch(endpoint)
   .then(blob => blob.json())
   //spread the items into an array, eliminates the unwanted characters like ","
   .then(data => cities.push(...data))
-
+console.log(cities);
 function findMatches(wordToMatch, cities) {
   return cities.filter(place => {
     //check if city or state matches what was searched
