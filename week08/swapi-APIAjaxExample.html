@@ -84,8 +84,9 @@
     function displayMatches() {
       const matchArray = findMatches(this.value, planets);
       const html = matchArray.map(planet => {
-        
-
+        const regex = new RegExp(this.value, 'gi');
+        const planetName = planet.name.replace(regex, `<span class="h2">${this.value}</span>`);
+        const stateName = planet.terrain.replace(regex, `<span class="h2">${this.value}</span>`);
         return `
     <li>
       <span class="name">${planet.name}, ${planet.terrain}</span>
