@@ -288,6 +288,13 @@ hr:nth-of-type(1) {
   text-shadow: 2px 2px 40px #45a29e;
   margin: 0.4rem;
   color: #85a9ff;
+  background-color: transparent;
+  border-left: none;
+}
+
+.lining__panel small {
+  background-color: transparent;
+  border: none;
 }
 
 @media only screen and (min-width: 600px) {
@@ -359,6 +366,13 @@ hr:nth-of-type(1) {
 
 .lining__content div h1 {
   padding: 0;
+  background-color: transparent;
+  border-left: none;
+}
+
+.lining__content div small {
+  background-color: transparent;
+  border: none;
 }
 
 .content__index--special {
@@ -678,6 +692,7 @@ body {
 
 body h1 {
   padding: .8rem;
+  padding-bottom: .3rem;
 }
 
 body ul,
@@ -713,16 +728,35 @@ body header {
           justify-content: flex-end;
 }
 
+body header h1 {
+  background-color: #1f283977;
+  border-left: 2.5px solid #45a29e;
+}
+
+body header small {
+  display: block;
+  padding-left: .8rem;
+  padding-bottom: .8rem;
+  background-color: #1f283977;
+  border-radius: 85% 0% 0% 100% / 0% 50% 100% 100%;
+  border: 2.5px solid #45a29e;
+  border-top: none;
+  border-right: none;
+}
+
 body nav ol li {
   position: fixed;
   z-index: 100;
   top: 4em;
-  right: -180px;
-  padding: 15px;
+  right: -145px;
+  padding: 10px;
+  padding-left: 100px;
   width: 200px;
-  border-radius: 0 0 0 100%;
+  border-radius: 85% 0% 0% 100% / 0% 60% 100% 100%;
   -webkit-box-shadow: -1px 5px 1px #45a29e;
           box-shadow: -1px 5px 1px #45a29e;
+  border: 4px solid #0b0c10;
+  border-bottom: none;
 }
 
 body ol li a {
@@ -730,11 +764,12 @@ body ol li a {
 }
 
 body nav ol li:hover {
-  -webkit-transition: .8s;
-  transition: .8s;
+  -webkit-transition: .5s;
+  transition: .5s;
   right: 0;
   -webkit-box-shadow: -5px 5px 29px #45a29e;
           box-shadow: -5px 5px 29px #45a29e;
+  padding-left: 15px;
   border-radius: 10% 0 0 0;
   -webkit-animation: tabWiggle 1.3s ease-in-out infinite;
           animation: tabWiggle 1.3s ease-in-out infinite;
@@ -814,7 +849,8 @@ code {
 
 .index__btn {
   background-color: #1f2839;
-  padding: 1.5rem;
+  padding: 12px;
+  padding-left: 105px;
   cursor: pointer;
 }
 
@@ -886,6 +922,20 @@ code {
   border-radius: 0 100% 0 0;
   -webkit-box-shadow: 1px 6px 2px #45a29e;
           box-shadow: 1px 6px 2px #45a29e;
+}
+
+.notebook__note .note__img--scale:hover {
+  -webkit-transition: 1s ease-in;
+  transition: 1s ease-in;
+  -webkit-transform: scale(3);
+          transform: scale(3);
+}
+
+@media only screen and (min-width: 1000px) {
+  .notebook__note .note__img--scale:hover {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
 }
 
 .todo h2 {

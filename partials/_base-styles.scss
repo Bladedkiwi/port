@@ -17,7 +17,8 @@ body {
 	
 	h1
 	 {
-		padding: .8rem  
+		padding: .8rem;
+		padding-bottom: .3rem; 
 	}
 	ul,
 	li,
@@ -41,24 +42,45 @@ body {
 		top: 0;
 		display: flex;
 		justify-content: flex-end;
+		h1 {
+			background-color: #1f283977;
+			border-left: 2.5px solid $ocean-blue;
+			
+			
+		}
+		small {
+			display: block;
+			padding-left: .8rem;
+			padding-bottom: .8rem;
+			background-color: #1f283977;
+			border-radius: 85% 0% 0% 100% / 0% 50% 100% 100%;
+			border: 2.5px solid $ocean-blue;
+			border-top: none;
+			border-right: none;
+			
+		}
 	}
 	nav ol li {
 		position: fixed;
 		z-index: 100;	
 		top: 4em;
-		right: -180px;
-		padding: 15px;
+		right: -145px;
+		padding: 10px;
+		padding-left: 100px;
 		width: 200px;
-		border-radius: 0 0 0 100%;
+		border-radius: 85% 0% 0% 100% / 0% 60% 100% 100%;
 		box-shadow: -1px 5px 1px $ocean-blue;
+		border: 4px solid $black;
+		border-bottom: none;
 	}
 	ol li a {
 		display: block;
 	}
 	nav ol li:hover {
-		transition: .8s;
+		transition: .5s;
 		right: 0;
 		box-shadow: -5px 5px 29px $ocean-blue;
+		padding-left: 15px;
 		border-radius: 10% 0 0 0;
 		animation: tabWiggle 1.3s ease-in-out infinite;
 		background-image: linear-gradient(-7deg,
@@ -131,7 +153,8 @@ code {
 }
 .index__btn {
 	background-color: #1f2839;
-	padding: 1.5rem;
+	padding: 12px;
+	padding-left: 105px;
 	cursor: pointer;
 }
 //Taken from note-taker.html - might need to alter in future
@@ -187,6 +210,14 @@ code {
 		border-bottom: 25px $dgray double;
 		border-radius: 0 100% 0 0;
 		box-shadow: 1px 6px 2px $ocean-blue;
+	}
+	.note__img--scale:hover {
+		transition: 1s ease-in;
+		transform: scale(3);
+		@include MQ(L) {
+			transform: scale(1.5);
+		}
+		
 	}
 }
 //todo challenge one

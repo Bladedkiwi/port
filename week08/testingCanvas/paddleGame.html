@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author"
+          content="Kian Hyatt">
+    <meta name="description"
+          content="WDD 330 Portfolio: Week 8: Canvas Pong Game">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <link rel="stylesheet"
+          href="../../styles.css">
+    <title>Hyatt | Week 8: Pong Game</title>
+</head>
+<style>
+    .notebook__canvas {
+        border: dotted 2px white;
+        margin-top: 2.5rem;
+        margin-bottom: 5rem;
+    }
+</style>
+
+<body>
+    <header>
+        <div>
+            <h1>Week 8</h1>
+            <small>by Kian Hyatt</small>
+        </div>
+    </header>
+    <nav>
+        <ol id="index">
+            <li class="index__btn"
+                onclick="backwards()">Back</li>
+        </ol>
+    </nav>
+    <section class="notebook">
+        <div>
+            <h2>Pong</h2>
+        </div>
+        <hr>
+        <article class="notebook__note">
+            <h3>The journey</h3>
+            <p>I delved deeper into what purpose canvas has, and I believe I have found it. Below, is a game of Pong I translated from a Python project I did for cs241. I was surprised to learn that the cicles, paddles, and x,y coordinates are defined in a similar way between Python and JavaScript. The overall translation went rather smoothly except some hiccups that occured with the paddle movement, and working out how to update the board. This game is also very low on rescources coming in at only 70kb. Granted it is very simple, but it does mean making a game is fairly simple for the browser.</p>
+        </article>
+        <!--Canvas takes both width and height attribute plus uses JS API to draw things-->
+        <canvas id="game"
+                class="notebook__canvas">
+            Sorry! Your browser doesn’t support Canvas.
+        </canvas>
+        
+
+    </section>
+    <script src="js/game.js" type="module"></script>
+    <script src="../js/wk08-index.js"></script>
+    <script src="../../js/buildNav.js"></script>
+    <script src="../../js/functionality.js"></script>
+</body>
+
+</html>

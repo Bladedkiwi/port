@@ -4,7 +4,7 @@ const links = [
 	{ label: "Team Activity", url: "teamActivity/team.html" },
 	{ label: "Upgraded Note It!", url: "./note-taker.html" },
 	{
-		label: "To Do List: Challenge One In the Making",
+		label: "Challenge One: Draft",
 		url: "./todo/index.html",
 	},
 ];

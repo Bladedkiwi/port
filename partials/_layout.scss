@@ -106,7 +106,13 @@ hr:nth-of-type(1) {
 		letter-spacing: 3px;
 		text-shadow: 2px 2px 40px $ocean-blue;
 		margin: 0.4rem;
-		color: #85a9ff;
+		color: #85a9ff;	
+		background-color: transparent;
+		border-left: none;
+	}
+	small {
+		background-color: transparent;
+		border: none;
 	}
 	@include MQ(M) {
 		small {
@@ -168,6 +174,12 @@ hr:nth-of-type(1) {
 		margin-left: 1rem;
 		h1 {
 			padding: 0;
+			background-color: transparent;
+			border-left: none;
+		}
+		small {
+			background-color: transparent;
+			border: none;
 		}
 	}
 }

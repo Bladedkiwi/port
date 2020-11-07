@@ -1,32 +1,110 @@
 <!DOCTYPE html>
 <html lang="en-us">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="author" content="Kian Hyatt" />
-		<meta name="description" content="WDD 330 Portfolio: Week 8: Notes" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" href="../styles.css" />
-		<title>Hyatt Portfolio | Week 8: Notes</title>
-	</head>
 
-	<body>
-		<header>
-			<div>
-				<h1>Week 8</h1>
-				<small>by Kian Hyatt</small>
+<head>
+	<meta charset="utf-8" />
+	<meta name="author"
+		  content="Kian Hyatt" />
+	<meta name="description"
+		  content="WDD 330 Portfolio: Week 8: Notes" />
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible"
+		  content="ie=edge" />
+	<link rel="stylesheet"
+		  href="../styles.css" />
+	<title>Hyatt Portfolio | Week 8: Notes</title>
+</head>
+
+<body>
+	<header>
+		<div>
+			<h1>Week 8</h1>
+			<small>by Kian Hyatt</small>
+		</div>
+	</header>
+	<nav>
+		<ol id="index">
+			<li class="index__btn"
+				onclick="backwards()">Back</li>
+		</ol>
+	</nav>
+	<section class="notebook">
+		<h2>Notes</h2>
+		<hr>
+		<article class="notebook__note">
+			11/2/2020, 11:27:56 AM--<h2>Nifty Form Input</h3>
+			<div class="note__content">
+				<p>I found this nifty form for submitting your credit card number for payment. The actual input area for
+					the card number is rather complex for how simplistic it feels.</p> <img
+					 src="img/niftyCCardExample.png"
+					 alt="Credit Card Input Field Example">
+				<p style="grid-column: span 2;">When focusing on the input, the text in the background does not disappear like placeholder text, and
+					will show a picture of the card type to the left of your number after placing it in. In fact, at
+					first glance, I assumed the card number was all they were looking for because I had ignored the text
+					on the right side of it. That's a nice feature to include the entire card info on one line, instead
+					of the normal broken up fields. I can imagine someone would miss it, and then get annoyed by an
+					error being thrown. Some ideas to fix that could be to add a css arrow that is pointing down on the
+					date after placing in the full card number, or simple words above those spots. The MM/YY CVC feel
+					like they run together which is why they can become missed. However, this input field keeps the rest
+					of the site's feel and strives for that simple/clean look.</p>
+				<img src="img/niftyCCardExampleCode.png"
+					 alt="Displayed HTML Code of Credit Card Example"
+					 class="note__img--scale">
+				<ul>
+					<li>First off, the entire input field is it's own separate HTML document</li>
+					<li>Which means, this is a document consisting of a form, and an input field that looks like it's
+						only one field.</li>
+					<li>There are spans used for all the extra features.
+						<ul>
+							<li>aria support/tabindex for the number</li>
+							<li>credit card images</li>
+							<li>number field, expiration field, and CVC field, zipcode field 
+								<ul>
+									<li>All of these provide the nifty text that doesn't disappear on focus</li>
+								</ul>
+							</li>
+						</ul>
+					</li> 
+					<li>disabled input fields for tabIndex and the general separation of the various fields. These have
+						opacity of 0, so they are there, but not.</li>
+					<li>The actual makeup of the container is:
+						<ul>
+							<li>div container &#8407; div card icon; div card fields wrapper; invisible input field;
+								invisible button;</li>
+						</ul>
+					</li>
+					<li>It is interesting though, the div card fields wrapper includes a fake number div, that includes
+						the value you've given. The actual input under the span class="InputContainer" under
+						CardNumberField-input-wrapper, acts like it doesn't input anything in, and only sets the
+						attribute value of the input. I don't understand the reasoning behind this; is it to hide the
+						input field, or make it harder to find?</li>
+					<li>Overall, this simple form has a lot more going on than you would think. As most things do, but I
+						like how they made the card data seem like it was completely contained on one line. </li>
+				</ul>
+
+				<p style="grid-column: span 2;">I'm super curious now as to why they have a whole class set up for a fakeNumber. What's the point? I
+					searched through <a href="https://www.w3.org/TR/html52/sec-forms.html#sec-forms">W3C:Forms</a> and
+					couldn't find any tips on why the extra fake number div. The only thing that seemed kind of familiar
+					to their coding style was that W3C suggests the use of surrounding each area within a form with
+					div tags. </p>
+				<p style="grid-column: span 2">Another idea that I found as to why they have that there is because they are using it as a way to
+					send it to the server without having it store itself in jquery. <a
+					   href="https://stackoverflow.com/questions/33228963/how-to-pass-a-div-value-as-input-in-a-form">This
+						Stack post</a> suggests (in the second answer) a way to send div data to the server by creating
+					a hidden input that's value is set based off of the div. Another user suggested cloning the div
+					value, and posting it to the server. <br><br>Both of these ideas don't explain the fake div number class. However, maybe they are using a hidden
+					input that's setting the value for the actual input to fetch it to the server. Not sure</p>
+
 			</div>
-		</header>
-		<nav>
-			<ol id="index">
-				<li class="index__btn"
-					onclick="backwards()">Back</li>
-			</ol>
-		</nav>
+		</article>
+	</section>
 
 
-		<script src="js/wk08-index.js"></script>
-		<script src="../js/buildNav.js"></script>
-		<script src="../js/functionality.js"></script>
-	</body>
+
+	<script src="js/wk08-index.js"></script>
+	<script src="../js/buildNav.js"></script>
+	<script src="../js/functionality.js"></script>
+</body>
+
 </html>
