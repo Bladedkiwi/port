@@ -703,6 +703,7 @@ body a {
 
 body ul li {
   list-style-type: circle;
+  list-style-position: inside;
 }
 
 body a {
@@ -936,6 +937,11 @@ code {
     -webkit-transform: scale(1.5);
             transform: scale(1.5);
   }
+}
+
+.notebook__note .ul__title {
+  list-style-type: none;
+  font-size: 1.5rem;
 }
 
 .todo h2 {
