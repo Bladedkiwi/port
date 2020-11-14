@@ -691,8 +691,8 @@ body {
 }
 
 body h1 {
-  padding: .8rem;
-  padding-bottom: .3rem;
+  padding: 0.8rem;
+  padding-bottom: 0.3rem;
 }
 
 body ul,
@@ -711,11 +711,36 @@ body a {
 }
 
 body p {
-  padding: .2rem;
+  padding: 0.2rem;
 }
 
 body a:hover {
   text-decoration: underline;
+}
+
+body table {
+  max-width: 100%;
+  width: 100%;
+}
+
+body th {
+  text-align: left;
+  font-size: 1.25rem;
+}
+
+body th,
+body td {
+  line-height: inherit;
+  border-bottom: 1px #c5c6c7 solid;
+  padding: 1rem;
+}
+
+body th {
+  vertical-align: bottom;
+}
+
+body td {
+  vertical-align: top;
 }
 
 body header {
@@ -736,8 +761,8 @@ body header h1 {
 
 body header small {
   display: block;
-  padding-left: .8rem;
-  padding-bottom: .8rem;
+  padding-left: 0.8rem;
+  padding-bottom: 0.8rem;
   background-color: #1f283977;
   border-radius: 85% 0% 0% 100% / 0% 50% 100% 100%;
   border: 2.5px solid #45a29e;
@@ -765,8 +790,8 @@ body ol li a {
 }
 
 body nav ol li:hover {
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   right: 0;
   -webkit-box-shadow: -5px 5px 29px #45a29e;
           box-shadow: -5px 5px 29px #45a29e;
@@ -910,14 +935,19 @@ code {
   }
 }
 
+.notebook .ul__title {
+  list-style-type: none;
+  font-size: 1.5rem;
+}
+
 .notebook__note {
-  margin-top: calc(1.5rem + .5vh);
+  margin-top: calc(1.5rem + 0.5vh);
   padding: 1rem;
 }
 
 .notebook__note h2 {
-  margin-top: calc(.5rem + .2vh);
-  margin-bottom: .8rem;
+  margin-top: calc(0.5rem + 0.2vh);
+  margin-bottom: 0.8rem;
   padding-left: 0.2rem;
   border-bottom: 25px #1f2833 double;
   border-radius: 0 100% 0 0;
@@ -939,22 +969,17 @@ code {
   }
 }
 
-.notebook__note .ul__title {
-  list-style-type: none;
-  font-size: 1.5rem;
-}
-
 .todo h2 {
   color: #7488EC;
 }
 
 .todo {
-  width: calc(260px + .8vw);
+  width: calc(260px + 0.8vw);
 }
 
 .todo .todo__list button {
   width: 30px;
-  margin-right: .2rem;
+  margin-right: 0.2rem;
   padding-bottom: 5px;
 }
 
@@ -968,8 +993,8 @@ code {
 }
 
 .todo .todo__filter {
-  padding: .2rem;
-  padding-top: .6rem;
+  padding: 0.2rem;
+  padding-top: 0.6rem;
 }
 
 .todo .completed {
