@@ -1,32 +1,219 @@
 <!DOCTYPE html>
 <html lang="en-us">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="author" content="Kian Hyatt" />
-		<meta name="description" content="WDD 330 Portfolio: Week 10: Notes" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" href="../styles.css" />
-		<title>Hyatt Portfolio | Week 10: Notes</title>
-	</head>
 
-	<body>
-		<header>
-			<div>
-				<h1>Week 10</h1>
-				<small>by Kian Hyatt</small>
+<head>
+	<meta charset="utf-8" />
+	<meta name="author"
+		  content="Kian Hyatt" />
+	<meta name="description"
+		  content="WDD 330 Portfolio: Week 10: Notes" />
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible"
+		  content="ie=edge" />
+	<link rel="stylesheet"
+		  href="../styles.css" />
+	<title>Hyatt Portfolio | Week 10: Notes</title>
+</head>
+
+<body>
+	<header>
+		<div>
+			<h1>Week 10</h1>
+			<small>by Kian Hyatt</small>
+		</div>
+	</header>
+	<nav>
+		<ol id="index">
+			<li class="index__btn"
+				onclick="backwards()">Back</li>
+		</ol>
+	</nav>
+	<section class="notebook">
+		<h2>Notes</h2>
+		<hr>
+		<article class="notebook__note">11/18/2020, 12:22:41 PM--<h2>Fetch/CORS Take 2</h2>
+			<div class="note__content">
+				<p>While looking at fetch, and a random youtube video's comment section, I ran across a comment saying
+					you can make any fetch call anywhere. Then, they provided the code they used to do so:</p>
+				<code>fetch('https://cors-anywhere.herokuapp.com/'any-site-name-here')</code>
+				<p>I tested this out, and it does bypass any headers that were in place, and allows access to a page
+					that would normally require the correct headers. At this point, this seemed odd. CORS is a built in
+					system that acts like a user/password login for accessing server data. I decided to look into the
+					host site, and pulled up cors-anywhere.herokuapp.com. This pulled up their readme text from github.
+					The readme didn't really help me understand what was going on, and so I ventured off to the
+					designated github addresses at the bottom of the document. <a
+					   href="https://github.com/Rob--W/cors-anywhere/">Rob--W's github</a></p>
+				<p>After reading the Readme, and inspecting their actual code in the src files. I came to the conclusion
+					that they get the required headers by a method of trial and error, and a proxy Server</p>
+				<pre><code>
+/**
+* Performs the actual proxy request.
+*
+* @param req {ServerRequest} Incoming http request
+* @param res {ServerResponse} Outgoing (proxied) http request
+* @param proxy {HttpProxy}
+*/
+function proxyRequest(req, res, proxy) {
+	var location = req.corsAnywhereRequestState.location;
+	req.url = location.path;
+
+	var proxyOptions = {
+	changeOrigin: false,
+	prependPath: false,
+	target: location,
+	headers: {
+		host: location.host,
+	},
+	// HACK: Get hold of the proxyReq object, because we need it later.
+	// https://github.com/nodejitsu/node-http-proxy/blob/v1.11.1/lib/http-proxy/passes/web-incoming.js#L144
+	buffer: {
+		pipe: function(proxyReq) {
+		var proxyReqOn = proxyReq.on;
+		// Intercepts the handler that connects proxyRes to res.
+		// https://github.com/nodejitsu/node-http-proxy/blob/v1.11.1/lib/http-proxy/passes/web-incoming.js#L146-L158
+		proxyReq.on = function(eventName, listener) {
+			if (eventName !== 'response') {
+			return proxyReqOn.call(this, eventName, listener);
+			}
+			return proxyReqOn.call(this, 'response', function(proxyRes) {
+			if (onProxyResponse(proxy, proxyReq, proxyRes, req, res)) {
+				try {
+				listener(proxyRes);
+				} catch (err) {
+				// Wrap in try-catch because an error could occur:
+				// "RangeError: Invalid status code: 0"
+				// https://github.com/Rob--W/cors-anywhere/issues/95
+				// https://github.com/nodejitsu/node-http-proxy/issues/1080
+
+				// Forward error (will ultimately emit the 'error' event on our proxy object):
+				// https://github.com/nodejitsu/node-http-proxy/blob/v1.11.1/lib/http-proxy/passes/web-incoming.js#L134
+				proxyReq.emit('error', err);
+				}
+			}
+			});
+		};
+		return req.pipe(proxyReq);
+		},
+	},
+	};
+
+	var proxyThroughUrl = req.corsAnywhereRequestState.getProxyForUrl(location.href);
+	if (proxyThroughUrl) {
+	proxyOptions.target = proxyThroughUrl;
+	proxyOptions.toProxy = true;
+	// If a proxy URL was set, req.url must be an absolute URL. Then the request will not be sent
+	// directly to the proxied URL, but through another proxy.
+	req.url = location.href;
+	}
+
+	// Start proxying the request
+	try {
+	proxy.web(req, res, proxyOptions);
+	} catch (err) {
+	proxy.emit('error', err, req, res);
+	}
+}
+				</code></pre>
+				<p>This was the code where I made this assumption. It seems like proxyRequest, makes a "clone" of the
+					site they're accessing, and tests the site's response headers and retrieves the required header to
+					the request. I wasn't positive on this though, and figured I would look into it further. In general,
+					I was curious if this would be a way to easily grab updated info from websites like simple html
+					content. However, if I am understanding CORS right, this way would be hacking into things instead of
+					acquiring access. So, I wanted to be sure.</p>
+				<p>I found a nifty article from <a
+					   href="https://medium.com/certik/cors-anywhere-the-dangers-of-misconfigured-third-party-software-df232aae144c">Medium.com</a>
+					written by CertiK. They explain in depth that cors-anywhere might be useful, but has a major risk of
+					Server-side request forgery. They explain, "<br><br>“Server-side request forgery (also known as
+					SSRF) is a web security vulnerability that allows an attacker to induce the server-side application
+					to make HTTP requests to an arbitrary domain of the attacker’s choosing. In typical SSRF examples,
+					the attacker might cause the server to make a connection back to itself, or to other web-based
+					services within the organization’s infrastructure, or to external third-party systems.”-PortSwigger,
+					Web Security Academy"<br><br> They go further into an actual example that points out how
+					cors-anywhere can be used to perform such a SSRF attack to retrieve the desired sites' headers. At
+					the end of this, they end up being able to gain full (read & write) access to that site. </p>
+				<p>Overall, this was very informative on the ways code can sometimes be re-used to become the atom bomb.
+					After this article, I decided to find other sources that might confirm these things. Most of them
+					weren't this in depth, but did hover around the same ideas of overwriting the usage/purpose of CORS.
+				</p>
 			</div>
-		</header>
-		<nav>
-			<ol id="index">
-				<li class="index__btn"
-					onclick="backwards()">Back</li>
-			</ol>
-		</nav>
+		</article>
+		<hr>
+		<article class="notebook__note">11/19/2020, 12:04:40 PM--<h2>Google API's: Google Calendar</h2>
+			<div class="note__content">
+				<p>Started looking into how possible it would be to use the Google Calendar API. I found a blog from a
+					Google Developer, that walks through using the API <a
+					   href="https://gsuite-developers.googleblog.com/2011/12/using-new-js-library-to-unlock-power-of.html">here</a>.
+					Overall, the code looks fairly understandable. Functions for both signing/verifying the user, and
+					making a fetch call for grabbing the data. The API call does look different because it makes a call
+					to the gapi.client or google api client, but continues a similar format as using fetch.</p>
+				<p>In general, in order to use the API, I would have to submit my app for use with sensitive scopes(a
+					process of having google say your app is approved/okay to do this), or try the G-suite free trial
+					that allows developers, or organizations to use the API's among their organization. My guess is that
+					I will need to figure out what kind of access I would need. The sensitive scope/OAuth deals with
+					logging people into their google calendar and changing their calendar. </p>
+				<h3>Understanding what I want</h3>
+				<p>Essentially, I want a calendar that allows for sign-ups/paying for that rental time. It is stored on
+					one calendar for the company, so they know what cars are being used and when. Also, it has to update
+					itself if there's a cancellation. The user can either see the calendar with times taken/available
+					with no user info attached, or request a time and set it up that way. It would be easiest, if like
+					booking a cabin for example, the taken time slots are shown to the user so they don't become
+					frustrated with not getting their time slot. The other caveat is allowing for customizable time
+					slots, so renting for 1hr to 8hr30min. <br><br>Well, if we want it to be customizable and be able to
+					see the other scheduled times taken that can be easy. Show the calendar with times taken (invisible
+					user info), and then allow the user to set it up themselves. Also, there could be a built in system
+					where there is a buffer zone like 15min between rentals for cleaning. So, base functionality, I
+					would need access to the company calendar to edit/view. Enhanced functionality, would be to offer an
+					option to set the user's reserved time in their own calendar too. </p>
+				<p>Overall, I imagine I will need OAuthorization abilities for the company's calendar. Something to
+					continue researching though. </p>
+			</div>
+		</article>
+		<hr>
+		<article class="notebook__note">11/21/2020, 12:35:18 PM--<h2>Quick Look: React</h2>
+			<div class="note__content">
+				<p><a href="https://reactjs.org/tutorial/tutorial.html#overview">React</a> is a declarative, efficient,
+					and flexible JavaScript library for building user interfaces. This allows the creation of complex
+					User Interfaces, and the creation of isolated pieces of code called "components". This code simply
+					displays this Shopping list, but is customizable. Much like a string literal, render() returns a
+					React element.</p>
+				<pre><code>
+class ShoppingList extends React.Component {
+	render() {
+	return (
+		div className="shopping-list"
+		h1 Shopping List for {this.props.name} h1
+		ul
+			li Instagram li
+			li WhatsApp li
+			li Oculus li
+		ul
+		div
+	);
+	}
+}
+
+// Example usage: ShoppingList name="Mark" 
+		</code></pre>
+				<pre><code>
+					
+return React.createElement('div', {className: 'shopping-list'},
+	React.createElement('h1', /* ... h1 children ... */),
+	React.createElement('ul', /* ... ul children ... */)
+);
+			</code></pre>
+					<p>This snippet, is equivalent to the above. Essentially, react grabs the shopping list, and throws
+						the content inside a div-h1-ul combo.</p>
+
+			</div>
+		</article>
+		<hr>
+	</section>
 
 
-		<script src="js/wk10-index.js"></script>
-		<script src="../js/buildNav.js"></script>
-		<script src="../js/functionality.js"></script>
-	</body>
+	<script src="js/wk10-index.js"></script>
+	<script src="../js/buildNav.js"></script>
+	<script src="../js/functionality.js"></script>
+</body>
+
 </html>

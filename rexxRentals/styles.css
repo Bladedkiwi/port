@@ -1,0 +1,96 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #000000;
+  color: #e5e5e5;
+}
+
+div {
+  background-color: #e5e5e53d;
+}
+
+h1,
+h2,
+h3 {
+  color: #ffaf2d;
+  font-family: "Megrim", cursive;
+  background-color: #4202089a;
+}
+
+a {
+  color: #ffaf2d;
+  font-family: "Megrim", cursive;
+}
+
+th {
+  background-color: #e5e5e5;
+  color: black;
+}
+
+td {
+  border-left: 5px #14213d ridge;
+  border-right: 5px #14213d ridge;
+}
+
+body ul li {
+  list-style-type: none;
+}
+
+header {
+  background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIQDw8PEhIVFRUPDQ0PDxUVFQ8VFw8PFREWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNyg5LisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIALQBGAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAJhABAQEAAQIEBwEBAAAAAAAAABEB8CFRAhJBgTFhcZHR4fGhsf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDjWJ5sSc/qwCmeFUlAuZ8P8/Jv2WEBMxYoAlIsBCKAAQEFAQoAAACkBBYAgoAAABAEUAAAABIsKkA2LukASKAAAALAQVNAEOdQAighFgAJVAKQgFFQCEFgILAEFAQUBBQEFASqFAKICgACpQBm+59QWoKBDnNCgFIoJDyqAAQBFAAAAAIAACggAAEAAAgsASKUAGd8SZvM/INam/P7YJYCz2wwWAhi5igkUqAqUigkWAAJQCgAAUBUICgAEAAAAAAABnfFnOqSk5+gN8WmeHuc7AEwt/fw+zXlUGZ339LmLQCGhgBAoGYAAFZvMBaAAQoCoKCRRKCgAAUFBKCiUoKIAogDM5/VgQDMxaQBOp5VKAVAFQAUZp1BaVJ3/GFA0IsBFgaBipUgLQUEipSgokIC0SgKCAoAAAAAFKyboNVKz5gGqVirOfAFpUiwEpudymYC1KuYdATM/rSXfoQFpuoYBQAUqLAKQKAVFApAAoAAACoAqAAADKf59sXnczOdAOepnh+X3jSQALz+ICkADQzC4BFiebskBfMJc51Xr9ANKmZ7tAhFSgogAKAQKAAnmBRmrgFCgKItACoCiUApu/NmqBRKAtKYQAoAnOeikWAlIvQoGYBAKABDAAAADU3QVN0MBFIoEEoChAACgEAAAERSc6gc9M/4Z7LAEMFoEEiwCgACUgLRAFSkUAE83YFTzIAAUFKiwCkUAEoC1KRQQUAEAURQOeiKAkVKUFEqc7gpQAAAAoCom+LAaSs3dWd/wByG57Gb2QFz5BmNQGYuYtSgqUIBSFAUSgAFAAAIUAVAETxdFAWJgAuGgAKAiKAZjOeLrABPjvu1mdZ8gBKYAK1mABus+sAD1UAAAEUASgC5gAIoAgoAAD//2Q==");
+}
+
+nav {
+  position: fixed;
+  z-index: 1;
+  background-color: #420208;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  overflow-x: hidden;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+nav a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav .nav__content {
+  position: relative;
+  top: 25%;
+  text-align: center;
+}
+
+nav .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+button {
+  font-size: 30px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */
