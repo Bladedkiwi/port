@@ -1,13 +1,13 @@
-//Auth class which provides basic JWT based authentication for our app.
-// Requires: access to the makeRequest  functions
+// Requires: access to the makeRequest function
 import { makeRequest } from "./authHelpers.js";
+//Auth class which provides basic JWT(JSON Web Token) based authentication
 export default class Auth {
 	constructor() {
 		this.jwtToken = "";
 		this.user = {};
 	}
 	async login(callback) {
-		// replace the ids below with whatever you used in your form.
+		//grabs the forms input fields, and their values
 		const password = document.getElementById("password");
 		const username = document.getElementById("username");
 		const postData = {
@@ -15,17 +15,19 @@ export default class Auth {
 			password: password.value,
 		};
 		try {
-			// 1. use the makeRequest function to pass our credentials to the server
-            //http://127.0.0.1:3000/ + credentials ?username=lbs&password=hsdf
-            
-            let url = `?username=${encodeURIComponent(username.value)}&password=${encodeURIComponent(password.value)}`;
-            const response = await makeRequest(url);
-            // 2. if we get a successful response...we have a token!  Store it since we will need to send it with every request to the API.
-            if (response) {
-                this.jwtToken = await response;
-            }
-            // let's get the user details as well and store them locally in the class
-            this.user.push(postData);
+			//makeRequest needs a url to be passed to server
+			//http://127.0.0.1:3000/ + credentials: ?username=lbs&password=hsdf
+
+			let url = `?username=${encodeURIComponent(
+				postData.email
+			)}&password=${encodeURIComponent(postData.password)}`;
+			const response = await makeRequest(url);
+			// 2. if we get a successful response...we have a token!  Store it since we will need to send it with every request to the API.
+			if (response) {
+				this.jwtToken = await response;
+			}
+			// let's get the user details as well and store them locally in the class
+			this.user.push(postData);
 			// you can pass a query to the API by appending it on the end of the url like this: 'users?email=' + email
 			this.user = await this.getCurrentUser(username.value);
 			// hide the login form.
