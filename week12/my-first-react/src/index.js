@@ -1,4 +1,10 @@
-"use strict";
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const myfirstelement = <h1>Hello React!</h1>
+
+ReactDOM.render(myfirstelement, document.getElementById('root'));
+
 const create = React.createElement;
 
 class ShoppingList extends React.Component {
@@ -10,7 +16,7 @@ class ShoppingList extends React.Component {
 		return create(
 			"div",
 			{ className: "shopping-list" },
-			create("h1", null, "Shopping List for ", props.name),
+			create("h1", null, "Shopping List for ", this.props.name),
 			create(
 				"ul",null,
 				create("li", null, "Cookies"),
@@ -20,9 +26,7 @@ class ShoppingList extends React.Component {
 		);
 	}
 }
-function wrap() {
-    return create('div', new ShoppingList(name="Peter Pan"));
-}
+const listName = <ShoppingList name="Peter Pan" />
 const desiredContainer = document.querySelector(".shopping");
 //React.DOM is similar to saying innerHTML =
-ReactDOM.render(wrap(), desiredContainer);
+ReactDOM.render(listName, desiredContainer);

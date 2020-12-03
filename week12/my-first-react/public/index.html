@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html lang="en-us">
-
 <head>
     <meta charset="utf-8">
     <meta name="author"
@@ -12,16 +11,9 @@
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge">
     <link rel="stylesheet"
-          href="../styles.css">
+          href="../../../styles.css">
     <title>Hyatt | Week 12: ExamplePad</title>
 </head>
-<style>
-    .notebook__canvas {
-        border: dotted 2px white;
-        margin-top: 2.5rem;
-    }
-</style>
-
 <body>
     <header>
         <div>
@@ -30,17 +22,15 @@
         </div>
     </header>
     <nav>
-        <ol id="index">
-            <li class="index__btn"
-                onclick="backwards()">Back</li>
-        </ol>
+        
     </nav>
     <section class="notebook">
-        <h2>Simply Testing React</h2>
+        <h2>React Playground</h2>
         <hr>
         <article class="notebook__note">
-            <p>This page demonstrates using React with no build tooling. React is loaded as a script tag. See Below</p>
-            <div id="like_button_container"></div>
+            <div class="shopping" id="root">
+                
+            </div>
         </article>
         
         
@@ -50,14 +40,14 @@
     <!--from here: https://reactjs.org/docs/add-react-to-a-website.html-->
     <!-- Load React. -->
   <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-  <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+  <!--<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>-->
   
   <!-- Load our React component. -->
-    <script src="js/like.js"></script>
-    <script src="js/wk12-index.js"></script>
-    <script src="../js/buildNav.js"></script>
-    <script src="../js/functionality.js"></script>
+  <script src="../src/examplePad.js"></script>
+    
+    <!--<script src="js/ticTacReact.js"></script>-->
+    
 </body>
 
 </html>
