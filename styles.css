@@ -774,10 +774,10 @@ body nav ol li {
   position: fixed;
   z-index: 100;
   top: 4em;
-  right: -145px;
+  right: -445px;
   padding: 10px;
   padding-left: 100px;
-  width: 200px;
+  width: 500px;
   border-radius: 85% 0% 0% 100% / 0% 60% 100% 100%;
   -webkit-box-shadow: -1px 5px 1px #45a29e;
           box-shadow: -1px 5px 1px #45a29e;

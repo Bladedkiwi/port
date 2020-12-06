@@ -1,75 +1,73 @@
 {"rentals": [
-	{
-		"name":"Focus",
-		"brand":"Ford",
-		"year":"2015",
-		"color": "white",
-		"type": "Sedan",
-		"trips": 3,
-		"age": false,
-		"mpg": {
-			"highway":40,
-			"city": 29,
-			"average": 34
-		},
-		"gas":"Regular",
-		"doors":4,
-		"seats":5,
-		"costDay":35,
-		"pickup": "Phoenix, AZ 85018",
-		"return": "Phoenix, AZ 85018",
-		"parking": ["We'll send you the exact address once your trip is booked"],
-		"deliveryLocations": {
-			"free": ["Phoenix Sky Harbor International Airport"],
-			"paid": false
-		},
-		"imgIconPath": "mini/",
-		"imgName": "focus-white",
-		"imgTotal": 7,
-		"distance": {
-			"day":200,
-			"week":1400,
-			"month":6000,
-			"flat": false,
-			"overPerMileFee": false
-		},
-		"addOns": {
-			"cleaningTrip": false,
-			"prepaidRefuel": false,
-			"unlimitedMileage": false,
-			"childSafetySeat": false,
-			"rechargeEV": false
-		},
-		"features": {
-			"safety":false,
-			"autoTransmission": true,
-			"auxInput": true,
-			"usbJack": true,
-			"awd": true,
-			"rwd": false,
-			"fwd": false,
-			"gps": true,
-			"navigation": true,
-			"bluetooth": false,
-			"heatedSeats":false,
-			"cooledSeats":false,
-			"tunnelWashing":true,
-			"childSeat": false,
-			"fullyLoaded": false,
-			"backupCamera": true,
-			"blindSpot": false,
-			"cargoCamera": false,
-			"360ParkAssistCamera": false,
-			"proximityAlert": false,
-			"sunroof": false,
-			"panoroof": false,
-			"usbCharger": false,
-			"special": {
-				
-			}
+	{	
+		"baseInfo": {
+			"location": "Phoenix, AZ 85018",
+			"imgIconPath": "mini/"
 		}
 	},
 	{
+		"type": ["Focus","Ford","2015","White","Sedan", 3],
+		"imagePathName": "focus-white",
+		"mechanics": {
+			"gas":"Regular",
+			"drivetrain": "All-Wheel Drive",
+			"transmission": "Automatic Transmission",
+			"mpgHCAv": [40,29,34]
+		},
+		"inside": {
+			"seatsAndHC": [5, false, false],
+			"doors": 4,
+			"features":["Aux Input", "GPS", "Navigation","USB Jack"]
+		},
+		"carAware": {
+			"cameras": ["Back Up Camera"]
+		},
+		"travel": {
+			"distance": [200,1400,6000],
+			"freeDeliveryLocations": ["Phoenix Sky Harbor International Airport"],
+			"differentLocation": false,
+			"costDay": 35
+		},
+		"addOns": [],
+		"requirements": {
+			"tunnelWashing": true,
+			"ageNeeded": false
+		},
+		"includedPackages": []
+		
+	},
+	{
+		{
+		"type": ["Focus","Ford","2015","White","Sedan", 3],
+		"imagePathName": "focus-white",
+		"mechanics": {
+			"gas":"Regular",
+			"drivetrain": "All-Wheel Drive",
+			"transmission": "Automatic Transmission",
+			"mpgHCAv": [40,29,34]
+		},
+		"inside": {
+			"seatsAndHC": [5, false, false],
+			"doors": 4,
+			"features":["Aux Input", "GPS", "Navigation","USB Jack"]
+		},
+		"carAware": {
+			"cameras": ["Back Up Camera"]
+		},
+		"travel": {
+			"distance": [200,1400,6000],
+			"freeDeliveryLocations": ["Phoenix Sky Harbor International Airport"],
+			"differentLocation": false,
+			"costDay": 35
+		},
+		"addOns": [],
+		"requirements": {
+			"tunnelWashing": true,
+			"ageNeeded": false
+		},
+		"includedPackages": []
+		
+	}
 		"name":"Dodge Ram 3500",
 		"brand":"Dodge",
 		"year":"2020",
@@ -116,24 +114,12 @@
 			"auxInput": true,
 			"usbJack": true,
 			"awd": true,
-			"rwd": false,
-			"fwd": false,
 			"gps": true,
 			"navigation": true,
 			"bluetooth": true,
 			"heatedSeats":true,
-			"cooledSeats":false,
 			"tunnelWashing":true,
-			"childSeat": false,
-			"fullyLoaded": false,
 			"backupCamera": true,
-			"blindSpot": false,
-			"cargoCamera": false,
-			"360ParkAssistCamera": false,
-			"proximityAlert": false,
-			"sunroof": false,
-			"panoroof": false,
-			"usbCharger": false,
 			"special": {
 				"leather": "Black Leather",
 				"screen": "12 inch",

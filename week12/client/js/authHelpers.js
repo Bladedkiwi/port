@@ -4,7 +4,7 @@ const baseURL = "http://localhost:3000/";
 export async function makeRequest(
 	url,
 	method = "GET",
-	body = null,
+	body = null, //login data or password/username
 	token = null
 ) {
 	//customizing the options
