@@ -17,46 +17,76 @@
 </head>
 
 <body>
-    <header>
+    <header class="hdr">
         <!--Logo-->
-        <img src="#" />
+        <picture class="hdr__logo">
+            <img src="./img/logo.svg" />
+        </picture>
         <!--Company Name-->
-        <h1>Rexx Rentals</h1>
+        <h1 class="hdr__rexx">Rexx Rentals</h1>
     </header>
     <nav>
         <!--Sliding navigation over full page-->
-        <a href="javascript:void(0)" class="closebtn" id="navBtn">&times;</a>
+        <a href="javascript:void(0)"
+           class="nav__close-btn"
+           id="close-btn">&times;</a>
         <ul class="nav__content">
-            <li>
-                <a href="#">Car Brand</a>
+            <li class="content__type--accordian">
+                <a href="javascript:void(0)"
+                   data-type="sedan">Sedans</a>
+                <ul class="type__sedans">
+                </ul>
             </li>
-            <li>
-                <a href="#">Car Brand</a>
+            <li class="content__item--accordian">
+                <a href="javascript:void(0)"
+                   data-type="truck">Trucks</a>
+                <ul class="type__trucks">
+                </ul>
             </li>
-            <li>
-                <a href="#">Car Brand</a>
-            </li>
-            <li>
-                <a href="#">Car Brand</a>
-            </li>
-            <li>
-                <a href="#">Car Brand</a>
+            <li class="content__item--accordian">
+                <a href="javascript:void(0)"
+                   data-type="sport">Sports Cars</a>
+                <ul class="type__sports">
+                </ul>
             </li>
         </ul>
     </nav>
     <main>
         <picture>
-            <img src="https://d1zgdcrdir5wgt.cloudfront.net/media/vehicle/images/z7jpnbkoRreFDyiIp2p5fw.1440x700.jpg"
-                 width="500px" />
+            <img src="https://d1zgdcrdir5wgt.cloudfront.net/media/vehicle/images/z7jpnbkoRreFDyiIp2p5fw.1440x700.jpg" />
         </picture>
-        <div class="menu">
-            <button id="leftNavBtn">&#9776; Our Fleet</button>
-            <button id="rightNavBtn">About Us</button>
+        <!--Feel like something has to go here... Maybe the feature car in the photo's quick shot of info?-->
+        <article class="about-us">
+            <h2>Who We Are:</h2>
+            <div class="about-us__content--flex">
+                <figure>
+                    <img src="./img/owner.png"
+                         alt="Photo of Rexx Rentals' Owner">
+                    <figcaption>Owner</figcaption>
+                </figure>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aperiam in dolores, iure voluptate,
+                    quia ipsa modi, iste deleniti incidunt harum! Iusto consectetur cupiditate molestias qui maxime
+                    provident, enim maiores.<br><br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aperiam in dolores, iure
+                    voluptate,
+                    quia ipsa modi, iste deleniti incidunt harum! Iusto consectetur cupiditate molestias qui maxime
+                    provident, enim maiores.<br><br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aperiam in dolores, iure
+                    voluptate,
+                    quia ipsa modi, iste deleniti incidunt harum! Iusto consectetur cupiditate molestias qui maxime
+                    provident, enim maiores.</p>
+            </div>
+        </article>
+        <div class="bot-nav-btns">
+            <!--&#9776; Took out because right button doesn't always fit right/might have to look into this later-->
+            <button id="fleetBtn">Our Fleet</button>
+            <button id="aboutBtn">About Us</button>
         </div>
 
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script src="./js/util.js" type="module"></script>
+    <script src="./js/util.js"
+            type="module"></script>
 </body>
 
 </html>

@@ -15,62 +15,71 @@
           href="styles.css">
     <title>Hyatt | Rexx Rentals</title>
 </head>
-
+<!--Decided to take this html out, because the only new content was small. Also, liked the idea of an opposite side sliding menu-->
 <body>
-    <header>
+    <header class="hdr">
         <!--Logo-->
-        <img src="#" />
+        <picture class="hdr__logo">
+            <img src="./img/logo.svg" />
+        </picture>
         <!--Company Name-->
-        <h1>Rexx Rentals</h1>
+        <h1 class="hdr__rexx">Rexx Rentals</h1>
     </header>
     <nav>
         <!--Sliding navigation over full page-->
         <a href="javascript:void(0)"
-           class="closebtn"
-           onclick="closeNav()">&times;</a>
+           class="nav__close-btn"
+           id="close-btn">&times;</a>
         <ul class="nav__content">
             <li>
-                <a href="#">Car Brand</a>
+                <a href="./ourFleet/"
+                   data-src="sedan">Sedans</a>
             </li>
             <li>
-                <a href="#">Car Brand</a>
+                <a href="./ourFleet/"
+                   data-src="truck">Trucks</a>
             </li>
             <li>
-                <a href="#">Car Brand</a>
-            </li>
-            <li>
-                <a href="#">Car Brand</a>
-            </li>
-            <li>
-                <a href="#">Car Brand</a>
+                <a href="./ourFleet/"
+                   data-src="sport">Sports Cars</a>
             </li>
         </ul>
     </nav>
     <main>
         <picture>
-            <img src="https://d1zgdcrdir5wgt.cloudfront.net/media/vehicle/images/z7jpnbkoRreFDyiIp2p5fw.1440x700.jpg"
-                 width="500px" />
+            <img src="https://d1zgdcrdir5wgt.cloudfront.net/media/vehicle/images/z7jpnbkoRreFDyiIp2p5fw.1440x700.jpg" />
         </picture>
-        <div>
-            <button onclick="openNav()">&#9776; Our Fleet</button>
-            <button>About Us</button>
+        <div class="menu">
+            <!--&#9776; Took out because right button doesn't always fit right/might have to look into this later-->
+            <button id="menu__left">Our Fleet</button>
+            <button id="menu__right">About Us</button>
         </div>
-        <article>
+        <article class="about-us">
+
             <h2>Who We Are:</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aperiam in dolores, iure voluptate, quia ipsa modi, iste deleniti incidunt harum! Iusto consectetur cupiditate molestias qui maxime provident, enim maiores.</p>
+            <div class="about-us__content--flex">
+                <figure>
+                    <img src="./img/owner.png"
+                     alt="Photo of Rexx Rentals' Owner">
+                     <figcaption>Owner</figcaption>
+                </figure>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aperiam in dolores, iure voluptate,
+                    quia ipsa modi, iste deleniti incidunt harum! Iusto consectetur cupiditate molestias qui maxime
+                    provident, enim maiores.<br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aperiam in dolores, iure voluptate,
+                    quia ipsa modi, iste deleniti incidunt harum! Iusto consectetur cupiditate molestias qui maxime
+                    provident, enim maiores.<br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aperiam in dolores, iure voluptate,
+                    quia ipsa modi, iste deleniti incidunt harum! Iusto consectetur cupiditate molestias qui maxime
+                    provident, enim maiores.</p>
+            </div>
         </article>
+        <hr>
 
     </main>
-
-    <script>
-        function openNav() {
-            document.querySelector('nav').style.width = "100%";
-        }
-
-        function closeNav() {
-            document.querySelector('nav').style.width = "0%";
-        }
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="./js/util.js"
+            type="module"></script>
 </body>
 
 </html>
