@@ -187,10 +187,36 @@ body {
   background-repeat: no-repeat;
 }
 
+body p {
+  padding: 1rem;
+  text-align: justify;
+}
+
 main hr {
-  height: 10vh;
-  color: transparent;
-  background-color: transparent;
+  height: 10em;
+  color: #000000;
+  background-color: #000000;
+  border-color: #000000;
+}
+
+main footer {
+  background-color: #2b2a2a;
+  border-right: 10px solid #1d0305;
+  margin: 3em 0 3em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: right;
+  padding: 1em;
+  -webkit-box-shadow: 0px 0px 1.5px #ffaf2d;
+          box-shadow: 0px 0px 1.5px #ffaf2d;
 }
 
 h1,
@@ -264,6 +290,8 @@ header {
   margin-top: 2em;
   height: 6em;
   width: 100%;
+  -webkit-box-shadow: 0px -2px 3px #ffaf2d;
+          box-shadow: 0px -2px 3px #ffaf2d;
 }
 
 header .hdr__logo {
@@ -330,18 +358,16 @@ nav .nav__closebtn {
 }
 
 .bot-nav-btns {
+  width: 100%;
   position: fixed;
   bottom: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #ffaf2d;
+  font-family: "Megrim", cursive;
 }
 
 .bot-nav-btns button {
@@ -354,9 +380,34 @@ nav .nav__closebtn {
   cursor: pointer;
 }
 
-.car {
-  margin: 0 6rem 0 6rem;
-  width: 85vw;
+.bot-nav-btns button:hover,
+.bot-nav-btns .bot-nav-btns__contact-us:hover {
+  -webkit-box-shadow: inset 0px -2px 5px #ffc260;
+          box-shadow: inset 0px -2px 5px #ffc260;
+}
+
+.bot-nav-btns .bot-nav-btns__contact-us {
+  grid-column: span 2;
+  background: #2b2a2a;
+  border: 3px outset #1d0305;
+  border-left: 0;
+  border-right: 0;
+  font-size: 0.9rem;
+}
+
+.bot-nav-btns .bot-nav-btns__contact-us a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-decoration: none;
+}
+
+.car > * {
+  -webkit-box-shadow: 0px 0px 1.5px #ffaf2d;
+          box-shadow: 0px 0px 1.5px #ffaf2d;
 }
 
 .car .car__feature {
@@ -365,19 +416,17 @@ nav .nav__closebtn {
 }
 
 .car .car__title {
-  padding: .2rem;
+  padding: 0.2rem;
 }
 
 .car .feature__figure {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 0.1fr;
-      grid-template-columns: 1fr 0.1fr;
 }
 
 .car .feature__figure picture {
-  padding: 1.5em;
+  padding: .5em;
   border-bottom: 10px solid #1d0305;
 }
 
@@ -386,35 +435,35 @@ nav .nav__closebtn {
 }
 
 .car .figcapt__icon-reel {
-  border-right: 10px solid #1d0305;
-  margin-top: 1.5em;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (minmax(4em, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(4em, 1fr));
   background-color: #ffb947;
 }
 
 .car .figcapt__icon-reel li {
   color: #1d0305;
   font-weight: bold;
-  padding: .2em;
-  width: 5em;
+  font-size: .7em;
+  padding: 0.3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  border-bottom: 3px solid #1d0305;
+  border-right: 1.5px solid #1d0305;
+  border-left: 1.5px solid #1d0305;
 }
 
 .car .figcapt__icon-reel img {
+  min-width: 24px;
+  max-width: 24px;
   width: 24px;
 }
 
@@ -427,13 +476,49 @@ nav .nav__closebtn {
 }
 
 .car .car__gallery img {
-  width: 13vw;
-  margin: 0.7em;
+  width: 20vw;
+  margin: 0.3em;
 }
 
 .car .car__gallery img:hover {
   -webkit-box-shadow: 1px 1px 10px #ffaf2d;
           box-shadow: 1px 1px 10px #ffaf2d;
+}
+
+.car__details {
+  margin-top: 3em;
+  display: -ms-grid;
+  display: grid;
+  background-color: #2b2a2a;
+      grid-template-areas: 'feat feat' 'enhance enhance' 'specs cond';
+  border-right: 10px solid #1d0305;
+}
+
+.car__details .details__feature {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: feat;
+  background-color: #2b2a2a;
+}
+
+.car__details .details__specs {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: specs;
+}
+
+.car__details .details__enhance {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: enhance;
+}
+
+.car__details .details__conditions {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: cond;
 }
 
 /* Scrollbar Alterations */
@@ -457,5 +542,51 @@ nav .nav__closebtn {
 ::-webkit-scrollbar-thumb:hover {
   -webkit-box-shadow: inset 1px 1px 5px whitesmoke;
           box-shadow: inset 1px 1px 5px whitesmoke;
+}
+
+@media only screen and (min-width: 600px) {
+  .car .feature__figure picture {
+    padding: .7em;
+  }
+  .car .figcapt__icon-reel li {
+    padding: 0.2em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .car {
+    width: 85vw;
+  }
+  .car .feature__figure {
+    -ms-grid-columns: 1fr 0.1fr;
+        grid-template-columns: 1fr 0.1fr;
+  }
+  .car .feature__figure picture {
+    padding: 1.5em;
+  }
+  .car .figcapt__icon-reel {
+    border-right: 10px solid #1d0305;
+    margin-top: 1.5em;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .car .figcapt__icon-reel li {
+    padding: .3em .6em .3em .6em;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    border-right: none;
+    border-left: none;
+    border-top: 2px solid #1d0305;
+    border-bottom: 2px solid #1d0305;
+  }
+  .car .car__gallery img {
+    width: 13vw;
+    margin: 0.7em;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

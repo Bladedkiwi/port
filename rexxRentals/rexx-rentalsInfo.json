@@ -7,35 +7,37 @@
 	},
 	{
 		"type": ["Focus","Ford","2015","White","Sedan"],
-		"imagePathName": "focus-white",
+		"imgPath": "/focus-white",
 		"mechanics": {
 			"gas":"Regular",
 			"drivetrain": "All-Wheel Drive",
 			"transmission": "Automatic Transmission",
-			"mpgHCAv": [40,29,34]
+			"mpgHwyCtyAvg": [40,29,34]
 		},
-		"inside": {
-			"seatsAndHC": [5, false, false],
+		"interior": {
+			"seatsHeatCool": [5, false, false],
 			"doors": 4,
+			"leather": false,
 			"features":["Aux Input", "GPS", "Navigation","USB Jack"]
 		},
 		"carAware": {
-			"cameras": ["Back Up Camera"]
+			"cam": ["Back Up Camera"]
 		},
 		"travel": {
 			"distance": [200,1400,6000],
-			"freeDeliveryLocations": ["Phoenix Sky Harbor International Airport"],
-			"differentLocation": false,
+			"freeDropLoc": ["Phoenix Sky Harbor International Airport"],
+			"paidDropLoc":[],
 			"costDay": 35,
-			"trips": 3
+			"trips": 3,
+			"rentLink": "https://turo.com/us/en/car-rental/united-states/phoenix-az/ford/focus/783711";
 		},
 		"requirements": {
-			"tunnelWashing": true,
-			"ageNeeded": false
+			"tunnelWash": true,
+			"rentAgeReq": false
 		},
 		"addOns": [],
-		"includedPackages": [],
-		"uniqueAttributes": []
+		"pkgIncl": [],
+		"uniqAttrib": []
 		
 	},
 	{

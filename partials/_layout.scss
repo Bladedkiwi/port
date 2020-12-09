@@ -105,7 +105,7 @@ hr:nth-of-type(1) {
 		letter-spacing: 3px;
 		text-shadow: 2px 2px 40px $ocean-blue;
 		margin: 0.4rem;
-		color: #85a9ff;	
+		color: #85a9ff;
 		background-color: transparent;
 		border-left: none;
 	}
@@ -226,7 +226,7 @@ hr:nth-of-type(1) {
 .slide {
 	transform: translateX(-120%);
 }
-//note_taker.html 
+//note_taker.html
 .take_notes {
 	display: flex;
 	flex-direction: column;
@@ -256,21 +256,21 @@ hr:nth-of-type(1) {
 	border: 3px $dgray outset;
 	* {
 		display: flex;
-		align-items:center;
+		align-items: center;
 		//border-bottom: 3px $ocean-blue outset;
 	}
 	.todo__list {
 		background-color: $off-white;
 		display: grid;
-		grid-template-columns: 1fr .1fr;
+		grid-template-columns: 1fr 0.1fr;
 		* {
 			border-bottom: 3px $ocean-blue outset;
 		}
 		button {
 			width: 30px;
-			margin-right: .2rem;
+			margin-right: 0.2rem;
 			display: flex;
-			align-items:center;
+			align-items: center;
 			justify-content: center;
 			color: $ocean-blue;
 			background-color: $dgray;
@@ -282,8 +282,8 @@ hr:nth-of-type(1) {
 		width: 25px;
 	}
 	.todo__filter {
-		padding: .2rem;
-		padding-top: .6rem;
+		padding: 0.2rem;
+		padding-top: 0.6rem;
 		background-color: $off-white;
 		display: flex;
 		flex-direction: row;
@@ -299,12 +299,13 @@ hr:nth-of-type(1) {
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		margin: .7rem 0 0 0;
+		margin: 0.7rem 0 0 0;
 		* {
 			border-bottom: none;
 			height: 25px;
 		}
-		label, label input {
+		label,
+		label input {
 			width: 100%;
 			margin-right: 2px;
 		}
@@ -314,5 +315,3 @@ hr:nth-of-type(1) {
 		}
 	}
 }
-
-
