@@ -1,5 +1,7 @@
+@import "reset";
+
 //variables
-$dark-red: #300106;
+$dark-red: #1d0305;
 $dark-gray: #2b2a2a;
 $light-gray: #e5e5e5;
 $gold: #ffaf2d;
@@ -7,6 +9,17 @@ $black: #000000;
 $font-hdr: "Megrim", cursive;
 $font-bdy: "David Libre", serif;
 $texture: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIQDw8PEhIVFRUPDQ0PDxUVFQ8VFw8PFREWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNyg5LisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIALQBGAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAJhABAQEAAQIEBwEBAAAAAAAAABEB8CFRAhJBgTFhcZHR4fGhsf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDjWJ5sSc/qwCmeFUlAuZ8P8/Jv2WEBMxYoAlIsBCKAAQEFAQoAAACkBBYAgoAAABAEUAAAABIsKkA2LukASKAAAALAQVNAEOdQAighFgAJVAKQgFFQCEFgILAEFAQUBBQEFASqFAKICgACpQBm+59QWoKBDnNCgFIoJDyqAAQBFAAAAAIAACggAAEAAAgsASKUAGd8SZvM/INam/P7YJYCz2wwWAhi5igkUqAqUigkWAAJQCgAAUBUICgAEAAAAAAABnfFnOqSk5+gN8WmeHuc7AEwt/fw+zXlUGZ339LmLQCGhgBAoGYAAFZvMBaAAQoCoKCRRKCgAAUFBKCiUoKIAogDM5/VgQDMxaQBOp5VKAVAFQAUZp1BaVJ3/GFA0IsBFgaBipUgLQUEipSgokIC0SgKCAoAAAAAFKyboNVKz5gGqVirOfAFpUiwEpudymYC1KuYdATM/rSXfoQFpuoYBQAUqLAKQKAVFApAAoAAACoAqAAADKf59sXnczOdAOepnh+X3jSQALz+ICkADQzC4BFiebskBfMJc51Xr9ANKmZ7tAhFSgogAKAQKAAnmBRmrgFCgKItACoCiUApu/NmqBRKAtKYQAoAnOeikWAlIvQoGYBAKABDAAAADU3QVN0MBFIoEEoChAACgEAAAERSc6gc9M/4Z7LAEMFoEEiwCgACUgLRAFSkUAE83YFTzIAAUFKiwCkUAEoC1KRQQUAEAURQOeiKAkVKUFEqc7gpQAAAAoCom+LAaSs3dWd/wByG57Gb2QFz5BmNQGYuYtSgqUIBSFAUSgAFAAAIUAVAETxdFAWJgAuGgAKAiKAZjOeLrABPjvu1mdZ8gBKYAK1mABus+sAD1UAAAEUASgC5gAIoAgoAAD//2Q==");
+//font sizes
+$headings: h6 h5 h4 h3 h2 h1;
+$font-base: 0.8rem;
+$add-scale: 1;
+
+@each $heading in $headings {
+	#{$heading} {
+		font-size: $font-base * $add-scale;
+		$add-scale: $add-scale + 0.4;
+	}
+}
 *,
 *:before,
 *:after {
@@ -20,10 +33,16 @@ img {
 	width: 100%;
 }
 body {
-	padding: 0;
-	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	background-color: $black;
 	color: $light-gray;
+	//background properties: image tells background that there could be more than one image, size sets width and height
+	background-image: $texture;
+	background-position: 0px 15px;
+	background-size: 100% 5em;
+	background-repeat: no-repeat;
 }
 main {
 	hr {
@@ -35,30 +54,26 @@ main {
 h1,
 h2,
 h3 {
+	font-weight: lighter;
 	color: $gold;
 	font-family: $font-hdr;
 	background-color: $dark-red;
 }
-
 a {
 	color: $gold;
 	font-family: $font-hdr;
 }
-
 th {
 	background-color: #e5e5e5;
 	color: black;
 }
-
 td {
 	border-left: 5px #14213d ridge;
 	border-right: 5px #14213d ridge;
 }
-
 body ul li {
 	list-style-type: none;
 }
-
 .about-us {
 	display: none;
 	h2 {
@@ -81,21 +96,21 @@ body ul li {
 	}
 }
 header {
+	margin-top: 2em;
 	height: 6em;
-	background: $texture;
-	background-position: center;
-}
+	width: 100%;
 .hdr__logo {
 	position: absolute;
-	width: 10em;
+	width: 6em;
 	left: 10px;
 	z-index: 1;
-	top: 2em;
+	top: 1.6em;
 }
 .hdr__rexx {
-	margin-left: 8.5rem;
-	padding-top: 1rem;
-	background-color: transparent;
+	width: 100%;
+	margin-top: 0;
+	padding-left: 6rem;
+}
 }
 nav {
 	position: fixed;
@@ -127,8 +142,7 @@ nav {
 		transition: max-height 0.2s ease-out;
 	}
 	.content__type--accordian:after {
-		content: '\02795';
-			
+		content: "\02795";
 	}
 	.nav__closebtn {
 		position: absolute;
@@ -140,8 +154,8 @@ nav {
 .bot-nav-btns {
 	position: fixed;
 	bottom: 0;
-	width: 100%;
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	justify-content: center;
 	align-items: center;
 	button {
@@ -152,18 +166,82 @@ nav {
 		padding: 0.3rem;
 		font-size: 2rem;
 		cursor: pointer;
-		width: 50%;
 	}
 }
-.gallery {
-	display: flex;
-	width: 100%;
-	overflow-x: scroll;
-	img {
-		width: 20vw;
-		margin: .7em;
+.car {
+	margin: 0 6rem 0 6rem;
+	width: 85vw;
+	.car__feature {
+		background-color: $dark-gray;
+		border-right: 10px solid $dark-red;
 	}
-	img:hover {
-		box-shadow: 3px 3px 1px $gold;
+	.car__title {
+		padding: .2rem;
 	}
+	.feature__figure {
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr 0.1fr;
+		picture {
+			padding: 1.5em;
+			border-bottom: 10px solid $dark-red;
+		}
+	}
+	figcaption {
+		border-bottom: 10px solid $dark-red;
+	}
+	.figcapt__icon-reel {
+		border-right: 10px solid $dark-red;
+		margin-top: 1.5em;
+		display: grid;
+		background-color: lighten($gold, 5%);
+		//border-bottom: 10px solid $dark-red;
+		li {
+			color: $dark-red;
+			font-weight: bold;
+			//display: grid;
+			//grid-template-columns: 1fr 1fr;
+			padding: .2em;
+			width: 5em;
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: space-between;
+			//padding: 0.3em 0.5em 0.3em 0.5em;
+			border-bottom: 3px solid $dark-red;
+		}
+		img {
+			width: 24px;
+		}
+	}
+	.car__gallery {
+		display: flex;
+		overflow-x: scroll;
+		background-color: $dark-gray;
+		//box-shadow: 1.5px 1.5px 3px $gold;
+		img {
+			width: 13vw;
+			margin: 0.7em;
+		}
+		img:hover {
+			box-shadow: 1px 1px 10px $gold;
+		}
+	}
+}
+/* Scrollbar Alterations */
+::-webkit-scrollbar {
+	height: 0.8em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+	background: $dark-red;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: $black;
+	box-shadow: inset 1px 1px 10px $dark-gray;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	box-shadow: inset 1px 1px 5px whitesmoke;
 }

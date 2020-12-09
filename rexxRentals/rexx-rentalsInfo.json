@@ -6,7 +6,7 @@
 		}
 	},
 	{
-		"type": ["Focus","Ford","2015","White","Sedan", 3],
+		"type": ["Focus","Ford","2015","White","Sedan"],
 		"imagePathName": "focus-white",
 		"mechanics": {
 			"gas":"Regular",
@@ -26,14 +26,16 @@
 			"distance": [200,1400,6000],
 			"freeDeliveryLocations": ["Phoenix Sky Harbor International Airport"],
 			"differentLocation": false,
-			"costDay": 35
+			"costDay": 35,
+			"trips": 3
 		},
-		"addOns": [],
 		"requirements": {
 			"tunnelWashing": true,
 			"ageNeeded": false
 		},
-		"includedPackages": []
+		"addOns": [],
+		"includedPackages": [],
+		"uniqueAttributes": []
 		
 	},
 	{
