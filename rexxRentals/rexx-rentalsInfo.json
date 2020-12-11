@@ -59,8 +59,8 @@
 			"distance": [200,1400,6000],
 			"freeDropLoc": ["Phoenix Sky Harbor International Airport", "Hyatt Place Scottsdale/Old Town", "Aloft Phoenix Airport", "Hilton Phoenix Airport"],
 			"paidDropLoc":[],
-			"costDay": 102,
-			"trips": 14,
+			"costDay": 80,
+			"trips": 15,
 			"longTerm": false,
 			"rentLink": "https://turo.com/us/en/truck-rental/united-states/phoenix-az/dodge/ram-3500/777845"
 		},
@@ -100,8 +100,8 @@
 			"distance": [200,1400,6000],
 			"freeDropLoc": ["Phoenix Sky Harbor International Airport", "Hyatt Place Scottsdale/Old Town", "Aloft Phoenix Airport", "Hilton Phoenix Airport"],
 			"paidDropLoc":[],
-			"costDay": 91,
-			"trips": 17,
+			"costDay": 75,
+			"trips": 19,
 			"longTerm": false,
 			"rentLink": "https://turo.com/us/en/truck-rental/united-states/phoenix-az/chevrolet/silverado-1500/769286"
 		},
@@ -148,7 +148,7 @@
 			"distance": [200,1400,6000],
 			"freeDropLoc": ["Phoenix Sky Harbor International Airport","Aloft Phoenix Airport","Hilton Phoenix Airport"],
 			"paidDropLoc":[],
-			"costDay": 116,
+			"costDay": 125,
 			"trips": 16,
 			"longTerm": false,
 			"rentLink": "https://turo.com/us/en/truck-rental/united-states/phoenix-az/ford/super-duty-f-250/785105"
@@ -193,7 +193,7 @@
 			"distance": [150,1050,4500],
 			"freeDropLoc": ["Phoenix Sky Harbor International Airport","Hyatt Place Scottsdale/Old Town","Aloft Phoenix Airport","Hilton Phoenix Airport"],
 			"paidDropLoc":["La Quinta Inn by Wyndham Phoenix North $60"],
-			"costDay": 116,
+			"costDay": 125,
 			"trips": 38,
 			"longTerm": true,
 			"rentLink": "https://turo.com/us/en/suv-rental/united-states/phoenix-az/tesla/model-x/763762"
@@ -244,7 +244,7 @@
 				"distance": [200,1400,6000],
 				"freeDropLoc": ["Phoenix Sky Harbor International Airport","Hyatt Place Scottsdale/Old Town","Aloft Phoenix Airport","Hilton Phoenix Airport"],
 				"paidDropLoc":[],
-				"costDay": 116,
+				"costDay": 125,
 				"trips": 50,
 				"longTerm": false,
 				"rentLink": "https://turo.com/us/en/car-rental/united-states/phoenix-az/jaguar/f-type/763805"

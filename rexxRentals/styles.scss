@@ -16,8 +16,8 @@ $headings: h6 h5 h4 h3 h2 h1;
 $font-base: 0.8rem;
 $add-scale: 1;
 // breakpoints
-$M: 600px;
-$L: 1000px;
+$M: 450px;
+$L: 800px;
 
 @mixin MQ($canvas) {
 	@if $canvas == M {
@@ -59,74 +59,68 @@ body {
 	background-position: 0px 15px;
 	background-size: 100% 5em;
 	background-repeat: no-repeat;
-	p {
-		padding: 1rem;
-		text-align: justify;
+	a {
+		color: $gold;
+		font-family: $font-hdr;
 	}
-}
-main {
-	hr {
-		height: 10em;
-		color: $black;
-		background-color: $black;
-		border-color: $black;
+	header a {
+		text-decoration: none;
+	}
+	header a:hover {
+		h1 {
+			box-shadow: 3px 3px 5px $gold;
+		}
+	}
+	ul li {
+		list-style-type: none;
 	}
 	footer {
 		background-color: $dark-gray;
 		border-right: $border-10-red;
 		margin: 3em 0 3em 0;
-		display: flex; 
+		display: flex;
 		flex-flow: row wrap;
 		justify-content: flex-end;
 		text-align: right;
 		padding: 1em;
 		box-shadow: 0px 0px 1.5px $gold;
 	}
-}
-h1,
-h2,
-h3 {
-	font-weight: lighter;
-	color: $gold;
-	font-family: $font-hdr;
-	background-color: $dark-red;
-}
-a {
-	color: $gold;
-	font-family: $font-hdr;
-}
-th {
-	background-color: #e5e5e5;
-	color: black;
-}
-td {
-	border-left: 5px #14213d ridge;
-	border-right: 5px #14213d ridge;
-}
-body ul li {
-	list-style-type: none;
-}
-.about-us {
-	display: none;
-	h2 {
-		padding: 0.5rem 0 0 0.5rem;
-		border-bottom: 0.4rem inset $dark-gray;
-		box-shadow: 0px 6.2px 9px lighten($gold, 10%);
+	hr {
+		height: 10em;
+		color: $black;
+		background-color: $black;
+		border-color: $black;
 	}
-	.about-us__content--flex {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		figure {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		p {
-			padding: 1rem;
-		}
+	h1,
+	h2,
+	h3 {
+		font-weight: lighter;
+		color: $gold;
+		font-family: $font-hdr;
+		background-color: $dark-red;
+		padding: 0.2rem;
+	}
+	p {
+		padding: 1rem;
+		text-align: justify;
+		text-indent: 50px;
 	}
 }
+main {
+	p,
+	li {
+		letter-spacing: 1px;
+		line-height: 1.2;
+	}
+	em {
+		font-style: italic;
+		font-weight: bold;
+		color: $gold;
+	}
+	
+	
+}
+
 header {
 	margin-top: 2em;
 	height: 6em;
@@ -147,7 +141,7 @@ header {
 }
 nav {
 	position: fixed;
-	z-index: 1;
+	z-index: 3;
 	background-color: $dark-red;
 	top: 0;
 	left: 0;
@@ -177,7 +171,7 @@ nav {
 	.content__type--accordian:after {
 		content: "\02795";
 	}
-	.nav__closebtn {
+	.nav__close-btn {
 		position: absolute;
 		top: 20px;
 		right: 45px;
@@ -188,12 +182,14 @@ nav {
 .bot-nav-btns {
 	width: 100%;
 	position: fixed;
+	z-index: 2;
 	bottom: 0;
 	display: grid;
 	align-items: center;
 	color: $gold;
 	font-family: $font-hdr;
-	button {
+	button,
+	#aboutBtn {
 		background: $dark-red;
 		color: $gold;
 		font-family: $font-hdr;
@@ -218,10 +214,36 @@ nav {
 			justify-content: space-between;
 			text-decoration: none;
 		}
+		p {text-indent: initial;}
+	}
+}
+.about-us {
+	> * {
+		box-shadow: 0px 0px 1.5px $gold;
+	}
+	display: flex;
+	position: relative;
+	z-index: 1;
+	justify-content: center;
+	background-color: $dark-gray;
+	picture {
+		background-color: $dark-gray;
+	}
+	.about-us__content {
+		position: absolute;
+		z-index: 2;
+		background-color: #2b2a2ab4;
+		h2 {
+			padding: 0.5rem 0 0 0.5rem;
+			border-bottom: 0.4rem inset $dark-gray;
+		}
+		p {
+			padding: 1rem;
+		}
 	}
 }
 .car {
-	>* {
+	> * {
 		box-shadow: 0px 0px 1.5px $gold;
 	}
 	.car__feature {
@@ -235,7 +257,8 @@ nav {
 		position: relative;
 		display: grid;
 		picture {
-			padding: .5em;
+			max-width: 1000px;
+			padding: 0.5em;
 			border-bottom: $border-10-red;
 		}
 	}
@@ -244,12 +267,12 @@ nav {
 	}
 	.figcapt__icon-reel {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(4em,1fr));
+		grid-template-columns: repeat(auto-fit, minmax(4em, 1fr));
 		background-color: lighten($gold, 5%);
 		li {
 			color: $dark-red;
 			font-weight: bold;
-			font-size: .7em;
+			font-size: 0.7em;
 			padding: 0.3em;
 			display: flex;
 			flex-direction: column;
@@ -258,9 +281,8 @@ nav {
 			border-left: 1.5px solid $dark-red;
 		}
 		img {
-			min-width: 24px;
-				max-width: 24px;
 			width: 24px;
+			height: 24px;
 		}
 	}
 	.car__gallery {
@@ -276,24 +298,31 @@ nav {
 		}
 	}
 }
+ol {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1em;
+	padding-top: 0;
+	padding-left: 3.2em;
+	list-style-type: upper-roman;
+	li {
+		padding: 1em;
+	}
+}
 .car__details {
 	margin-top: 3em;
 	display: grid;
 	background-color: $dark-gray;
-	grid-template-areas: 'feat feat' 'enhance enhance' 'specs cond';
 	border-right: $border-10-red;
-	.details__feature {
-		grid-area: feat;
-		background-color: $dark-gray;
+	.details__content {
+		display: none;
+		grid-template-columns: 1fr 1fr;
 	}
-	.details__specs {
-		grid-area: specs;
+	#conditions {
+		grid-template-columns: 1fr;
 	}
-	.details__enhance {
-		grid-area: enhance;
-	}
-	.details__conditions {
-		grid-area: cond;
+	.active {
+		display: grid;
 	}
 }
 /* Scrollbar Alterations */
@@ -317,7 +346,7 @@ nav {
 	.car {
 		.feature__figure {
 			picture {
-				padding: .7em;
+				padding: 0.7em;
 			}
 		}
 		.figcapt__icon-reel {
@@ -328,8 +357,11 @@ nav {
 	}
 }
 @include MQ(L) {
-	.car {
+	.about-us {
 		width: 85vw;
+	}
+	.car {
+		max-width: 1100px;
 		.feature__figure {
 			grid-template-columns: 1fr 0.1fr;
 			picture {
@@ -337,11 +369,10 @@ nav {
 			}
 		}
 		.figcapt__icon-reel {
-			border-right: $border-10-red;
 			margin-top: 1.5em;
 			grid-template-columns: 1fr;
 			li {
-				padding: .3em .6em .3em .6em;
+				padding: 0.3em 0.6em 0.3em 0.6em;
 				flex-direction: row-reverse;
 				justify-content: space-between;
 				border-right: none;
