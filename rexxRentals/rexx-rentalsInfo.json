@@ -1,5 +1,6 @@
 {"rentals": [
 	{
+		"id": 1,
 		"type": ["Focus","Ford","2015","White","Sedan"],
 		"imgPath": "/ford-focus-white/",
 		"mechanics": {
@@ -36,6 +37,7 @@
 		
 	},
 	{
+		"id": 2,
 		"type": ["Dodge Ram 3500","Laramie FlatBed","2020","Black","Truck"],
 		"imgPath": "/dodge-ram-laramie-black/",
 		"about": "Ram added eTorque to the 2019 Ram 1500 as an option. Etorque combined a belt-drive generator with a battery pack to provide short term torque and energy regeneration to increase torque output by up to 130 ft-lbs to the 5.7 L Hemi. Also introduced in 2019 was the new U-connect platform sporting a 12-inch touchscreen display, the largest in its class.[77]<br><br>The 2019 Ram 1500 saw increases in capability for this new model year with payload increasing to 2300 lbs and ma trailer tow reaching 12,750 lbs when properly equipped. This pairs with a total weight reduction of about 225 lbs compared to the previous generation. [77]",
@@ -77,6 +79,7 @@
 		]
 	},
 	{
+		"id": 3,
 		"type": ["Chevrolet","Silverado 1500","2017","Matte Black","Z71 Lifted Truck"],
 		"imgPath": "/chevSilv-black",
 		"about": "For the 2017 model year, Silverado and Sierra HD models equipped with the 6.6L Duramax Turbo Diesel V8 (L5P) received a new front hood with air intake vents. Gasoline-powered models now have a capless fuel fill. Sierra HD now features standard HID headlamps on all trim levels. New colors include Graphite Metallic and Pepperdust Metallic (Chevrolet) or Dark Slate Metallic and Pepperdust Metallic (GMC). Jet Black/Medium Ash Gray interior trim is added for Silverado High Country. Low-Speed Mitigation Braking is added to the Driver Alert Package for both Silverado and Sierra.[37]",
@@ -124,6 +127,7 @@
 		]
 	},
 	{
+		"id": 4,
 		"type": ["Ford","Lariat Super Duty F-250","2020","Black","Truck"],
 		"imgPath": "/spr-duty-black",
 		"about":"The top-of-the-line Lariat was the most luxurious trim level of the F-Series Super Duty. It added the following features to the mid-range XLT trim level: an AM/FM stereo with both a cassette player and a single-disc CD player (later, a six-disc, in-dash CD changer), leather-trimmed seating surfaces, chrome-clad (later aluminum) wheels and center wheel hubs, keyless entry, a security system, electronic climate controls, a power front bench seat with fold-down center armrest, wood interior trim panels, and a chrome front grille with chrome inserts. Available options included two-tone exterior paint, color-keyed grille insert as well as front & rear bumpers, bucket seats replacing the bench seat, heated front seats, and an automatic transmission (which later became standard on this trim level).",
@@ -171,6 +175,7 @@
 		
 	},
 	{
+		"id": 5,
 		"type": ["Tesla","Model X P90D","2016","Obsidian Black","Sedan"],
 		"imgPath": "/teslaX-P90D-black/",
 		"about":"The Model X was developed from the full-sized sedan platform of the Tesla Model S. The Model X has an EPA size class as an SUV,[7] and shares ~30% of its content with the Model S, half of the originally planned ~60%, and weighs about 10 percent more. Both the Model X and Model S are being produced at the Tesla Factory in Fremont, California. The prototype was unveiled at Tesla's design studios in Hawthorne, California on February 9, 2012.[11][12] First deliveries of the Model X began in September 2015.[13] After one full year on the market, in 2016, the Model X ranked seventh among the world's best-selling plug-in cars.[14]",
@@ -222,6 +227,7 @@
 	
 	},
 	{
+		"id": 6,
 		"type": ["Jaguar","F Type R Coupe","2015","Black","Premium Sports Coupe"],
 			"imgPath": "/jaguar-fTypeR-black/",
 			"about":"The Jaguar F-Type (X152) is a series of two-door, two-seater grand tourers manufactured by British luxury car manufacturer Jaguar Land Rover under their Jaguar Cars marque since 2013.[3] The car's JLR D6a platform is based on a shortened version of the XK's platform.[3] It is the so-called 'spiritual successor' to the famous E-Type.[4] The car was launched initially as a 2-door soft-top convertible, with a 2-door fastback coupé version launched in 2013.[5]",

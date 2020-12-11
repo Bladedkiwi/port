@@ -221,8 +221,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
 }
 
 code {
@@ -386,6 +384,15 @@ hr:nth-of-type(1) {
   position: relative;
   width: 70vw;
   z-index: 3;
+  overflow: auto;
+  padding-left: 2rem;
+  padding-bottom: 6rem;
+}
+
+@supports (scrollbar-color: #1f2833 #0b0c10) {
+  .content__index--special {
+    scrollbar-color: #122582 #1b232d;
+  }
 }
 
 .content__index--special li {
@@ -490,8 +497,8 @@ hr:nth-of-type(1) {
   background-color: #c5c6c7;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr .1fr;
-      grid-template-columns: 1fr .1fr;
+  -ms-grid-columns: 1fr 0.1fr;
+      grid-template-columns: 1fr 0.1fr;
 }
 
 .todo .todo__list * {
@@ -500,7 +507,7 @@ hr:nth-of-type(1) {
 
 .todo .todo__list button {
   width: 30px;
-  margin-right: .2rem;
+  margin-right: 0.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -521,8 +528,8 @@ hr:nth-of-type(1) {
 }
 
 .todo .todo__filter {
-  padding: .2rem;
-  padding-top: .6rem;
+  padding: 0.2rem;
+  padding-top: 0.6rem;
   background-color: #c5c6c7;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -558,7 +565,7 @@ hr:nth-of-type(1) {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  margin: .7rem 0 0 0;
+  margin: 0.7rem 0 0 0;
 }
 
 .todo .todo__create * {
@@ -566,7 +573,8 @@ hr:nth-of-type(1) {
   height: 25px;
 }
 
-.todo .todo__create label, .todo .todo__create label input {
+.todo .todo__create label,
+.todo .todo__create label input {
   width: 100%;
   margin-right: 2px;
 }
@@ -841,6 +849,29 @@ body dl {
   body p {
     padding: 1rem;
   }
+}
+
+/* Scrollbar Alterations */
+::-webkit-scrollbar {
+  height: 0.8em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1f2833;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0b0c10;
+  -webkit-box-shadow: inset 1px 1px 10px #7488EC;
+          box-shadow: inset 1px 1px 10px #7488EC;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  -webkit-box-shadow: inset 1px 1px 5px #7488EC;
+          box-shadow: inset 1px 1px 5px #7488EC;
 }
 
 h6 {

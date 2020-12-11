@@ -155,6 +155,24 @@ body {
 		}
 	}*/
 }
+/* Scrollbar Alterations */
+::-webkit-scrollbar {
+	height: 0.8em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+	background: $dgray;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: $black;
+	box-shadow: inset 1px 1px 10px $cyan;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	box-shadow: inset 1px 1px 5px $cyan;
+}
+
 
 // an idea from: https://codepen.io/jinukurian7/pen/grvwdb
 //grabs each heading, and scales them accordingly

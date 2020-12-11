@@ -1,12 +1,5 @@
-WebFont.load({
-    google: { families: ['David Libre', 'Megrim'] }
-});
-const nav = document.querySelector('nav');
-const navBtns = Array.from(document.querySelectorAll('.bot-nav-btns button'));
-navBtns.push(document.querySelector('nav a'));
-navBtns.forEach((element) => element.addEventListener('click', slideNav));
-
-function slideNav() {
+//slides nav, or changes window location
+function activateMenu() {
     //check which btn was clicked and change width
     if (this.className.includes('close')) {
         nav.style.width == "100%" ? nav.style.width = "0%" : nav.style.width = "0%";
@@ -20,5 +13,13 @@ function slideNav() {
     else {
         nav.style.width = "100%";
     }
+}
+//toggle's display property of child element
+function toggleShow() {
+    let item = this.children[1];
+    //if item hasn't been defined - 
+    //define it block, or if item is defined as none define it block
+    //if item is defined as "block" define it none
+    (item.style.display === "" || item.style.display === "none") ? item.style.display = "block" : item.style.display = "none";
 }
     

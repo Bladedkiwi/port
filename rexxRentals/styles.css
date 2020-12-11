@@ -295,12 +295,26 @@ nav {
   transition: 1s ease-in-out;
 }
 
-nav a {
+nav > * {
+  font-family: "Megrim", cursive;
+}
+
+nav button {
+  font-family: "Megrim", cursive;
+  width: 100%;
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  text-align: right;
+  margin: 0.2rem;
+  background-color: #000000;
+  color: #ffaf2d;
+}
+
+nav button:after {
+  content: "\25BF";
 }
 
 nav ul {
@@ -309,22 +323,90 @@ nav ul {
 
 nav .nav__content {
   position: relative;
-  top: 25%;
-  text-align: center;
+  top: 15%;
+  margin-right: 3em;
 }
 
-nav .content__type--accordian {
-  max-height: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-out;
-  transition: max-height 0.2s ease-out;
+nav .type__list {
+  display: none;
+  margin: 0 0.1em 0.1em 0;
 }
 
-nav .content__type--accordian:after {
-  content: "\02795";
+nav .type__list > * {
+  -webkit-box-shadow: 0px 0px 1.5px #ffaf2d;
+          box-shadow: 0px 0px 1.5px #ffaf2d;
+}
+
+nav .list__items {
+  background-color: #2b2a2a;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.2fr 0.1fr;
+      grid-template-columns: 1fr 0.2fr 0.1fr;
+      grid-template-areas: "carName carName carName" ".. img details";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.3em;
+}
+
+nav .list__items img {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: img;
+  max-width: 180px;
+  width: 200px;
+}
+
+nav .list__items h2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: carName;
+  background-color: #111111;
+  text-align: right;
+}
+
+nav .list__items div {
+  height: 100%;
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: details;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .list__items div a {
+  display: block;
+  background-color: #111111;
+  text-decoration: none;
+  width: 100%;
+  padding: 1rem;
+  -webkit-box-shadow: 0px 0px 0.8px #ffaf2d;
+          box-shadow: 0px 0px 0.8px #ffaf2d;
+}
+
+nav .list__items div a:hover {
+  -webkit-box-shadow: inset 3px -1px 5px #ffc260;
+          box-shadow: inset 3px -1px 5px #ffc260;
 }
 
 nav .nav__close-btn {
+  list-style-type: none;
   position: absolute;
   top: 20px;
   right: 45px;
