@@ -14,3 +14,5 @@ const accordianMenus = document.querySelectorAll('.content__type--accordian');
 accordianMenus.forEach((menu) => {
     menu.addEventListener('click', util.toggleShow)
 });
+//Fetch Data
+console.log(util.fetchJson());

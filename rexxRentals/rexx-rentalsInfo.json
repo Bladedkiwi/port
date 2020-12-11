@@ -40,7 +40,7 @@
 		"id": 2,
 		"type": ["Dodge Ram 3500","Laramie FlatBed","2020","Black","Truck"],
 		"imgPath": "/dodge-ram-laramie-black/",
-		"about": "Ram added eTorque to the 2019 Ram 1500 as an option. Etorque combined a belt-drive generator with a battery pack to provide short term torque and energy regeneration to increase torque output by up to 130 ft-lbs to the 5.7 L Hemi. Also introduced in 2019 was the new U-connect platform sporting a 12-inch touchscreen display, the largest in its class.[77]<br><br>The 2019 Ram 1500 saw increases in capability for this new model year with payload increasing to 2300 lbs and ma trailer tow reaching 12,750 lbs when properly equipped. This pairs with a total weight reduction of about 225 lbs compared to the previous generation. [77]",
+		"about": "Ram added eTorque to the 2019 Ram 1500 as an option. Etorque combined a belt-drive generator with a battery pack to provide short term torque and energy regeneration to increase torque output by up to 130 ft-lbs to the 5.7 L Hemi. Also introduced in 2019 was the new U-connect platform sporting a 12-inch touchscreen display, the largest in its class.[77].The 2019 Ram 1500 saw increases in capability for this new model year with payload increasing to 2300 lbs and ma trailer tow reaching 12,750 lbs when properly equipped. This pairs with a total weight reduction of about 225 lbs compared to the previous generation. [77]",
 		"aboutLnk":"https://en.wikipedia.org/wiki/Ram_pickup",
 		"mechanics": {
 			"gas":"Regular",
