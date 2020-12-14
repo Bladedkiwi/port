@@ -1,17 +1,41 @@
-export {activateMenu,toggleShow, fetchJson};
-
+export {
+	activateMenu,
+	toggleShow,
+	fetchTheBall,
+	setNewCarWindow,
+	countNum,
+	setListeners,
+	getElem,
+	getElemAll
+};
+function getElem(id) {
+	return document.querySelector(`${id}`);
+}
+function getElemAll(id) {
+	return document.querySelectorAll(`${id}`);
+}
+function countNum(start) {
+	let index = start;
+	return function () {
+		return index++;
+	};
+}
+function setListeners(elem,event, call) {
+	elem.addEventListener(event, call);
+}
 //slides nav, or changes window location
 function activateMenu() {
-	//check which btn was clicked and change width
+	const nav = document.querySelector("nav");
+    //check which btn was clicked and change width
 	if (this.className.includes("close")) {
 		nav.style.width == "100%"
 			? (nav.style.width = "0%")
 			: (nav.style.width = "0%");
 	} else if (this.id.includes("rent")) {
-		window.location = `${this.dataSet.src}`;
+		window.location = `${this.dataset.src}`;
 	} else if (this.id.includes("about")) {
 		window.location = "/about.html";
-	} else {
+    } else {
 		nav.style.width = "100%";
 	}
 }
@@ -25,17 +49,19 @@ function toggleShow() {
 		? (item.style.display = "block")
 		: (item.style.display = "none");
 }
-async function fetchJson() {
-    const endpoint =
-        "https://bladedkiwi.github.io/port/rexxRentals/rexx-rentalsInfo.json";
-    const response = await fetch(endpoint.response);
-    await console.log(response.json());
-    // const jsonData = await fetch(() => {
-    //     endpoint.blob().then(() => {
-    //         return endpoint.json();
-    //     });
-    // });
-    // return jsonData;
-    //const data = await fetch(endpoint.blob());
-    //const jsonData = await data.json();
+async function fetchTheBall(url) {
+	const ball = await fetch(url)
+		.then((dog) => {
+			if (!dog.ok) {
+				throw Error(dog.statusText);
+			} else {
+				return dog.json();
+			}
+		})
+		.catch((error) => console.log(`Dog is blind: ${error}`));
+	return ball;
+}
+
+function setNewCarWindow(event) {
+    window.location = `./ourFleet.html#${event.target.dataset.car}`;
 }

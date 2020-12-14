@@ -1,266 +1,376 @@
-{"rentals": [
-	{
-		"id": 1,
-		"type": ["Focus","Ford","2015","White","Sedan"],
-		"imgPath": "/ford-focus-white/",
-		"mechanics": {
-			"gas":"Regular",
-			"drivetrain": "All-Wheel Drive",
-			"transmission": "Automatic Transmission",
-			"mpgHwyCtyAvg": [40,29,34]
-		},
-		"interior": {
-			"seatsHeatCool": [5, false, false],
-			"doors": 4,
-			"leather": false,
-			"features":["Aux Input", "GPS", "Navigation","USB Jack"]
-		},
-		"carAware": {
-			"cam": ["Back Up Camera"]
-		},
-		"travel": {
-			"distance": [200,1400,6000],
-			"freeDropLoc": ["Phoenix Sky Harbor International Airport"],
-			"paidDropLoc":[],
-			"costDay": 35,
-			"trips": 3,
-			"longTerm": false,
-			"rentLink": "https://turo.com/us/en/car-rental/united-states/phoenix-az/ford/focus/783711"
-		},
-		"requirements": {
-			"tunnelWash": true,
-			"rentAgeReq": false
-		},
-		"addOns": [],
-		"pkgIncl": [],
-		"uniqAttrib": []
-		
-	},
-	{
-		"id": 2,
-		"type": ["Dodge Ram 3500","Laramie FlatBed","2020","Black","Truck"],
-		"imgPath": "/dodge-ram-laramie-black/",
-		"about": "Ram added eTorque to the 2019 Ram 1500 as an option. Etorque combined a belt-drive generator with a battery pack to provide short term torque and energy regeneration to increase torque output by up to 130 ft-lbs to the 5.7 L Hemi. Also introduced in 2019 was the new U-connect platform sporting a 12-inch touchscreen display, the largest in its class.[77].The 2019 Ram 1500 saw increases in capability for this new model year with payload increasing to 2300 lbs and ma trailer tow reaching 12,750 lbs when properly equipped. This pairs with a total weight reduction of about 225 lbs compared to the previous generation. [77]",
-		"aboutLnk":"https://en.wikipedia.org/wiki/Ram_pickup",
-		"mechanics": {
-			"gas":"Regular",
-			"drivetrain": "All-Wheel Drive",
-			"transmission": "Automatic Transmission",
-			"mpgHwyCtyAvg": []
-		},
-		"interior": {
-			"seatsHeatCool": [5, true, false],
-			"doors": 4,
-			"leather": "Premium Laramie Black Leather",
-			"features":["Aux Input", "GPS", "Navigation","USB Jack", "BlueTooth"]
-		},
-		"carAware": {
-			"cam": ["Back Up Camera"]
-		},
-		"travel": {
-			"distance": [200,1400,6000],
-			"freeDropLoc": ["Phoenix Sky Harbor International Airport", "Hyatt Place Scottsdale/Old Town", "Aloft Phoenix Airport", "Hilton Phoenix Airport"],
-			"paidDropLoc":[],
-			"costDay": 80,
-			"trips": 15,
-			"longTerm": false,
-			"rentLink": "https://turo.com/us/en/truck-rental/united-states/phoenix-az/dodge/ram-3500/777845"
-		},
-		"requirements": {
-			"tunnelWash": false,
-			"rentAgeReq": "21+"
-		},
-		"addOns": ["Post Trip Cleaning: 40$/trip"],
-		"pkgIncl": ["Safety Package"],
-		"uniqAttrib": [
-			"Flatbed",
-			"12 inch Navigation Screen",
-			"Reconfigurable Center Console"
-		]
-	},
-	{
-		"id": 3,
-		"type": ["Chevrolet","Silverado 1500","2017","Matte Black","Z71 Lifted Truck"],
-		"imgPath": "/chevSilv-black",
-		"about": "For the 2017 model year, Silverado and Sierra HD models equipped with the 6.6L Duramax Turbo Diesel V8 (L5P) received a new front hood with air intake vents. Gasoline-powered models now have a capless fuel fill. Sierra HD now features standard HID headlamps on all trim levels. New colors include Graphite Metallic and Pepperdust Metallic (Chevrolet) or Dark Slate Metallic and Pepperdust Metallic (GMC). Jet Black/Medium Ash Gray interior trim is added for Silverado High Country. Low-Speed Mitigation Braking is added to the Driver Alert Package for both Silverado and Sierra.[37]",
-		"aboutLnk":"https://en.wikipedia.org/wiki/Chevrolet_Silverado",
-		"mechanics": {
-			"gas":"Regular",
-			"drivetrain": "All-Wheel Drive",
-			"transmission": "Automatic Transmission",
-			"mpgHwyCtyAvg": [null,null,20]
-		},
-		"interior": {
-			"seatsHeatCool": [5, true, false],
-			"doors": 4,
-			"leather": false,
-			"features":["Aux Input", "GPS", "Navigation","USB Jack", "Bluetooth"]
-		},
-		"carAware": {
-			"cam": ["Back Up Camera"]
-		},
-		"travel": {
-			"distance": [200,1400,6000],
-			"freeDropLoc": ["Phoenix Sky Harbor International Airport", "Hyatt Place Scottsdale/Old Town", "Aloft Phoenix Airport", "Hilton Phoenix Airport"],
-			"paidDropLoc":[],
-			"costDay": 75,
-			"trips": 19,
-			"longTerm": false,
-			"rentLink": "https://turo.com/us/en/truck-rental/united-states/phoenix-az/chevrolet/silverado-1500/769286"
-		},
-		"requirements": {
-			"tunnelWash": false,
-			"rentAgeReq": "21+"
-		},
-		"addOns": ["Post Trip Cleaning: 40$/trip","Prepaid Refuel 50$/trip"],
-		"pkgIncl": ["Tow Package", "Z71 Offroad Package"],
-		"uniqAttrib": [
-			"Z71 Lifted Truck",
-			"Pro Comp Xtreme Mt2 35inx12.5in Pro Comp Suspension Lift 6",
-			"Moto Metal 20in Offroad Wheels",
-			"Premium Ultimate Black Wrap",
-			"Tuned with Superchip",
-			"Custom Intake that improve air flow by 15%, fuel economy, and the proper rumble of the engine",
-			"Front Bench Seat to center console conversion",
-			"Three Child seats possible in back bench",
-			"Child Seat Top Tether Anchor"	
-		]
-	},
-	{
-		"id": 4,
-		"type": ["Ford","Lariat Super Duty F-250","2020","Black","Truck"],
-		"imgPath": "/spr-duty-black",
-		"about":"The top-of-the-line Lariat was the most luxurious trim level of the F-Series Super Duty. It added the following features to the mid-range XLT trim level: an AM/FM stereo with both a cassette player and a single-disc CD player (later, a six-disc, in-dash CD changer), leather-trimmed seating surfaces, chrome-clad (later aluminum) wheels and center wheel hubs, keyless entry, a security system, electronic climate controls, a power front bench seat with fold-down center armrest, wood interior trim panels, and a chrome front grille with chrome inserts. Available options included two-tone exterior paint, color-keyed grille insert as well as front & rear bumpers, bucket seats replacing the bench seat, heated front seats, and an automatic transmission (which later became standard on this trim level).",
-		"aboutLnk":"https://en.wikipedia.org/wiki/Ford_Super_Duty",
-		"mechanics": {
-			"gas":"Diesel",
-			"drivetrain": "All-Wheel Drive",
-			"transmission": "Automatic Transmission",
-			"mpgHwyCtyAvg": [null,null,18]
-		},
-		"interior": {
-			"seatsHeatCool": [5, true, true],
-			"doors": 4,
-			"leather": true,
-			"features":["Aux Input", "GPS", "Navigation","USB Jack", "USB Input", "Blind Spot Monitoring","Keyless Entry","Sunroof","Apple Car Play"],
-			"cam": ["Back Up Camera","Cargo Camera"]
-		},
-		"carAware": {
-			"cam": ["Back Up Camera", "Cargo Camera"]
-		},
-		"travel": {
-			"distance": [200,1400,6000],
-			"freeDropLoc": ["Phoenix Sky Harbor International Airport","Aloft Phoenix Airport","Hilton Phoenix Airport"],
-			"paidDropLoc":[],
-			"costDay": 125,
-			"trips": 16,
-			"longTerm": false,
-			"rentLink": "https://turo.com/us/en/truck-rental/united-states/phoenix-az/ford/super-duty-f-250/785105"
-		},
-		"requirements": {
-			"tunnelWash": false,
-			"rentAgeReq": "25+"
-		},
-		"addOns": ["Post-Trip Cleaning $50/trip","Prepaid Refuel $80/trip"],
-		"pkgIncl": ["Fully Loaded Lariat", "Max Tow", "Premium Leather", "Premium Sound","Safety Package"],
-		"uniqAttrib": [
-			"6in lift 40in Tires",
-			"475 hp plus 1050 pounds-feet of torque",
-			"10-speed transmission with three overdrive gears, six drive modes and an available power takeoff",
-			"Adjustable Side Mirrors for Towing",
-			"No Carpet to get dirty",
-			"Cargo Camera",
-			"360 Park Assist View"
-		]
-		
-	},
-	{
-		"id": 5,
-		"type": ["Tesla","Model X P90D","2016","Obsidian Black","Sedan"],
-		"imgPath": "/teslaX-P90D-black/",
-		"about":"The Model X was developed from the full-sized sedan platform of the Tesla Model S. The Model X has an EPA size class as an SUV,[7] and shares ~30% of its content with the Model S, half of the originally planned ~60%, and weighs about 10 percent more. Both the Model X and Model S are being produced at the Tesla Factory in Fremont, California. The prototype was unveiled at Tesla's design studios in Hawthorne, California on February 9, 2012.[11][12] First deliveries of the Model X began in September 2015.[13] After one full year on the market, in 2016, the Model X ranked seventh among the world's best-selling plug-in cars.[14]",
-		"aboutLnk":"https://en.wikipedia.org/wiki/Tesla_Model_X",
-		"mechanics": {
-			"gas":false,
-			"drivetrain": "All-Wheel Drive",
-			"transmission": "Automatic Transmission",
-			"mpgHwyCtyAvg": [],
-			"mpgeHwyCtyAvg":[89,90,89]
-		},
-		"interior": {
-			"seatsHeatCool": [5, true, true],
-			"doors": 4,
-			"leather": true,
-			"features":["Aux Input", "GPS", "Navigation","Bluetooth", "USB Input","Keyless Entry","Panoroof"],
-			"cam": []
-		},
-		"travel": {
-			"distance": [150,1050,4500],
-			"freeDropLoc": ["Phoenix Sky Harbor International Airport","Hyatt Place Scottsdale/Old Town","Aloft Phoenix Airport","Hilton Phoenix Airport"],
-			"paidDropLoc":["La Quinta Inn by Wyndham Phoenix North $60"],
-			"costDay": 125,
-			"trips": 38,
-			"longTerm": true,
-			"rentLink": "https://turo.com/us/en/suv-rental/united-states/phoenix-az/tesla/model-x/763762"
-		},
-		"requirements": {
-			"tunnelWash": false,
-			"rentAgeReq": "25+"
-		},
-		"addOns": ["Child Safety Seat $40/trip","Post-Trip Cleaning $20/trip","Prepaid EV Recharge $40/trip"],
-		"pkgIncl": ["Signature Series Package", "Ultra High Fidelity Sound Package"],
-		"uniqAttrib": [
-			"0-60 3.8 seconds or in Ludricrous mode 3.2 seconds",
-			"17in TouchScreen",
-			"Premium Ultimate Obsidian",
-			"Free Supercharging",
-			"Panoroof",
-			"Smart Air Suspension (can adjust based on speed and also manually adjustable as needed)",
-			"Silent Ride (unless max battery power)",
-			"Ulta High Fidelity Sound Package",
-			"All Adult Seats, Three Rows",
-			"Automatic Falcon Wing",
-			"22in Satin Wheels",
-			"Autopilot enabled",
-			"Uncommon White Leather"
-		]
-	
-	},
-	{
-		"id": 6,
-		"type": ["Jaguar","F Type R Coupe","2015","Black","Premium Sports Coupe"],
-			"imgPath": "/jaguar-fTypeR-black/",
-			"about":"The Jaguar F-Type (X152) is a series of two-door, two-seater grand tourers manufactured by British luxury car manufacturer Jaguar Land Rover under their Jaguar Cars marque since 2013.[3] The car's JLR D6a platform is based on a shortened version of the XK's platform.[3] It is the so-called 'spiritual successor' to the famous E-Type.[4] The car was launched initially as a 2-door soft-top convertible, with a 2-door fastback coupé version launched in 2013.[5]",
-			"aboutLnk":"https://en.wikipedia.org/wiki/Jaguar_F-Type",
-			"mechanics": {
-				"gas":"Premium",
-				"drivetrain": "Rear-Wheel Drive",
-				"transmission": "Automatic Transmission",
-				"mpgHwyCtyAvg": [16,23,20],
-				"mpgeHwyCtyAvg":[]
+{
+	"rentals": [
+		{
+			"type": "sedan",
+			"name": "Ford Focus",
+			"year": "2015",
+			"imgPath": "ford-focus-white",
+			"rentLnk": "https://turo.com/us/en/car-rental/united-states/phoenix-az/ford/focus/783711",
+			"about": {
+				"car": "The Ford Focus is a compact car (C-segment in Europe) manufactured by the Ford Motor Company and created under Alexander Trotman's Ford 2000 plan, which aimed to globalize model development and sell one compact vehicle worldwide. The original Focus was primarily designed by Ford of Europe's German and British teams.[1]",
+				"link": "https://en.wikipedia.org/wiki/Ford_Focus"
 			},
-			"interior": {
-				"seatsHeatCool": [5, true, true],
-				"doors": 2,
-				"leather": true,
-				"features":["Aux Input", "GPS", "Navigation","Bluetooth", "USB Input","Keyless Entry", "Blind Spot Monitoring", "Proximity Alert"],
-				"cam": ["Backup Camera"]
+			"specs": {
+				"seatsHeatCool": [5, false, false],
+				"color": "White",
+				"doors": 4,
+				"leather": false,
+				"features": [
+					"Aux Input",
+					"GPS",
+					"Navigation",
+					"USB Jack",
+					"Back Up Camera"
+				],
+				"mechanics": {
+					"gas": "Regular",
+					"drivetrain": "All-Wheel Drive",
+					"transmission": "Automatic Transmission",
+					"mpgHwyCtyAvg": [40, 29, 34],
+					"mpgeHwyCtyAvg": []
+				}
 			},
 			"travel": {
-				"distance": [200,1400,6000],
-				"freeDropLoc": ["Phoenix Sky Harbor International Airport","Hyatt Place Scottsdale/Old Town","Aloft Phoenix Airport","Hilton Phoenix Airport"],
-				"paidDropLoc":[],
+				"distance": [200, 1400, 6000],
+				"freeDropLoc": ["Phoenix Sky Harbor International Airport"],
+				"paidDropLoc": [],
+				"costDay": 35,
+				"trips": 3,
+				"longTerm": false,
+				"req": {
+					"tunnelWash": true,
+					"rentAgeReq": false
+				}
+			},
+			"addOns": [],
+			"pkgIncl": [],
+			"uniqAttrib": []
+		},
+		{
+			"type": "truck",
+			"name": "Laramie FlatBed Dodge Ram 3500",
+			"year": "2020",
+			"imgPath": "dodge-ram-laramie-black",
+			"rentLnk": "https://turo.com/us/en/truck-rental/united-states/phoenix-az/dodge/ram-3500/777845",
+			"about": {
+				"car": "Ram added eTorque to the 2019 Ram 1500 as an option. Etorque combined a belt-drive generator with a battery pack to provide short term torque and energy regeneration to increase torque output by up to 130 ft-lbs to the 5.7 L Hemi. Also introduced in 2019 was the new U-connect platform sporting a 12-inch touchscreen display, the largest in its class.[77].The 2019 Ram 1500 saw increases in capability for this new model year with payload increasing to 2300 lbs and ma trailer tow reaching 12,750 lbs when properly equipped. This pairs with a total weight reduction of about 225 lbs compared to the previous generation. [77]",
+				"link": "https://en.wikipedia.org/wiki/Ram_pickup"
+			},
+			"specs": {
+				"seatsHeatCool": [5, true, false],
+				"color": "Black",
+				"doors": 4,
+				"leather": "Premium Laramie Black Leather",
+				"features": [
+					"Aux Input",
+					"GPS",
+					"Navigation",
+					"USB Jack",
+					"BlueTooth",
+					"Back Up Camera",
+					"Dual Zone A/C"
+				],
+				"mechanics": {
+					"gas": "Regular",
+					"drivetrain": "All-Wheel Drive",
+					"transmission": "Automatic Transmission",
+					"mpgeHwyCtyAvg": []
+				}
+			},
+			"travel": {
+				"distance": [200, 1400, 6000],
+				"freeDropLoc": [
+					"Phoenix Sky Harbor International Airport",
+					"Hyatt Place Scottsdale/Old Town",
+					"Aloft Phoenix Airport",
+					"Hilton Phoenix Airport"
+				],
+				"paidDropLoc": [],
+				"costDay": 80,
+				"trips": 15,
+				"longTerm": false,
+				"req": {
+					"tunnelWash": false,
+					"rentAgeReq": "21+"
+				}
+			},
+			"addOns": ["Post Trip Cleaning: 40$/trip"],
+			"pkgIncl": ["Safety Package"],
+			"uniqAttrib": [
+				"Laramie Flatbed",
+				"12 inch Navigation Screen",
+				"Reconfigurable Center Console"
+			]
+		},
+		{
+			"type": "truck",
+			"name": "Chevrolet Lifted Z71 Silverado 1500",
+			"year": "2017",
+			"imgPath": "chevSilv-black",
+			"rentLnk": "https://turo.com/us/en/truck-rental/united-states/phoenix-az/chevrolet/silverado-1500/769286",
+			"about": {
+				"car": "For the 2017 model year, Silverado and Sierra HD models equipped with the 6.6L Duramax Turbo Diesel V8 (L5P) received a new front hood with air intake vents. Gasoline-powered models now have a capless fuel fill. Sierra HD now features standard HID headlamps on all trim levels. New colors include Graphite Metallic and Pepperdust Metallic (Chevrolet) or Dark Slate Metallic and Pepperdust Metallic (GMC). Jet Black/Medium Ash Gray interior trim is added for Silverado High Country. Low-Speed Mitigation Braking is added to the Driver Alert Package for both Silverado and Sierra.[37]",
+				"link": "https://en.wikipedia.org/wiki/Chevrolet_Silverado"
+			},
+			"specs": {
+				"seatsHeatCool": [5, true, false],
+				"color": "Matte Black",
+				"doors": 4,
+				"leather": false,
+				"features": [
+					"Aux Input",
+					"GPS",
+					"Navigation",
+					"USB Jack",
+					"Bluetooth",
+					"Back Up Camera"
+				],
+				"mechanics": {
+					"gas": "Regular",
+					"drivetrain": "All-Wheel Drive",
+					"transmission": "Automatic Transmission",
+					"mpgHwyCtyAvg": [null, null, 20],
+					"mpgeHwyCtyAvg": []
+				}
+			},
+			"travel": {
+				"distance": [200, 1400, 6000],
+				"freeDropLoc": [
+					"Phoenix Sky Harbor International Airport",
+					"Hyatt Place Scottsdale/Old Town",
+					"Aloft Phoenix Airport",
+					"Hilton Phoenix Airport"
+				],
+				"paidDropLoc": [],
+				"costDay": 75,
+				"trips": 19,
+				"longTerm": false,
+				"req": {
+					"tunnelWash": false,
+					"rentAgeReq": "21+"
+				}
+			},
+			"addOns": ["Post Trip Cleaning: 40$/trip", "Prepaid Refuel 50$/trip"],
+			"pkgIncl": ["Tow Package", "Z71 Offroad Package"],
+			"uniqAttrib": [
+				"Z71 Lifted Truck",
+				"Pro Comp Xtreme Mt2 35inx12.5in Pro Comp Suspension Lift 6",
+				"Moto Metal 20in Offroad Wheels",
+				"Premium Ultimate Black Wrap",
+				"Tuned with Superchip",
+				"Custom Intake that improve air flow by 15%, fuel economy, and the proper rumble of the engine",
+				"Front Bench Seat to center console conversion",
+				"Three Child seats possible in back bench",
+				"Child Seat Top Tether Anchor"
+			]
+		},
+		{
+			"type": "truck",
+			"name": "Ford Super Duty F-250 Lariat",
+			"year": "2020",
+			"imgPath": "spr-duty-black",
+			"rentLnk": "https://turo.com/us/en/truck-rental/united-states/phoenix-az/ford/super-duty-f-250/785105",
+			"about": {
+				"car": "The top-of-the-line Lariat was the most luxurious trim level of the F-Series Super Duty. It added the following features to the mid-range XLT trim level: an AM/FM stereo with both a cassette player and a single-disc CD player (later, a six-disc, in-dash CD changer), leather-trimmed seating surfaces, chrome-clad (later aluminum) wheels and center wheel hubs, keyless entry, a security system, electronic climate controls, a power front bench seat with fold-down center armrest, wood interior trim panels, and a chrome front grille with chrome inserts. Available options included two-tone exterior paint, color-keyed grille insert as well as front & rear bumpers, bucket seats replacing the bench seat, heated front seats, and an automatic transmission (which later became standard on this trim level).",
+				"link": "https://en.wikipedia.org/wiki/Ford_Super_Duty"
+			},
+			"specs": {
+				"seatsHeatCool": [5, true, true],
+				"color": "Black",
+				"doors": 4,
+				"leather": true,
+				"features": [
+					"Aux Input",
+					"GPS",
+					"Navigation",
+					"USB Jack",
+					"USB Input",
+					"Blind Spot Monitoring",
+					"Keyless Entry",
+					"Sunroof",
+					"Apple Car Play",
+					"Back Up Camera"
+				],
+				"mechanics": {
+					"gas": "Diesel",
+					"drivetrain": "All-Wheel Drive",
+					"transmission": "Automatic Transmission",
+					"mpgHwyCtyAvg": [null, null, 18],
+					"mpgeHwyCtyAvg": []
+				}
+			},
+			"travel": {
+				"distance": [200, 1400, 6000],
+				"freeDropLoc": [
+					"Phoenix Sky Harbor International Airport",
+					"Aloft Phoenix Airport",
+					"Hilton Phoenix Airport"
+				],
+				"paidDropLoc": [],
+				"costDay": 125,
+				"trips": 16,
+				"longTerm": false,
+				"req": {
+					"tunnelWash": false,
+					"rentAgeReq": "25+"
+				}
+			},
+			"addOns": ["Post-Trip Cleaning $50/trip", "Prepaid Refuel $80/trip"],
+			"pkgIncl": [
+				"Fully Loaded Lariat",
+				"Max Tow",
+				"Premium Leather",
+				"Premium Sound",
+				"Safety Package"
+			],
+			"uniqAttrib": [
+				"6in lift 40in Tires",
+				"475 hp plus 1050 pounds-feet of torque",
+				"10-speed transmission with three overdrive gears, six drive modes and an available power takeoff",
+				"Adjustable Side Mirrors for Towing",
+				"No Carpet to get dirty",
+				"Cargo Camera",
+				"360 Park Assist View"
+			]
+		},
+		{
+			"type": "sedan",
+			"name": "Tesla Model X P90D",
+			"year": "2016",
+			"imgPath": "teslaX-P90D-black",
+			"rentLnk": "https://turo.com/us/en/suv-rental/united-states/phoenix-az/tesla/model-x/763762",
+			"about": {
+				"car": "The Model X was developed from the full-sized sedan platform of the Tesla Model S. The Model X has an EPA size class as an SUV,[7] and shares ~30% of its content with the Model S, half of the originally planned ~60%, and weighs about 10 percent more. Both the Model X and Model S are being produced at the Tesla Factory in Fremont, California. The prototype was unveiled at Tesla's design studios in Hawthorne, California on February 9, 2012.[11][12] First deliveries of the Model X began in September 2015.[13] After one full year on the market, in 2016, the Model X ranked seventh among the world's best-selling plug-in cars.[14]",
+				"link": "https://en.wikipedia.org/wiki/Tesla_Model_X"
+			},
+			"specs": {
+				"seatsHeatCool": [5, true, true],
+				"color": "Obsidian Black",
+				"doors": 4,
+				"leather": true,
+				"features": [
+					"Aux Input",
+					"GPS",
+					"Navigation",
+					"Bluetooth",
+					"USB Input",
+					"Keyless Entry",
+					"Panoroof"
+				],
+				"mechanics": {
+					"gas": false,
+					"drivetrain": "All-Wheel Drive",
+					"transmission": "Automatic Transmission",
+					"mpgHwyCtyAvg": [],
+					"mpgeHwyCtyAvg": [89, 90, 89]
+				}
+			},
+			"travel": {
+				"distance": [150, 1050, 4500],
+				"freeDropLoc": [
+					"Phoenix Sky Harbor International Airport",
+					"Hyatt Place Scottsdale/Old Town",
+					"Aloft Phoenix Airport",
+					"Hilton Phoenix Airport"
+				],
+				"paidDropLoc": ["La Quinta Inn by Wyndham Phoenix North $60"],
+				"costDay": 125,
+				"trips": 38,
+				"longTerm": true,
+				"req": {
+					"tunnelWash": false,
+					"rentAgeReq": "25+"
+				}
+			},
+			"addOns": [
+				"Child Safety Seat $40/trip",
+				"Post-Trip Cleaning $20/trip",
+				"Prepaid EV Recharge $40/trip"
+			],
+			"pkgIncl": [
+				"Signature Series Package",
+				"Ultra High Fidelity Sound Package"
+			],
+			"uniqAttrib": [
+				"0-60 3.8 seconds or in Ludricrous mode 3.2 seconds",
+				"17in TouchScreen",
+				"Premium Ultimate Obsidian",
+				"Free Supercharging",
+				"Panoroof",
+				"Smart Air Suspension (can adjust based on speed and also manually adjustable as needed)",
+				"Silent Ride (unless max battery power)",
+				"Ulta High Fidelity Sound Package",
+				"All Adult Seats, Three Rows",
+				"Automatic Falcon Wing",
+				"22in Satin Wheels",
+				"Autopilot enabled",
+				"Uncommon White Leather"
+			]
+		},
+		{
+			"type": "sportsCar",
+			"name": "Jaguar F Type R Coupe",
+			"year": "2015",
+			"imgPath": "jaguar-fTypeR-black",
+			"rentLnk": "https://turo.com/us/en/car-rental/united-states/phoenix-az/jaguar/f-type/763805",
+			"about": {
+				"car": "The Jaguar F-Type (X152) is a series of two-door, two-seater grand tourers manufactured by British luxury car manufacturer Jaguar Land Rover under their Jaguar Cars marque since 2013.[3] The car's JLR D6a platform is based on a shortened version of the XK's platform.[3] It is the so-called 'spiritual successor' to the famous E-Type.[4] The car was launched initially as a 2-door soft-top convertible, with a 2-door fastback coupé version launched in 2013.[5]",
+				"link": "https://en.wikipedia.org/wiki/Jaguar_F-Type"
+			},
+			"specs": {
+				"seatsHeatCool": [5, true, true],
+				"color": "Black",
+				"doors": 2,
+				"leather": true,
+				"features": [
+					"Aux Input",
+					"GPS",
+					"Navigation",
+					"Bluetooth",
+					"USB Input",
+					"Keyless Entry",
+					"Blind Spot Monitoring",
+					"Proximity Alert",
+					"Backup Camera"
+				],
+				"mechanics": {
+					"gas": "Premium",
+					"drivetrain": "Rear-Wheel Drive",
+					"transmission": "Automatic Transmission",
+					"mpgHwyCtyAvg": [16, 23, 20],
+					"mpgeHwyCtyAvg": []
+				}
+				
+			},
+			"travel": {
+				"distance": [200, 1400, 6000],
+				"freeDropLoc": [
+					"Phoenix Sky Harbor International Airport",
+					"Hyatt Place Scottsdale/Old Town",
+					"Aloft Phoenix Airport",
+					"Hilton Phoenix Airport"
+				],
+				"paidDropLoc": [],
 				"costDay": 125,
 				"trips": 50,
 				"longTerm": false,
-				"rentLink": "https://turo.com/us/en/car-rental/united-states/phoenix-az/jaguar/f-type/763805"
+				"req": {
+					"tunnelWash": false,
+					"rentAgeReq": "21+"
+				}
 			},
-			"requirements": {
-				"tunnelWash": false,
-				"rentAgeReq": "21+"
-			},
-			"addOns": ["Unlimited Mileage $40/day", "Post-Trip Cleaning $30/trip", "Prepaid Refuel $55/trip"],
-			"pkgIncl": ["Black Pack", "Extended Leather", "Meridian Premium Sound", "Fully Loaded Performance", "Premium Leather"],
+			"addOns": [
+				"Unlimited Mileage $40/day",
+				"Post-Trip Cleaning $30/trip",
+				"Prepaid Refuel $55/trip"
+			],
+			"pkgIncl": [
+				"Black Pack",
+				"Extended Leather",
+				"Meridian Premium Sound",
+				"Fully Loaded Performance",
+				"Premium Leather"
+			],
 			"uniqAttrib": [
 				"Uncommon Rear Wheel Drive F- Type R (only made for one year)",
 				"Supercharged and Intercooled DOHC 32-valve V-8, aluminum block and heads, Direct fuel injection",
@@ -272,7 +382,6 @@
 				"20in Jag Wheels and Yellow Calipers",
 				"Paddle Shifting mode to experience the famous F-Type exhaust cracks and pops",
 				"Jaguar Adaptive Dynamics suspension (slightly stiff ride, more responsive handling)"
-
 			]
 		}
 	]

@@ -88,7 +88,6 @@ body {
 	}
 	hr {
 		height: 10em;
-		color: $black;
 		background-color: $black;
 		border-color: $black;
 	}
@@ -151,7 +150,26 @@ nav {
 	> * {
 		font-family: $font-hdr;
 	}
-	button {
+	ul {
+		list-style-type: none;
+	}
+	hr {
+		border-color: $dark-red;
+		background-color: $dark-red;
+	}
+	.nav__close-btn {
+		list-style-type: none;
+		position: absolute;
+		top: 20px;
+		right: 45px;
+		font-size: 60px;
+	}
+}
+.nav__content {
+	position: relative;
+	top: 15%;
+	margin-right: 3em;
+	.content__type > button:first-child {
 		font-family: $font-hdr;
 		width: 100%;
 		padding: 8px;
@@ -163,68 +181,58 @@ nav {
 		background-color: $black;
 		color: $gold;
 	}
-	button:after {
+	.content__type > button:first-child:after {
 		content: "\25BF";
 	}
-	ul {
-		list-style-type: none;
+}
+.type__list {
+	display: none;
+	> * {
+		box-shadow: $border-1-gold;
 	}
-	.nav__content {
-		position: relative;
-		top: 15%;
-		margin-right: 3em;
-	}
-	.type__list {
-		display: none;
-		> * {
-			box-shadow: $border-1-gold;
-		}
-		margin: 0 0.1em 0.1em 0;
-	}
-	.list__items {
-		background-color: $dark-gray;
-		display: grid;
-		grid-template-columns: 1fr 0.2fr 0.1fr;
-		grid-template-areas: "carName carName carName" ".. img details";
-		justify-content: space-between;
-		align-items: center;
-		margin: 0.3em;
-	}
-	.list__items img {
+	margin: 0 0.1em 0.1em 0;
+}
+.list__items {
+	background-color: $dark-gray;
+	display: grid;
+	grid-template-columns: 1fr 0.2fr 0.1fr;
+	grid-template-areas: "carName carName carName" ".. img details";
+	justify-content: space-between;
+	align-items: center;
+	margin: 0.3em;
+	img {
 		grid-area: img;
 		max-width: 180px;
 		width: 200px;
 	}
-	.list__items h2 {
+	h2 {
 		grid-area: carName;
 		background-color: darken($dark-gray, 10%);
 		text-align: right;
 	}
-	.list__items div {
-		a {
-			display: block;
-			background-color: darken($dark-gray, 10%);
-			text-decoration: none;
-			width: 100%;
-			padding: 1rem;
-			box-shadow: 0px 0px 0.8px $gold;
-		}
-		a:hover {
-			box-shadow: inset 3px -1px 5px lighten($gold, 10%);
-		}
+	div {
 		height: 100%;
 		grid-area: details;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-items: center;
-	}
-	.nav__close-btn {
-		list-style-type: none;
-		position: absolute;
-		top: 20px;
-		right: 45px;
-		font-size: 60px;
+		a,
+		button {
+			text-align: center;
+			display: block;
+			color: $gold;
+			font-family: $font-hdr;
+			background-color: darken($dark-gray, 10%);
+			text-decoration: none;
+			width: 100%;
+			padding: 1rem;
+			box-shadow: 0px 0px 0.8px $gold;
+		}
+		a:hover,
+		button:hover {
+			box-shadow: inset 3px -1px 5px lighten($gold, 10%);
+		}
 	}
 }
 
@@ -237,8 +245,11 @@ nav {
 	align-items: center;
 	color: $gold;
 	font-family: $font-hdr;
-	button,
-	#aboutBtn {
+	//#about-us
+	#rentBtn {
+		grid-column: span 2;
+	}
+	button{
 		background: $dark-red;
 		color: $gold;
 		font-family: $font-hdr;

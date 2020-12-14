@@ -6,35 +6,47 @@
     <meta name="author"
           content="Kian Hyatt">
     <meta name="description"
-          content="WDD 330 Portfolio: Rexx Rentals Project">
+          content="WDD 330 Portfolio: Rexx Rentals">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge">
+    <link rel="preload"
+          href="styles.css"
+          as="style">
     <link rel="stylesheet"
-          href="../styles.css">
+          href="styles.css">
     <link rel="apple-touch-icon"
           sizes="180x180"
-          href="../img/favicon/apple-touch-icon.png">
+          href="img/favicon/apple-touch-icon.png">
     <link rel="icon"
           type="image/png"
           sizes="32x32"
-          href="../img/favicon/favicon-32x32.png">
+          href="img/favicon/favicon-32x32.png">
     <link rel="icon"
           type="image/png"
           sizes="16x16"
-          href="../img/favicon/favicon-16x16.png">
+          href="img/favicon/favicon-16x16.png">
     <link rel="manifest"
           href="site.webmanifest">
+    <link rel="preconnect"
+          href="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js">
+    <link rel="dns-prefetch"
+          href="rexx-rentalsInfo.json">
+    <link rel="prefetch"
+          href="js/main.js"
+          as="script">
+          <link rel="modulepreload" href="js/carModel.js" as="script">
     <title>Hyatt | Rexx Rentals</title>
 </head>
 
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <header class="hdr">
         <!--Logo-->
         <a href="../rexxRentals/">
             <picture class="hdr__logo">
-                <img src="./../img/logo.svg"
+                <img src="./img/logo.svg"
                      alt="Rexx Rentals Logo" />
             </picture>
             <!--Company Name-->
@@ -46,9 +58,9 @@
         <a href="javascript:void(0)"
            class="nav__close-btn">&times;</a>
         <ul class="nav__content">
-            <li class="content__type--accordian">
+            <li class="content__type">
                 <button>Sedans</button>
-                <ul id="sedans"
+                <ul id="sedan"
                     class="type__list">
                     <!--<li class="list__items">
                         <h2>Ford Focus</h2>
@@ -58,16 +70,16 @@
                     </li>-->
                 </ul>
             </li>
-            <li class="content__item--accordian">
+            <li class="content__type">
                 <button>Trucks</button>
-                <ul id="trucks"
+                <ul id="truck"
                     class="type__list">
                     <li class="list__items"></li>
                 </ul>
             </li>
-            <li class="content__item--accordian">
+            <li class="content__type">
                 <button>Sports Cars</button>
-                <ul id="sportsCars"
+                <ul id="sportsCar"
                     class="type__list">
                     <li class="list__items"></li>
                 </ul>
@@ -81,68 +93,57 @@
             <div class="car__feature">
                 <figure class="feature__figure">
                     <picture id="featPic">
-                        <img srcset="./../img/ford-focus-white/medium/fron-right-side.webp 500w, 
-                        ./../img/ford-focus-white/front-right-side.webp 1000w"
+                        <img srcset="https://via.placeholder.com/500.webp 500w, 
+                        https://via.placeholder.com/1000.webp 1000w"
                              sizes="(max-width: 500px) 500px, 1000px"
-                             src="../img/ford-focus-white/front-right-side.webp"
-                             alt="Front Right Side of Focus">
+                             src="https://via.placeholder.com/1000.webp"
+                             alt="C/O https://placeholder.com/">
                     </picture>
                     <figcaption>
                         <ul class="figcapt__icon-reel">
-                            <li><img src="./../img/icons/car-door.png">4</li>
-                            <li><img src="./../img/icons/seat-belt.png">5</li>
-                            <li><img src="./../img/icons/chassis.png">AWD</li>
-                            <li><img src="./../img/icons/gasoline.png">Reg</li>
-                            <li><img src="./../img/icons/steering-wheel.png">Auto</li>
-                            <li><img src="./../img/icons/car-door.png">4</li>
-                            <li><img src="./../img/icons/seat-belt.png">5</li>
-                            <li><img src="./../img/icons/chassis.png">AWD</li>
-                            <li><img src="./../img/icons/gasoline.png">Reg</li>
-                            <li><img src="./../img/icons/steering-wheel.png">Auto</li>
+                            <li><img src="./img/icons/car-door.png">4</li>
+                            <li><img src="./img/icons/seat-belt.png">5</li>
+                            <li><img src="./img/icons/chassis.png">AWD</li>
+                            <li><img src="./img/icons/gasoline.png">Reg</li>
+                            <li><img src="./img/icons/steering-wheel.png">Auto</li>
+                            <li><img src="./img/icons/car-door.png">4</li>
+                            <li><img src="./img/icons/seat-belt.png">5</li>
+                            <li><img src="./img/icons/chassis.png">AWD</li>
+                            <li><img src="./img/icons/gasoline.png">Reg</li>
+                            <li><img src="./img/icons/steering-wheel.png">Auto</li>
 
-                            <!--<li><img src="./../img/icons/auxiliary-cable.png"><&#10003;AUX</li> -->
+                            <!--<li><img src="./img/icons/auxiliary-cable.png"><&#10003;AUX</li> -->
 
                             <!--
-                    <img src="./../img/icons/auxiliary-cable.png">
-                    <img src="./../img/icons/car-door.png">
-                    <img src="./../img/icons/chassis.png">
-                    <img src="./../img/icons/eco.png">
-                    <img src="./../img/icons/gasoline.png">
-                    <img src="./../img/icons/heat.png">
-                    <img src="./../img/icons/key.png">
-                    <img src="./../img/icons/parking.png">
-                    <img src="./../img/icons/seat-belt.png">
-                    <img src="./../img/icons/seat.png">
-                    <img src="./../img/icons/speedometer.png">
-                    <img src="./../img/icons/steering-wheel.png">
+                    <img src="./img/icons/auxiliary-cable.png">
+                    <img src="./img/icons/car-door.png">
+                    <img src="./img/icons/chassis.png">
+                    <img src="./img/icons/eco.png">
+                    <img src="./img/icons/gasoline.png">
+                    <img src="./img/icons/heat.png">
+                    <img src="./img/icons/key.png">
+                    <img src="./img/icons/parking.png">
+                    <img src="./img/icons/seat-belt.png">
+                    <img src="./img/icons/seat.png">
+                    <img src="./img/icons/speedometer.png">
+                    <img src="./img/icons/steering-wheel.png">
                     -->
                         </ul>
                     </figcaption>
                 </figure>
                 <div class="car__gallery">
-                    <!--100px for small,200px for next -->
-
-                    <img src="./../img/ford-focus-white/mini/steering-wheel.webp" />
-                    <img src="./../img/ford-focus-white/mini/right-side.webp" />
-                    <img src="./../img/ford-focus-white/mini/right-door.webp" />
-                    <img src="./../img/ford-focus-white/mini/open-doors-left-side.webp" />
-                    <img src="./../img/ford-focus-white/mini/front-right-side.webp" />
-                    <img src="./../img/ford-focus-white/mini/front.webp" />
-                    <img src="./../img/ford-focus-white/mini/front-right-side.webp" />
-                    <img src="./../img/ford-focus-white/mini/front-right-seats.webp" />
-                    <img src="./../img/ford-focus-white/mini/front-left-side.webp" />
-                    <img src="./../img/ford-focus-white/mini/front-left-seats.webp" />
-                    <img src="./../img/ford-focus-white/mini/front-dashboard.webp" />
-                    <img src="./../img/ford-focus-white/mini/cargo.webp" />
-
+                    <img src="https://via.placeholder.com/200.webp" alt="C/O https://placeholder.com/" />
+                    <img src="https://via.placeholder.com/200.webp" alt="C/O https://placeholder.com/" />
+                    <img src="https://via.placeholder.com/200.webp" alt="C/O https://placeholder.com/" />
                 </div>
             </div>
             <article class="car__details">
                 <div class="details__feature">
-                    <h2 id="type"></h2>
+                    <h2 id="type">Fantastic Kangaroos</h2>
                     <p id="about">
+                        Fantastic Kangaroos are coming to a browser near you! In the wild, these wonderful animals jump to each browser and stomp on it until JavaScript has been enabled. In order to avoid this fantastic sight, please be sure to enable JavaScript. Kangaroos use this to hop over your browser to your friends system instead. Protect these beautiful kangaroos, and enable JavaScript today!
                         <a id="aboutURL"
-                           href="">Read more..</a>
+                           href="#">Read more..</a>
                     </p>
                 </div>
                 <div class="details__tabs">
@@ -287,9 +288,6 @@
                     </div>
                 </div>
             </article>
-
-
-
         </section>
         <footer>
             <div>Icons made by
@@ -313,6 +311,7 @@
         <!--&#9776; Took out because right button doesn't always fit right/might have to look into this later-->
         <button id="rentBtn"
                 data-src="">Rent</button>
+        <button id="fleetBtn">Our Fleet</button>
         <button id="aboutBtn">About Us</button>
         <div class="bot-nav-btns__contact-us">
             <a href="https://turo.com/us/en/drivers/13628009">
@@ -321,7 +320,7 @@
             </a>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
     <script src="./../js/util.js"
             type="module"></script>
     <script src="./../js/main.js"

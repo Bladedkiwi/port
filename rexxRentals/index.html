@@ -6,11 +6,14 @@
     <meta name="author"
           content="Kian Hyatt">
     <meta name="description"
-          content="WDD 330 Portfolio: Rexx Rentals Project">
+          content="WDD 330 Portfolio: The Rexx Rentals Project">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge">
+    <link rel="preload"
+          href="styles.css"
+          as="style">
     <link rel="stylesheet"
           href="styles.css">
     <link rel="apple-touch-icon"
@@ -26,6 +29,16 @@
           href="img/favicon/favicon-16x16.png">
     <link rel="manifest"
           href="site.webmanifest">
+    <link rel="dns-prefetch"
+          href="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js">
+    <link rel="dns-prefetch"
+          href="rexx-rentalsInfo.json">
+    <link rel="preconnect"
+          href="js/main.js"
+          as="script">
+    <link rel="preconnect"
+          href="js/carController.js"
+          as="script">
     <title>Hyatt | Rexx Rentals</title>
 </head>
 
@@ -46,9 +59,9 @@
         <a href="javascript:void(0)"
            class="nav__close-btn">&times;</a>
         <ul class="nav__content">
-            <li class="content__type--accordian">
+            <li class="content__type">
                 <button>Sedans</button>
-                <ul id="sedans"
+                <ul id="sedan"
                     class="type__list">
                     <!--<li class="list__items">
                         <h2>Ford Focus</h2>
@@ -58,25 +71,26 @@
                     </li>-->
                 </ul>
             </li>
-            <li class="content__item--accordian">
+            <li class="content__type">
                 <button>Trucks</button>
-                <ul id="trucks"
+                <ul id="truck"
                     class="type__list">
                     <li class="list__items"></li>
                 </ul>
             </li>
-            <li class="content__item--accordian">
+            <li class="content__type">
                 <button>Sports Cars</button>
-                <ul id="sportsCars"
+                <ul id="sportsCar"
                     class="type__list">
                     <li class="list__items"></li>
                 </ul>
             </li>
         </ul>
+        <hr>
     </nav>
     <main>
         <picture>
-            <img src="https://d1zgdcrdir5wgt.cloudfront.net/media/vehicle/images/z7jpnbkoRreFDyiIp2p5fw.1440x700.jpg" />
+            <img src="./img/homepage-feature.webp" />
         </picture>
     </main>
     <div class="bot-nav-btns">
