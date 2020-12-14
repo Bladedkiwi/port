@@ -33,16 +33,26 @@ export default class CarMaker {
 				return img.match(size);
 			});
 		}
-		let carImgList = imgRefList.filter((img) => {
-			return img.match(`${carDetails.imgPath}`);
-		});
-		let carSrcSetList = carImgList.filter((img) => {
-			if (!img.match("/mini/")) {
-				return img;
-			}
-		});
-		let carMiniList = carImgList.filter((img) => {
-			return img.match("/mini/");
-		});
+	}
+	getCarIcons(carDetails, iconsList) {
+		//return an array of matching icons and details for the icon - key/value pair
+		let carIcons = [];
+		let carMech = carDetails.mechanics;
+		carIcons.push([`${carDetails.doors}`,`${iconsList.doors}`,"Doors"]);
+		carIcons.push([`${carDetails.seatsHeatCool[0]}`,`${iconsList.seats}`,"Seats"]);
+		carIcons.push([`${carMech.drivetrain}`,`${iconsList.drivetrain}`,"Drivetrain"]);
+		carIcons.push([`${carMech.transmission}`,`${iconsList.transmission}`,"Transmission"]);
+		if (carMech.zeroToSixty) {
+			carIcons.push([`${carMech.zeroToSixty}`,`${iconsList.zeroToSixty}`,"0-60"]);
+		} else if (carDetails.seatsHeatCool[1]) {
+			carIcons.push([`Heat`,`${iconsList.heatedSeats}`,"Heated Seats"]);
+		} else if (carDetails.keyLess) {
+			carIcons.push([``,`${iconsList.keyLess}`,"KeyLess"]);
+		} else if (carMech.gas) {
+			carIcons.push([`${carMech.gas}`,`${iconsList.gas}`,"Gas"]);
+		} else if (!(carMech.gas)) {
+			carIcons.push([`Electric`,`${iconsList.electric}`,"Electric"]);
+		} 
+		return carIcons;
 	}
 }

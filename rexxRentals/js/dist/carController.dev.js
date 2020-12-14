@@ -27,7 +27,7 @@ function () {
 
     this.carTypeList = [type1, type2, type3];
     this.carMaker = new _carModel["default"]();
-    this.carShow = new _carView["default"](); //this.factory = list.rentals;
+    this.carShow = new _carView["default"]();
   }
 
   _createClass(CarFactory, [{
@@ -46,43 +46,59 @@ function () {
     }
   }, {
     key: "showCarImg",
-    value: function showCarImg(pageRef, imgRefList, factory) {
+    value: function showCarImg(carDetails, imgRefList) {
       var _this = this;
 
-      pageRef = parseInt(pageRef.match(/[1-9]/));
-      var carDetails = factory[pageRef - 1];
-      var carImgList = imgRefList.filter(function (img) {
-        return img.match("".concat(carDetails.imgPath));
-      });
-      this.carShow.renderCarImgs(this.carMaker.getCarImgLists("/mini/", carImgList), this.carMaker.getCarImgLists("/medium/", carImgList), this.carMaker.getCarImgLists("large", carImgList));
-      var gallery = this.carShow.getElemAll(".car__gallery img");
-      gallery.forEach(function (img) {
-        img.addEventListener("click", _this.changeImgView.bind(_this));
-      });
+      try {
+        var carImgList = imgRefList.filter(function (img) {
+          return img.match("".concat(carDetails.imgPath));
+        });
+        this.carShow.renderCarImgs(this.carMaker.getCarImgLists("/mini/", carImgList), this.carMaker.getCarImgLists("/medium/", carImgList), this.carMaker.getCarImgLists("large", carImgList));
+        var gallery = this.carShow.getElemAll(".car__gallery img");
+        gallery.forEach(function (img) {
+          img.addEventListener("click", _this.changeImgView.bind(_this));
+        });
+      } catch (err) {
+        console.log("CarFactory failed to showCarImg: ".concat(err.message));
+      }
     }
   }, {
     key: "changeImgView",
     value: function changeImgView(event) {
-      var srcSet = event.target.getAttribute("data-srcSet");
-      var alt = event.target.alt;
-      var imgSrc = srcSet.split(",");
-      imgSrc = imgSrc[1].split(" ");
-      this.carShow.renderFeatPic(this.carShow.getElem("#featPic img"), srcSet, imgSrc[1], alt); //const featPic = document.querySelector('#featPic');
-      //featPic.srcSet = srcSet;
-      //featPic.src =
-    } // showCarPage(pageRef) {
-    //     try {
-    //         pageRef = parseInt(pageRef.match(/[1-9]/));
-    //         const carDetails = this.factory[(pageRef - 1)];
-    //         console.log(carDetails);
-    //         //type, name, year, imgPath, rentLnk, about, specs, travel, addons?,pkgIncl?, uniqAttrib?
-    //         //show name
-    //         this.carShow.renderCarName(this.carMaker.getElementData('name'), carDetails);
-    //     }catch (err) {
-    // 		console.log(`CarFactory failed to showCarPage: ${err.message}`);
-    // 	}
-    // }
-
+      try {
+        var srcSet = event.target.getAttribute("data-srcSet");
+        var alt = event.target.alt;
+        var imgSrc = srcSet.split(",");
+        imgSrc = imgSrc[1].split(" ");
+        this.carShow.renderFeatPic(this.carShow.getElem("#featPic img"), srcSet, imgSrc[1], alt);
+      } catch (err) {
+        console.log("CarFactory failed to changeImgView: ".concat(err.message));
+      }
+    }
+  }, {
+    key: "showCarIcons",
+    value: function showCarIcons(carDetails, iconsList) {
+      try {
+        console.log(carDetails);
+        console.log(iconsList);
+        this.carShow.renderCarIcons(this.carMaker.getCarIcons(carDetails.specs, iconsList)); // 	carDetails.specs;
+        // let features = carDetails.features
+        // let mechanics = carDetails.specs.mechanics;
+      } catch (err) {
+        console.log("CarFactory failed to showCarIcons: ".concat(err.message));
+      }
+    }
+  }, {
+    key: "showCarPage",
+    value: function showCarPage(carDetails) {
+      try {
+        //type, name, year, imgPath, rentLnk, about, specs, travel, addons?,pkgIncl?, uniqAttrib?
+        //show name
+        this.carShow.renderCarName(this.carShow.getElem('#carName'), carDetails);
+      } catch (err) {
+        console.log("CarFactory failed to showCarPage: ".concat(err.message));
+      }
+    }
   }]);
 
   return CarFactory;

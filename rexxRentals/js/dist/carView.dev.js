@@ -78,6 +78,14 @@ function () {
       img.src = imgSrc;
       img.alt = imgAlt;
     }
+  }, {
+    key: "renderCarIcons",
+    value: function renderCarIcons(carIcons) {
+      var ul = this.getElem('.figcapt__icon-reel');
+      carIcons.forEach(function (icon) {
+        ul.innerHTML += "<li><img src=\"".concat(icon[1], "\" alt=\"").concat(icon[2], "\">").concat(icon[0], "</li>");
+      });
+    }
     /*
        Checks img path, and extracts file portion. 
        Then, sets images respectively.

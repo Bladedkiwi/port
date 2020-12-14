@@ -23,10 +23,15 @@ async function findFactory() {
 	carFactory.showCarNav(foundFactory.rentals);
 	//
 	if (window.location.href.includes('ourFleet')) {
-		const pageRef = window.location.hash;
+		let pageRef = window.location.hash;
+		pageRef = parseInt(pageRef.match(/[1-9]/));
+		pageRef -= 1;
+		const carDetails = foundFactory.rentals[pageRef];
 		const imgRefList = await util.fetchTheBall('./../imgPaths.json');
-		carFactory.showCarImg(pageRef, imgRefList, foundFactory.rentals);
-		carFactory.showCarPage(pageRef);
+		const iconsList = await util.fetchTheBall('./../icons.json');
+		carFactory.showCarImg(carDetails, imgRefList);
+		carFactory.showCarIcons(carDetails, iconsList);
+		carFactory.showCarPage(carDetails);
 		//console.log(document.querySelector('meta[name="description"]').content);
 	}
 }

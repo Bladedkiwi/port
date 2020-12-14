@@ -55,18 +55,31 @@ function () {
           return img.match(size);
         });
       }
+    }
+  }, {
+    key: "getCarIcons",
+    value: function getCarIcons(carDetails, iconsList) {
+      //return an array of matching icons and details for the icon - key/value pair
+      var carIcons = [];
+      var carMech = carDetails.mechanics;
+      carIcons.push(["".concat(carDetails.doors), "".concat(iconsList.doors), "Doors"]);
+      carIcons.push(["".concat(carDetails.seatsHeatCool[0]), "".concat(iconsList.seats), "Seats"]);
+      carIcons.push(["".concat(carMech.drivetrain), "".concat(iconsList.drivetrain), "Drivetrain"]);
+      carIcons.push(["".concat(carMech.transmission), "".concat(iconsList.transmission), "Transmission"]);
 
-      var carImgList = imgRefList.filter(function (img) {
-        return img.match("".concat(carDetails.imgPath));
-      });
-      var carSrcSetList = carImgList.filter(function (img) {
-        if (!img.match("/mini/")) {
-          return img;
-        }
-      });
-      var carMiniList = carImgList.filter(function (img) {
-        return img.match("/mini/");
-      });
+      if (carMech.zeroToSixty) {
+        carIcons.push(["".concat(carMech.zeroToSixty), "".concat(iconsList.zeroToSixty), "0-60"]);
+      } else if (carDetails.seatsHeatCool[1]) {
+        carIcons.push(["Heat", "".concat(iconsList.heatedSeats), "Heated Seats"]);
+      } else if (carDetails.keyLess) {
+        carIcons.push(["", "".concat(iconsList.keyLess), "KeyLess"]);
+      } else if (carMech.gas) {
+        carIcons.push(["".concat(carMech.gas), "".concat(iconsList.gas), "Gas"]);
+      } else if (!carMech.gas) {
+        carIcons.push(["Electric", "".concat(iconsList.electric), "Electric"]);
+      }
+
+      return carIcons;
     }
   }]);
 

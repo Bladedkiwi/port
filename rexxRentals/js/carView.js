@@ -30,7 +30,7 @@ export default class CarShow {
 		});
 
 		return `${num()}`;
-	}
+    }
 	renderCarNav(carsByType, typeList) {
 		let count = 1;
 		carsByType.forEach((carType) => {
@@ -48,7 +48,13 @@ export default class CarShow {
 		img.srcset = imgSet;
 		img.src = imgSrc;
 		img.alt = imgAlt;
-	}
+    }
+    renderCarIcons(carIcons) {
+        let ul = this.getElem('.figcapt__icon-reel');
+        carIcons.forEach((icon) => {
+            ul.innerHTML += `<li><img src="${icon[1]}" alt="${icon[2]}">${icon[0]}</li>`;
+        })
+    }
 	/*
     Checks img path, and extracts file portion. 
     Then, sets images respectively.

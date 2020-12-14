@@ -1,0 +1,11 @@
+{
+	"doors": "./img/icons/car-door.png",
+	"drivetrain": "./img/icons/chassis.png",
+	"electric": "./img/icons/electric.png",
+	"gas": "./img/icons/gasoline.png",
+	"heatedSeats": "./img/icons/heat.png",
+	"keyLess": "./img/icons/key.png",
+	"seats": "./img/icons/seat-belt.png",
+	"zeroToSixty": "./img/icons/speedometer.png",
+	"transmission": "./img/icons/steering-wheel.png"
+}

@@ -33,7 +33,7 @@ accordianMenus.forEach(function (menu) {
 }); //pass in the desired types to the car factory
 
 function findFactory() {
-  var foundFactory, carFactory, pageRef, imgRefList;
+  var foundFactory, carFactory, pageRef, carDetails, imgRefList, iconsList;
   return regeneratorRuntime.async(function findFactory$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -47,20 +47,29 @@ function findFactory() {
           carFactory.showCarNav(foundFactory.rentals); //
 
           if (!window.location.href.includes('ourFleet')) {
-            _context.next = 12;
+            _context.next = 19;
             break;
           }
 
           pageRef = window.location.hash;
-          _context.next = 9;
+          pageRef = parseInt(pageRef.match(/[1-9]/));
+          pageRef -= 1;
+          carDetails = foundFactory.rentals[pageRef];
+          _context.next = 12;
           return regeneratorRuntime.awrap(util.fetchTheBall('./../imgPaths.json'));
 
-        case 9:
-          imgRefList = _context.sent;
-          carFactory.showCarImg(pageRef, imgRefList, foundFactory.rentals);
-          carFactory.showCarPage(pageRef); //console.log(document.querySelector('meta[name="description"]').content);
-
         case 12:
+          imgRefList = _context.sent;
+          _context.next = 15;
+          return regeneratorRuntime.awrap(util.fetchTheBall('./../icons.json'));
+
+        case 15:
+          iconsList = _context.sent;
+          carFactory.showCarImg(carDetails, imgRefList);
+          carFactory.showCarIcons(carDetails, iconsList);
+          carFactory.showCarPage(carDetails); //console.log(document.querySelector('meta[name="description"]').content);
+
+        case 19:
         case "end":
           return _context.stop();
       }

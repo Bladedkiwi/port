@@ -7,25 +7,30 @@ var fs = require("fs");
 var path = require("path");
 
 try {
-  var arrayOfFiles = fs.readdirSync("./");
+  //synchronous reading of the directory
+  var arrayOfFiles = fs.readdirSync("./"); //grabs all files, and subdirectories
 
   var allFiles = function allFiles(dirPath, arrayOfFiles) {
     files = fs.readdirSync(dirPath);
-    arrayOfFiles = arrayOfFiles;
+    arrayOfFiles = arrayOfFiles; //check each file, if it's a file and not a folder then check if it's .webp and keep
+
     files.forEach(function (file) {
       if (fs.statSync(dirPath + "/" + file).isDirectory()) {
         arrayOfFiles = allFiles(dirPath + "/" + file, arrayOfFiles);
       } else {
         arrayOfFiles.push(path.join("".concat(dirPath, "/").concat(file)));
         arrayOfFiles = arrayOfFiles.filter(function (item) {
+          //customizable search for certain filepaths
           return path.extname(item) === ".webp";
         });
       }
-    });
+    }); //update array
+
     return arrayOfFiles;
   };
 
-  var result = allFiles("./", arrayOfFiles);
+  var result = allFiles("./", arrayOfFiles); //writes results to JSON for later use
+
   fs.writeFile("./test.json", JSON.stringify(result), function (err) {
     if (err) {
       console.error(err);

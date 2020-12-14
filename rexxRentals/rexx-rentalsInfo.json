@@ -24,8 +24,9 @@
 				],
 				"mechanics": {
 					"gas": "Regular",
-					"drivetrain": "All-Wheel Drive",
+					"drivetrain": "AWD",
 					"transmission": "Automatic Transmission",
+					"zeroToSixty": false,
 					"mpgHwyCtyAvg": [40, 29, 34],
 					"mpgeHwyCtyAvg": []
 				}
@@ -72,8 +73,10 @@
 				],
 				"mechanics": {
 					"gas": "Regular",
-					"drivetrain": "All-Wheel Drive",
+					"drivetrain": "AWD",
 					"transmission": "Automatic Transmission",
+					"zeroToSixty": false,
+					"mpgHwyCtyAvg":[],
 					"mpgeHwyCtyAvg": []
 				}
 			},
@@ -127,8 +130,9 @@
 				],
 				"mechanics": {
 					"gas": "Regular",
-					"drivetrain": "All-Wheel Drive",
+					"drivetrain": "AWD",
 					"transmission": "Automatic Transmission",
+					"zeroToSixty": false,
 					"mpgHwyCtyAvg": [null, null, 20],
 					"mpgeHwyCtyAvg": []
 				}
@@ -179,6 +183,7 @@
 				"color": "Black",
 				"doors": 4,
 				"leather": true,
+				"keyLess":true,
 				"features": [
 					"Aux Input",
 					"GPS",
@@ -193,8 +198,9 @@
 				],
 				"mechanics": {
 					"gas": "Diesel",
-					"drivetrain": "All-Wheel Drive",
+					"drivetrain": "AWD",
 					"transmission": "Automatic Transmission",
+					"zeroToSixty": false,
 					"mpgHwyCtyAvg": [null, null, 18],
 					"mpgeHwyCtyAvg": []
 				}
@@ -248,6 +254,7 @@
 				"color": "Obsidian Black",
 				"doors": 4,
 				"leather": true,
+				"keyLess":true,
 				"features": [
 					"Aux Input",
 					"GPS",
@@ -259,8 +266,9 @@
 				],
 				"mechanics": {
 					"gas": false,
-					"drivetrain": "All-Wheel Drive",
+					"drivetrain": "AWD",
 					"transmission": "Automatic Transmission",
+					"zeroToSixty": "3.6sec",
 					"mpgHwyCtyAvg": [],
 					"mpgeHwyCtyAvg": [89, 90, 89]
 				}
@@ -292,7 +300,7 @@
 				"Ultra High Fidelity Sound Package"
 			],
 			"uniqAttrib": [
-				"0-60 3.8 seconds or in Ludricrous mode 3.2 seconds",
+				"zeroToSixty 3.8 seconds or in Ludricrous mode 3.2 seconds",
 				"17in TouchScreen",
 				"Premium Ultimate Obsidian",
 				"Free Supercharging",
@@ -322,6 +330,7 @@
 				"color": "Black",
 				"doors": 2,
 				"leather": true,
+				"keyLess":true,
 				"features": [
 					"Aux Input",
 					"GPS",
@@ -335,8 +344,9 @@
 				],
 				"mechanics": {
 					"gas": "Premium",
-					"drivetrain": "Rear-Wheel Drive",
+					"drivetrain": "RWD",
 					"transmission": "Automatic Transmission",
+					"zeroToSixty": "3.6sec",
 					"mpgHwyCtyAvg": [16, 23, 20],
 					"mpgeHwyCtyAvg": []
 				}
@@ -375,6 +385,7 @@
 				"Uncommon Rear Wheel Drive F- Type R (only made for one year)",
 				"Supercharged and Intercooled DOHC 32-valve V-8, aluminum block and heads, Direct fuel injection",
 				"Rare Carbon Ceramix Matrix braking system",
+				"0 to 60MPH in 3.6 Seconds",
 				"550 hp @ 6500 rpm",
 				"502 lb-ft @ 2500 rpm",
 				"8-speed automatic with manual shifting mode",
