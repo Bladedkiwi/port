@@ -31,11 +31,13 @@ function activateMenu() {
 	//check which btn was clicked and change width
 	let responsive = "";
 	switch (true) {
+		case (screen.width > 1000):
+			responsive = "25vw";
 		case (screen.width > 745):
-			responsive = "27vw";
+			responsive = "50vw";
 			break;
 		case (screen.width > 500):
-			responsive = "50vw";
+			responsive = "70vw";
 			break;
 		default:
 			responsive = "100%";
