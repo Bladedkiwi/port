@@ -17,7 +17,7 @@ $headings: h6 h5 h4 h3 h2 h1;
 $font-base: 0.8rem;
 $add-scale: 1;
 // breakpoints
-$M: 450px;
+$M: 600px;
 $L: 800px;
 
 @mixin MQ($canvas) {

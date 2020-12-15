@@ -683,7 +683,7 @@ ol li {
           box-shadow: inset 1px 1px 5px whitesmoke;
 }
 
-@media only screen and (min-width: 450px) {
+@media only screen and (min-width: 600px) {
   .car .feature__figure picture {
     padding: 0.7em;
   }

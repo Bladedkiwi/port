@@ -30,7 +30,18 @@ function activateMenu() {
 	const nav = document.querySelector("nav");
 	//check which btn was clicked and change width
 	let responsive = "";
-	screen.width > 500 ? (responsive = "27vw") : (responsive = "100%");
+	switch (true) {
+		case (screen.width > 745):
+			responsive = "27vw";
+			break;
+		case (screen.width > 500):
+			responsive = "50vw";
+			break;
+		default:
+			responsive = "100%";
+	}
+	//screen.width > 500 ? (responsive = "50vw") : (responsive = "100%");
+	//screen.width > 745 ? (responsive = "27vw") : (responsive = "100%");
 	if (this.className.includes("close")) {
 		nav.style.width == `${responsive}`
 			? (nav.style.width = "0%")
