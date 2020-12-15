@@ -9,9 +9,7 @@ export default class CarShow {
 			ul.innerHTML += `
             <li class="list__items">
                 <h2>${car.name}</h2>
-                    <img src="./img/${
-											car.imgPath
-										}/mini/front-left-side.webp" alt="${car.name}">
+                    <img src="./img/${car.imgPath}/mini/front-left-side.webp" alt="${car.name}">
                 <div>
                     <button data-car="${num()}">Info</button>
                     <a href="${car.rentLnk}" title="Rent on Turo">Rent</a>
