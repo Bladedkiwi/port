@@ -205,6 +205,10 @@ body ul li {
   list-style-type: none;
 }
 
+body ul li::before {
+  content: "\200B";
+}
+
 body button {
   background: #1d0305;
   color: #ffaf2d;
@@ -313,17 +317,12 @@ nav > * {
   font-family: "Megrim", cursive;
 }
 
-nav ul {
-  list-style-type: none;
-}
-
 nav hr {
   border-color: #1d0305;
   background-color: #1d0305;
 }
 
 nav .nav__close-btn {
-  list-style-type: none;
   position: absolute;
   top: 20px;
   right: 45px;
@@ -628,7 +627,14 @@ ol li {
   display: grid;
 }
 
-.details__tabs {
+.car__details button.active {
+  display: initial;
+  -webkit-box-shadow: inset 0px 3px 3px #ffaf2d;
+          box-shadow: inset 0px 3px 3px #ffaf2d;
+  border-bottom: none;
+}
+
+.details__tab {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -650,7 +656,7 @@ ol li {
 
 .details__content ul li {
   padding: .3rem;
-  list-style-type: initial;
+  list-style-type: square;
   list-style-position: inside;
 }
 
@@ -684,7 +690,7 @@ ol li {
   .car .figcapt__icon-reel li {
     padding: 0.2em;
   }
-  .details__tabs {
+  .details__tab {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -693,7 +699,7 @@ ol li {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
   }
-  .details__tabs button {
+  .details__tab button {
     width: 100%;
   }
 }

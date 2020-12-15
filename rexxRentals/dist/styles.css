@@ -196,6 +196,9 @@ body header a:hover h1 {
 body ul li {
   list-style-type: none;
 }
+body ul li::before {
+  content: "​";
+}
 body button {
   background: #1d0305;
   color: #ffaf2d;
@@ -283,15 +286,11 @@ nav {
 nav > * {
   font-family: "Megrim", cursive;
 }
-nav ul {
-  list-style-type: none;
-}
 nav hr {
   border-color: #1d0305;
   background-color: #1d0305;
 }
 nav .nav__close-btn {
-  list-style-type: none;
   position: absolute;
   top: 20px;
   right: 45px;
@@ -506,8 +505,13 @@ ol li {
 .car__details .active {
   display: grid;
 }
+.car__details button.active {
+  display: initial;
+  box-shadow: inset 0px 3px 3px #ffaf2d;
+  border-bottom: none;
+}
 
-.details__tabs {
+.details__tab {
   display: flex;
   flex-direction: column;
 }
@@ -521,7 +525,7 @@ ol li {
 }
 .details__content ul li {
   padding: 0.3rem;
-  list-style-type: initial;
+  list-style-type: square;
   list-style-position: inside;
 }
 
@@ -554,11 +558,11 @@ ol li {
     padding: 0.2em;
   }
 
-  .details__tabs {
+  .details__tab {
     flex-direction: row;
     justify-content: space-evenly;
   }
-  .details__tabs button {
+  .details__tab button {
     width: 100%;
   }
 }

@@ -116,9 +116,8 @@ function () {
     value: function chkContent(carDetails) {
       if (!(carDetails.uniqAttr && carDetails.pkgIncl)) {
         (0, _util.getElem)("#enhancements").remove();
-        (0, _util.getElem)(".tabs__links:nth-of-type(1)").remove();
-        (0, _util.getElem)("#specs").style.display = "grid";
-        (0, _util.getElem)("#specsData").classList.add("active");
+        (0, _util.getElem)(".tab__link:nth-of-type(1)").remove();
+        (0, _util.getElem)("#specs").classList.add("active");
       }
     }
   }]);

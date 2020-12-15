@@ -30,7 +30,7 @@ export default class CarFactory {
 				this.carMaker.getCarImgLists("/medium/", carImgList),
 				this.carMaker.getCarImgLists("large", carImgList)
 			);
-			let gallery = getElemAll(".car__gallery img");
+			const gallery = getElemAll(".car__gallery img");
 			gallery.forEach((img) => {
 				img.addEventListener("click", this.changeImgView.bind(this));
 			});
@@ -108,9 +108,8 @@ export default class CarFactory {
 	chkContent(carDetails) {
 		if (!(carDetails.uniqAttr && carDetails.pkgIncl)) {
 			getElem("#enhancements").remove();
-			getElem(".tabs__links:nth-of-type(1)").remove();
-			getElem("#specs").style.display = "grid";
-			getElem("#specsData").classList.add("active");
+			getElem(".tab__link:nth-of-type(1)").remove();
+			getElem("#specs").classList.add("active");
 		}
 	}
 }

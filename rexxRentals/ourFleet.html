@@ -12,10 +12,10 @@
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge">
     <link rel="preload"
-          href="stylesMin.css"
+          href="styles.css"
           as="style">
     <link rel="stylesheet"
-          href="stylesMin.css">
+          href="styles.css">
     <link rel="apple-touch-icon"
           sizes="180x180"
           href="img/favicon/apple-touch-icon.png">
@@ -46,7 +46,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <header class="hdr">
         <!--Logo-->
-        <a href="../rexxRentals/">
+        <a href="../rexxRentals/" title="Return to Rexx Rentals Home Page">
             <picture class="hdr__logo">
                 <img src="./img/logo.svg"
                      alt="Rexx Rentals Logo" />
@@ -57,7 +57,7 @@
     </header>
     <nav>
         <!--Sliding navigation over full page-->
-        <a href="javascript:void(0)"
+        <a href="javascript:void(0)" title="Close Fleet Navigation"
            class="nav__close-btn">&times;</a>
         <ul class="nav__content">
             <li class="content__type">
@@ -122,12 +122,12 @@
                            title="About Kangaroos">Read more..</a>
                     </p>
                 </div>
-                <div class="details__tabs">
-                    <button class="tabs__links">Enhancements</button>
-                    <button class="tabs__links">Specs</button>
-                    <button class="tabs__links">Details</button>
+                <div class="details__tab">
+                    <button class="tab__link">Enhancements</button>
+                    <button class="tab__link">Specs</button>
+                    <button class="tab__link">Details</button>
                     <button id="conditionsBtn"
-                            class="tabs__links">Process</button>
+                            class="tab__link">Process</button>
                 </div>
                 <div id="enhancements"
                      class="details__content active">

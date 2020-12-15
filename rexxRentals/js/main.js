@@ -41,8 +41,8 @@ async function findFactory() {
 			);
 		};
 		util.getElem("#conditionsBtn").addEventListener("click", loadConditions);
-		const tabs = document.querySelectorAll(".details__tabs");
-		tabs.forEach((tab) => {
+		const tabList = document.querySelectorAll(".details__tab");
+		tabList.forEach((tab) => {
 			tab.addEventListener("click", util.openTab);
 		});
 		carFactory.chkContent(carDetails);

@@ -38,7 +38,7 @@ function activateMenu() {
   var nav = document.querySelector("nav"); //check which btn was clicked and change width
 
   var responsive = "";
-  screen.width > 500 ? responsive = "25vw" : responsive = "100%";
+  screen.width > 500 ? responsive = "27vw" : responsive = "100%";
 
   if (this.className.includes("close")) {
     nav.style.width == "".concat(responsive) ? nav.style.width = "0%" : nav.style.width = "0%";
@@ -117,10 +117,11 @@ function fetchThePaper(url) {
 
 function openTab(e) {
   var pages = document.querySelectorAll(".details__content");
-  var lowerTarget = e.target.innerHTML.toLowerCase();
+  var btns = document.querySelectorAll('.tab__link');
+  var lowerCaseEvent = e.target.innerHTML.toLowerCase();
 
-  var setPage = function setPage(activePage) {
-    activePage.className += " active";
+  var setActive = function setActive(activeEle) {
+    activeEle.className += " active";
   };
 
   pages.forEach(function (page) {
@@ -128,11 +129,19 @@ function openTab(e) {
       page.classList.remove("active");
     }
 
-    if (page.id.includes(lowerTarget)) {
-      setPage(page);
+    if (page.id.includes(lowerCaseEvent)) {
+      setActive(page);
     }
   });
-  e.target.classList += " active";
+  btns.forEach(function (btn) {
+    if (btn.className.includes("active")) {
+      btn.classList.remove("active");
+    }
+
+    if (btn == e.target) {
+      setActive(btn);
+    }
+  });
 }
 
 function setNewCarWindow(event) {

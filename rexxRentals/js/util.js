@@ -30,7 +30,7 @@ function activateMenu() {
 	const nav = document.querySelector("nav");
 	//check which btn was clicked and change width
 	let responsive = "";
-	screen.width > 500 ? (responsive = "25vw") : (responsive = "100%");
+	screen.width > 500 ? (responsive = "27vw") : (responsive = "100%");
 	if (this.className.includes("close")) {
 		nav.style.width == `${responsive}`
 			? (nav.style.width = "0%")
@@ -76,19 +76,27 @@ async function fetchThePaper(url) {
 }
 function openTab(e) {
 	const pages = document.querySelectorAll(".details__content");
-	let lowerTarget = e.target.innerHTML.toLowerCase();
-	let setPage = (activePage) => {
-		activePage.className += " active";
+	const btns = document.querySelectorAll('.tab__link');
+	let lowerCaseEvent = e.target.innerHTML.toLowerCase();
+	let setActive = (activeEle) => {
+		activeEle.className += " active";
 	};
 	pages.forEach((page) => {
 		if (page.className.includes("active")) {
 			page.classList.remove("active");
 		}
-		if (page.id.includes(lowerTarget)) {
-			setPage(page);
+		if (page.id.includes(lowerCaseEvent)) {
+			setActive(page);
 		}
 	});
-	e.target.classList += " active";
+	btns.forEach((btn) => {
+		if (btn.className.includes("active")) {
+			btn.classList.remove("active");
+		}
+		if (btn == e.target) {
+			setActive(btn);
+		}
+	});
 }
 function setNewCarWindow(event) {
 	window.location.href = `./ourFleet.html#${event.target.dataset.car}`;

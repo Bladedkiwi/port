@@ -35,7 +35,7 @@ accordianMenus.forEach(function (menu) {
 }); //pass in the desired types to the car factory
 
 function findFactory() {
-  var foundFactory, carFactory, pageRef, carDetails, imgRefList, iconsList, loadConditions, tabs;
+  var foundFactory, carFactory, pageRef, carDetails, imgRefList, iconsList, loadConditions, tabList;
   return regeneratorRuntime.async(function findFactory$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
@@ -90,8 +90,8 @@ function findFactory() {
           };
 
           util.getElem("#conditionsBtn").addEventListener("click", loadConditions);
-          tabs = document.querySelectorAll(".details__tabs");
-          tabs.forEach(function (tab) {
+          tabList = document.querySelectorAll(".details__tab");
+          tabList.forEach(function (tab) {
             tab.addEventListener("click", util.openTab);
           });
           carFactory.chkContent(carDetails);

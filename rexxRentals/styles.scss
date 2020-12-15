@@ -11,7 +11,7 @@ $font-bdy: "David Libre", serif;
 $texture: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIQDw8PEhIVFRUPDQ0PDxUVFQ8VFw8PFREWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNyg5LisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIALQBGAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAJhABAQEAAQIEBwEBAAAAAAAAABEB8CFRAhJBgTFhcZHR4fGhsf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDjWJ5sSc/qwCmeFUlAuZ8P8/Jv2WEBMxYoAlIsBCKAAQEFAQoAAACkBBYAgoAAABAEUAAAABIsKkA2LukASKAAAALAQVNAEOdQAighFgAJVAKQgFFQCEFgILAEFAQUBBQEFASqFAKICgACpQBm+59QWoKBDnNCgFIoJDyqAAQBFAAAAAIAACggAAEAAAgsASKUAGd8SZvM/INam/P7YJYCz2wwWAhi5igkUqAqUigkWAAJQCgAAUBUICgAEAAAAAAABnfFnOqSk5+gN8WmeHuc7AEwt/fw+zXlUGZ339LmLQCGhgBAoGYAAFZvMBaAAQoCoKCRRKCgAAUFBKCiUoKIAogDM5/VgQDMxaQBOp5VKAVAFQAUZp1BaVJ3/GFA0IsBFgaBipUgLQUEipSgokIC0SgKCAoAAAAAFKyboNVKz5gGqVirOfAFpUiwEpudymYC1KuYdATM/rSXfoQFpuoYBQAUqLAKQKAVFApAAoAAACoAqAAADKf59sXnczOdAOepnh+X3jSQALz+ICkADQzC4BFiebskBfMJc51Xr9ANKmZ7tAhFSgogAKAQKAAnmBRmrgFCgKItACoCiUApu/NmqBRKAtKYQAoAnOeikWAlIvQoGYBAKABDAAAADU3QVN0MBFIoEEoChAACgEAAAERSc6gc9M/4Z7LAEMFoEEiwCgACUgLRAFSkUAE83YFTzIAAUFKiwCkUAEoC1KRQQUAEAURQOeiKAkVKUFEqc7gpQAAAAoCom+LAaSs3dWd/wByG57Gb2QFz5BmNQGYuYtSgqUIBSFAUSgAFAAAIUAVAETxdFAWJgAuGgAKAiKAZjOeLrABPjvu1mdZ8gBKYAK1mABus+sAD1UAAAEUASgC5gAIoAgoAAD//2Q==");
 
 $border-10-red: 10px solid $dark-red;
-$border-1-gold: 0px 0px 1.5px $gold;
+$boxS-1-gold: 0px 0px 1.5px $gold;
 //font sizes
 $headings: h6 h5 h4 h3 h2 h1;
 $font-base: 0.8rem;
@@ -75,6 +75,10 @@ body {
 	ul li {
 		list-style-type: none;
 	}
+	//Apple accessibility for displaying list-styles none
+	ul li::before {
+		content: "\200B";
+	}
 	button{
 		background: $dark-red;
 		color: $gold;
@@ -97,7 +101,7 @@ body {
 		justify-content: flex-end;
 		text-align: right;
 		padding: 1em;
-		box-shadow: $border-1-gold;
+		box-shadow: $boxS-1-gold;
 	}
 	hr {
 		height: 10em;
@@ -162,15 +166,11 @@ nav {
 	> * {
 		font-family: $font-hdr;
 	}
-	ul {
-		list-style-type: none;
-	}
 	hr {
 		border-color: $dark-red;
 		background-color: $dark-red;
 	}
 	.nav__close-btn {
-		list-style-type: none;
 		position: absolute;
 		top: 20px;
 		right: 45px;
@@ -200,7 +200,7 @@ nav {
 .type__list {
 	display: none;
 	> * {
-		box-shadow: $border-1-gold;
+		box-shadow: $boxS-1-gold;
 	}
 	margin: 0 0.1em 0.1em 0;
 }
@@ -280,7 +280,7 @@ nav {
 }
 .about-us {
 	> * {
-		box-shadow: $border-1-gold;
+		box-shadow: $boxS-1-gold;
 	}
 	display: flex;
 	position: relative;
@@ -305,7 +305,7 @@ nav {
 }
 .car {
 	> * {
-		box-shadow: $border-1-gold;
+		box-shadow: $boxS-1-gold;
 	}
 	.car__feature {
 		background-color: $dark-gray;
@@ -381,8 +381,13 @@ ol {
 	.active {
 		display: grid;
 	}
+	button.active {
+		display: initial;
+		box-shadow: inset 0px 3px 3px $gold;
+		border-bottom: none;
+	}
 }
-.details__tabs {
+.details__tab {
 	display: flex;
 	flex-direction: column;
 }
@@ -393,7 +398,7 @@ ol {
 		padding: .5rem;
 		li {
 			padding: .3rem;
-			list-style-type: initial;
+			list-style-type: square;
 			list-style-position: inside;
 		}
 	}
@@ -428,7 +433,7 @@ ol {
 			}
 		}
 	}
-	.details__tabs {
+	.details__tab {
 		flex-direction: row;
 		justify-content: space-evenly;
 		button {
