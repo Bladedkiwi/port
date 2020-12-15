@@ -21,7 +21,7 @@ accordianMenus.forEach((menu) => {
 });
 //pass in the desired types to the car factory
 async function findFactory() {
-	const foundFactory = await util.fetchTheBall("./../rexx-rentalsInfo.json");
+	const foundFactory = await util.fetchTheBall("./rexx-rentalsInfo.json");
 	const carFactory = new CarFactory("sedan", "truck", "sportsCar");
 	carFactory.showCarNav(foundFactory.rentals);
 	//check for href change
@@ -29,15 +29,15 @@ async function findFactory() {
 		let pageRef = window.location.hash;
 		pageRef = parseInt(pageRef.match(/[0-9]/));
 		const carDetails = foundFactory.rentals[pageRef];
-		const imgRefList = await util.fetchTheBall("./../imgPaths.json");
-		const iconsList = await util.fetchTheBall("./../icons.json");
+		const imgRefList = await util.fetchTheBall("./imgPaths.json");
+		const iconsList = await util.fetchTheBall("./icons.json");
 		carFactory.showCarImg(carDetails, imgRefList);
 		carFactory.showCarIcons(carDetails, iconsList);
 		carFactory.showCarPage(carDetails);
 		//async arrow function - super cool
 		const loadConditions = async () => {
 			util.getElem("#conditions").innerHTML = await util.fetchThePaper(
-				"./../conditions.txt"
+				"./conditions.txt"
 			);
 		};
 		util.getElem("#conditionsBtn").addEventListener("click", loadConditions);

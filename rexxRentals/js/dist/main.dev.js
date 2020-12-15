@@ -41,7 +41,7 @@ function findFactory() {
       switch (_context2.prev = _context2.next) {
         case 0:
           _context2.next = 2;
-          return regeneratorRuntime.awrap(util.fetchTheBall("./../rexx-rentalsInfo.json"));
+          return regeneratorRuntime.awrap(util.fetchTheBall("./rexx-rentalsInfo.json"));
 
         case 2:
           foundFactory = _context2.sent;
@@ -57,12 +57,12 @@ function findFactory() {
           pageRef = parseInt(pageRef.match(/[0-9]/));
           carDetails = foundFactory.rentals[pageRef];
           _context2.next = 11;
-          return regeneratorRuntime.awrap(util.fetchTheBall("./../imgPaths.json"));
+          return regeneratorRuntime.awrap(util.fetchTheBall("./imgPaths.json"));
 
         case 11:
           imgRefList = _context2.sent;
           _context2.next = 14;
-          return regeneratorRuntime.awrap(util.fetchTheBall("./../icons.json"));
+          return regeneratorRuntime.awrap(util.fetchTheBall("./icons.json"));
 
         case 14:
           iconsList = _context2.sent;
@@ -76,7 +76,7 @@ function findFactory() {
                 switch (_context.prev = _context.next) {
                   case 0:
                     _context.next = 2;
-                    return regeneratorRuntime.awrap(util.fetchThePaper("./../conditions.txt"));
+                    return regeneratorRuntime.awrap(util.fetchThePaper("./conditions.txt"));
 
                   case 2:
                     util.getElem("#conditions").innerHTML = _context.sent;
