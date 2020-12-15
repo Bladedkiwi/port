@@ -45,7 +45,7 @@ function activateMenu() {
   } else if (this.id.includes("rent")) {
     window.location = "".concat(this.dataset.src);
   } else if (this.id.includes("about")) {
-    window.location = "/about.html";
+    window.location = "./about.html";
   } else {
     nav.style.width = "".concat(responsive);
   }
