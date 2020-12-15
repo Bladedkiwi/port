@@ -6,16 +6,16 @@
     <meta name="author"
           content="Kian Hyatt">
     <meta name="description"
-          content="WDD 330 Portfolio: Rexx Rentals">
+          content="WDD 330 Portfolio: Rexx Rentals: Rental cars with passion built in.">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge">
     <link rel="preload"
-          href="styles.css"
+          href="stylesMin.css"
           as="style">
     <link rel="stylesheet"
-          href="styles.css">
+          href="stylesMin.css">
     <link rel="apple-touch-icon"
           sizes="180x180"
           href="img/favicon/apple-touch-icon.png">
@@ -62,12 +62,6 @@
                 <button>Sedans</button>
                 <ul id="sedan"
                     class="type__list">
-                    <!--<li class="list__items">
-                        <h2>Ford Focus</h2>
-                        <img src="img/ford-focus-white/mini/front-left-side.webp">
-                        <div><a href="">Details</a><a href="">Rent</a></div>
-                        
-                    </li>-->
                 </ul>
             </li>
             <li class="content__type">
@@ -88,8 +82,8 @@
     </nav>
     <main>
         <section class="car">
-            <h2 id="carName"
-                class="car__title"></h2>
+            <h2 id="featName"
+                class="car__title">Featuring Driving Kangaroos</h2>
             <div class="car__feature">
                 <figure class="feature__figure">
                     <picture id="featPic">
@@ -112,40 +106,38 @@
             </div>
             <article class="car__details">
                 <div class="details__feature">
-                    <h2 id="type">Fantastic Kangaroos</h2>
+                    <h2 id="carName">Fantastic Kangaroos</h2>
                     <p id="about">
-                        Fantastic Kangaroos are coming to a browser near you! In the wild, these wonderful animals jump to each browser and stomp on it until JavaScript has been enabled. In order to avoid this fantastic sight, please be sure to enable JavaScript. Kangaroos use this to hop over your browser to your friends system instead. Protect these beautiful kangaroos, and enable JavaScript today!
-                        <a id="aboutURL"
-                           href="#">Read more..</a>
+                        Fantastic Kangaroos are coming to a browser near you! In the wild, these wonderful animals jump to each browser and stomp on it until JavaScript has been enabled. In order to avoid this fantastic sight, please be sure to enable JavaScript. Kangaroos use this to hop over your browser to your friends system instead. Protect these beautiful kangaroos, and enable JavaScript today! <a id="aboutURL"
+                        href="#" title="About Kangaroos">Read more..</a>
                     </p>
                 </div>
                 <div class="details__tabs">
                     <button class="tabs__links">Enhancements</button>
                     <button class="tabs__links">Specs</button>
                     <button class="tabs__links">Details</button>
-                    <button class="tabs__links">Process</button>
+                    <button id="conditionsBtn" class="tabs__links">Process</button>
                 </div>
-                <div id="enhance"
-                     class="details__content active">
-                    <div>
-                        <h3>Enhancements</h3>
-                        <ul id="uniqueAttributes"></ul>
+                <div id="enhancements" class="details__content active">
+                    <div id="uniqAttr">
+                        <h3>Attributes</h3>
+                        <ul></ul>
                     </div>
-                    <div>
+                    <div id="pkgIncl">
                         <h3>Packages</h3>
-                        <ul id="pkgIncl"></ul>
+                        <ul></ul>
                     </div>
                 </div>
                 <div id="specs"
                      class="details__content">
-                    <div>
+                    <div id="specsData">
                         <h2>Specs</h2>
-                        <ul id="specsData"></ul>
+                        <ul></ul>
                     </div>
                 </div>
-                <div id="rentInfo"
+                <div id="details"
                      class="details__content">
-                    <div>
+                    <div id="travel">
                         <h2>Rexx's Rental Process</h2>
                         <p>We use Turo for our rentals. Clicking Rent below will bring you to our Turo page. To rent,
                             select
@@ -154,110 +146,16 @@
                             desired extra options. Upon completing your order, we will contact you with any additional
                             details. To rent this car, simply click Rent below.
                         </p>
-                        <ul id="travel"></ul>
+                        <ul></ul>
                     </div>
-                    <div>
-                        <h2>Available Extra Options</h2>
-                        <ul id="addOns"></ul>
+                    <div id="addOns">
+                        <h2>Add On Options</h2>
+                        <ul></ul>
                     </div>
                 </div>
-                <div id="conditions"
-                     class="details__content">
-                    <div>
-                        <h2>Rental Conditions and Guidelines</h2>
-                        <ol>
-                            <li>Absolutely <em>NO SMOKING</em> (of any kind), this includes marijuana, cigarettes,
-                                cloves,
-                                cigars,
-                                etc. If the vehicles smells of any kind of smoke or marijuana, you will be fully
-                                responsible
-                                for all costs associated with having the vehicle decontaminated (Starts at $120 up to
-                                $250).
-                                JUST DON’T DO IT or pick a different host.
-                            </li>
-
-                            <li><em>No Racing, Peel-outs, Donuts, or Off-roading</em> of any kind. Each vehicle is
-                                equipped with
-                                a
-                                monitoring system that tracks location and speed. Before and after each trip, we
-                                complete inspections and measure tire tread depth ensuring no excessive wear and tear.
-                                Evidence of this will result in additional charges. Please be aware of how you use our
-                                vehicles, as we take pride in providing you with an excellent
-                                product.
-                            </li>
-
-                            <li><em>NO PETS</em>. We ask this to avoid issues with allergies. Any pet hair found in
-                                vehicles may
-                                incur additional fees.
-                            </li>
-
-                            <li><em>No Travel outside of the country</em>. This is strictly prohibited. GPS monitoring
-                                and state
-                                boundary
-                                alerts, provide notification of travel outside of the State of Arizona. Any travel
-                                outside of
-                                the state must be communicated with the Host PRIOR to travel and approved by the Host.
-                                Communication is important!
-                            </li>
-
-                            <li><em>Need additional time during your rental period?</em> Request an extension through
-                                the Turo
-                                App before your trip has ended. Trips returned 60 minutes past the return time are
-                                automatically
-                                reported to Turo, and charges for additional usage and late fees will apply. We often
-                                have
-                                other guests scheduled so it is important to be punctual.
-                            </li>
-
-                            <li><em>Tickets and Tolls are your responsibility</em>. Failure to properly maintain the
-                                cars condition,
-                                or to follow state laws will be charged to you as the guest.
-                            </li>
-
-                            <li><em>Want additional drivers?</em> New Drivers MUST be added to the reservation before
-                                start of trip. Turo must approve all additional drivers, which provides protection for
-                                all parties.
-                            </li>
-
-                            <li><em>Turo App Required</em>. With all bookings, we require that you have access to the
-                                Turo
-                                Smartphone App while renting. During this rental period, the App enables proper
-                                communication between Rexx Rentals, trip photos, and ease in the pickup/dropoff.
-                            </li>
-
-                            <li><em>Return vehicles fully cleaned</em>. Our vehicle's stay in great
-                                condition
-                                because we take care and pride in our vehicles. We require the vehicles to be
-                                hand-washed
-                                prior to return, unless you add the "Post Trip Cleaning" services. Cleaning charges will
-                                apply if the vehicle is returned dirty.
-                            </li>
-
-                            <li><em>Please refrain from eating in the vehicles</em>. We realize there are times when you
-                                are
-                                hungry while
-                                traveling, but this is not covered in our “vehicle cleaning” services. If you elect to
-                                consume
-                                food while in the vehicle, it is your responsibility to remove any remnants prior to
-                                returning the vehicle. Additional fees may be added for removal of various food/food
-                                items.
-                            </li>
-
-                            <li> Please make sure you understand the link below:
-                                <a href="https://support.turo.com/hc/en-us/articles/203990780-Fees-fines">Turo's Fees
-                                    and
-                                    Fines</a>
-                            </li>
-
-                            <li><em>IMPORTANT:</em><br> Our #1 reimbursement is for guests who curb and damage the low
-                                profile rims,
-                                this
-                                expense is $200 per wheel, we document photos before and after and if any damages are
-                                noted
-                                you will be required to incur the expense, turn a little wider than usual and please be
-                                cautious of curbs.
-                            </li>
-                        </ol>
+                <div id="process" class="details__content">
+                    <div id="conditions">
+                        
                     </div>
                 </div>
             </article>
@@ -281,7 +179,6 @@
         <hr>
     </main>
     <div class="bot-nav-btns">
-        <!--&#9776; Took out because right button doesn't always fit right/might have to look into this later-->
         <button id="rentBtn"
                 data-src="">Rent</button>
         <button id="fleetBtn">Our Fleet</button>

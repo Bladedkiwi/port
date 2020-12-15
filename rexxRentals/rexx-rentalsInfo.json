@@ -28,13 +28,14 @@
 					"transmission": "Automatic Transmission",
 					"zeroToSixty": false,
 					"mpgHwyCtyAvg": [40, 29, 34],
-					"mpgeHwyCtyAvg": []
+					"mpgeHwyCtyAvg": false
 				}
 			},
 			"travel": {
 				"distance": [200, 1400, 6000],
+				"disIncl": false,
 				"freeDropLoc": ["Phoenix Sky Harbor International Airport"],
-				"paidDropLoc": [],
+				"paidDropLoc": false,
 				"costDay": 35,
 				"trips": 3,
 				"longTerm": false,
@@ -43,9 +44,9 @@
 					"rentAgeReq": false
 				}
 			},
-			"addOns": [],
-			"pkgIncl": [],
-			"uniqAttrib": []
+			"addOns": false,
+			"pkgIncl": false,
+			"uniqAttr": false
 		},
 		{
 			"type": "truck",
@@ -76,19 +77,20 @@
 					"drivetrain": "AWD",
 					"transmission": "Automatic Transmission",
 					"zeroToSixty": false,
-					"mpgHwyCtyAvg":[],
-					"mpgeHwyCtyAvg": []
+					"mpgHwyCtyAvg":false,
+					"mpgeHwyCtyAvg": false
 				}
 			},
 			"travel": {
 				"distance": [200, 1400, 6000],
+				"disIncl": false,
 				"freeDropLoc": [
 					"Phoenix Sky Harbor International Airport",
 					"Hyatt Place Scottsdale/Old Town",
 					"Aloft Phoenix Airport",
 					"Hilton Phoenix Airport"
 				],
-				"paidDropLoc": [],
+				"paidDropLoc": false,
 				"costDay": 80,
 				"trips": 15,
 				"longTerm": false,
@@ -99,7 +101,7 @@
 			},
 			"addOns": ["Post Trip Cleaning: 40$/trip"],
 			"pkgIncl": ["Safety Package"],
-			"uniqAttrib": [
+			"uniqAttr": [
 				"Laramie Flatbed",
 				"12 inch Navigation Screen",
 				"Reconfigurable Center Console"
@@ -133,19 +135,20 @@
 					"drivetrain": "AWD",
 					"transmission": "Automatic Transmission",
 					"zeroToSixty": false,
-					"mpgHwyCtyAvg": [null, null, 20],
-					"mpgeHwyCtyAvg": []
+					"mpgHwyCtyAvg": [false, false, 20],
+					"mpgeHwyCtyAvg": false
 				}
 			},
 			"travel": {
 				"distance": [200, 1400, 6000],
+				"disIncl": false,
 				"freeDropLoc": [
 					"Phoenix Sky Harbor International Airport",
 					"Hyatt Place Scottsdale/Old Town",
 					"Aloft Phoenix Airport",
 					"Hilton Phoenix Airport"
 				],
-				"paidDropLoc": [],
+				"paidDropLoc": false,
 				"costDay": 75,
 				"trips": 19,
 				"longTerm": false,
@@ -156,7 +159,7 @@
 			},
 			"addOns": ["Post Trip Cleaning: 40$/trip", "Prepaid Refuel 50$/trip"],
 			"pkgIncl": ["Tow Package", "Z71 Offroad Package"],
-			"uniqAttrib": [
+			"uniqAttr": [
 				"Z71 Lifted Truck",
 				"Pro Comp Xtreme Mt2 35inx12.5in Pro Comp Suspension Lift 6",
 				"Moto Metal 20in Offroad Wheels",
@@ -201,18 +204,19 @@
 					"drivetrain": "AWD",
 					"transmission": "Automatic Transmission",
 					"zeroToSixty": false,
-					"mpgHwyCtyAvg": [null, null, 18],
-					"mpgeHwyCtyAvg": []
+					"mpgHwyCtyAvg": [false, false, 18],
+					"mpgeHwyCtyAvg": false
 				}
 			},
 			"travel": {
 				"distance": [200, 1400, 6000],
+				"disIncl": false,
 				"freeDropLoc": [
 					"Phoenix Sky Harbor International Airport",
 					"Aloft Phoenix Airport",
 					"Hilton Phoenix Airport"
 				],
-				"paidDropLoc": [],
+				"paidDropLoc": false,
 				"costDay": 125,
 				"trips": 16,
 				"longTerm": false,
@@ -229,7 +233,7 @@
 				"Premium Sound",
 				"Safety Package"
 			],
-			"uniqAttrib": [
+			"uniqAttr": [
 				"6in lift 40in Tires",
 				"475 hp plus 1050 pounds-feet of torque",
 				"10-speed transmission with three overdrive gears, six drive modes and an available power takeoff",
@@ -269,12 +273,13 @@
 					"drivetrain": "AWD",
 					"transmission": "Automatic Transmission",
 					"zeroToSixty": "3.6sec",
-					"mpgHwyCtyAvg": [],
+					"mpgHwyCtyAvg": false,
 					"mpgeHwyCtyAvg": [89, 90, 89]
 				}
 			},
 			"travel": {
 				"distance": [150, 1050, 4500],
+				"disIncl": false,
 				"freeDropLoc": [
 					"Phoenix Sky Harbor International Airport",
 					"Hyatt Place Scottsdale/Old Town",
@@ -299,11 +304,10 @@
 				"Signature Series Package",
 				"Ultra High Fidelity Sound Package"
 			],
-			"uniqAttrib": [
-				"zeroToSixty 3.8 seconds or in Ludricrous mode 3.2 seconds",
+			"uniqAttr": [
+				"0-60 in 3.8 seconds or in Ludricrous mode 3.2 seconds",
 				"17in TouchScreen",
-				"Premium Ultimate Obsidian",
-				"Free Supercharging",
+				"Premium Ultimate Obsidian Paint",
 				"Panoroof",
 				"Smart Air Suspension (can adjust based on speed and also manually adjustable as needed)",
 				"Silent Ride (unless max battery power)",
@@ -312,7 +316,8 @@
 				"Automatic Falcon Wing",
 				"22in Satin Wheels",
 				"Autopilot enabled",
-				"Uncommon White Leather"
+				"Uncommon White Leather",
+				"Free Supercharging"
 			]
 		},
 		{
@@ -348,19 +353,20 @@
 					"transmission": "Automatic Transmission",
 					"zeroToSixty": "3.6sec",
 					"mpgHwyCtyAvg": [16, 23, 20],
-					"mpgeHwyCtyAvg": []
+					"mpgeHwyCtyAvg": false
 				}
 				
 			},
 			"travel": {
-				"distance": [200, 1400, 6000],
+				"distance": false,
+				"disIncl": [600,"$0.51/mi fee for additional miles driven"],
 				"freeDropLoc": [
 					"Phoenix Sky Harbor International Airport",
 					"Hyatt Place Scottsdale/Old Town",
 					"Aloft Phoenix Airport",
 					"Hilton Phoenix Airport"
 				],
-				"paidDropLoc": [],
+				"paidDropLoc": false,
 				"costDay": 125,
 				"trips": 50,
 				"longTerm": false,
@@ -375,15 +381,16 @@
 				"Prepaid Refuel $55/trip"
 			],
 			"pkgIncl": [
-				"Black Pack",
-				"Extended Leather",
 				"Meridian Premium Sound",
 				"Fully Loaded Performance",
-				"Premium Leather"
+				"Premium Leather",
+				"Extended Leather",
+				"Black Pack"
 			],
-			"uniqAttrib": [
+			"uniqAttr": [
 				"Uncommon Rear Wheel Drive F- Type R (only made for one year)",
-				"Supercharged and Intercooled DOHC 32-valve V-8, aluminum block and heads, Direct fuel injection",
+				"Supercharged and Intercooled DOHC 32-valve V-8, aluminum block and heads",
+				"Direct fuel injection",
 				"Rare Carbon Ceramix Matrix braking system",
 				"0 to 60MPH in 3.6 Seconds",
 				"550 hp @ 6500 rpm",

@@ -12,10 +12,10 @@
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge">
     <link rel="preload"
-          href="styles.css"
+          href="stylesMin.css"
           as="style">
     <link rel="stylesheet"
-          href="styles.css">
+          href="stylesMin.css">
     <link rel="apple-touch-icon"
           sizes="180x180"
           href="img/favicon/apple-touch-icon.png">
@@ -33,11 +33,8 @@
           href="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js">
     <link rel="dns-prefetch"
           href="rexx-rentalsInfo.json">
-    <link rel="preconnect"
+    <link rel="prefetch"
           href="js/main.js"
-          as="script">
-    <link rel="preconnect"
-          href="js/carController.js"
           as="script">
     <title>Hyatt | Rexx Rentals</title>
 </head>
@@ -63,12 +60,6 @@
                 <button>Sedans</button>
                 <ul id="sedan"
                     class="type__list">
-                    <!--<li class="list__items">
-                        <h2>Ford Focus</h2>
-                        <img src="img/ford-focus-white/mini/front-left-side.webp">
-                        <div><a href="">Details</a><a href="">Rent</a></div>
-                        
-                    </li>-->
                 </ul>
             </li>
             <li class="content__type">
@@ -90,7 +81,8 @@
     </nav>
     <main>
         <picture>
-            <img src="./img/homepage-feature.webp" />
+            <img src="./img/homepage-feature.webp"
+                 alt="Jaguar F Type R in Black" />
         </picture>
     </main>
     <div class="bot-nav-btns">

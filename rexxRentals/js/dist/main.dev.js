@@ -17,14 +17,16 @@ WebFont.load({
   google: {
     families: ["David Libre", "Megrim"]
   }
-});
-/*NAV*/
-//add event listeners to nav buttons
+}); //add event listeners to nav buttons
 
 var navBtns = Array.from(document.querySelectorAll(".bot-nav-btns button"));
 navBtns.push(document.querySelector("nav a"));
 navBtns.forEach(function (element) {
-  return element.addEventListener("click", util.activateMenu);
+  if (!element.id.includes("favBtn")) {
+    element.addEventListener("click", util.activateMenu);
+  } else {
+    element.addEventListener("click", util.setNewCarWindow);
+  }
 }); //add event listeners to accordian menus
 
 var accordianMenus = document.querySelectorAll(".content__type");
@@ -33,45 +35,70 @@ accordianMenus.forEach(function (menu) {
 }); //pass in the desired types to the car factory
 
 function findFactory() {
-  var foundFactory, carFactory, pageRef, carDetails, imgRefList, iconsList;
-  return regeneratorRuntime.async(function findFactory$(_context) {
+  var foundFactory, carFactory, pageRef, carDetails, imgRefList, iconsList, loadConditions, tabs;
+  return regeneratorRuntime.async(function findFactory$(_context2) {
     while (1) {
-      switch (_context.prev = _context.next) {
+      switch (_context2.prev = _context2.next) {
         case 0:
-          _context.next = 2;
-          return regeneratorRuntime.awrap(util.fetchTheBall('./../rexx-rentalsInfo.json'));
+          _context2.next = 2;
+          return regeneratorRuntime.awrap(util.fetchTheBall("./../rexx-rentalsInfo.json"));
 
         case 2:
-          foundFactory = _context.sent;
+          foundFactory = _context2.sent;
           carFactory = new _carController["default"]("sedan", "truck", "sportsCar");
-          carFactory.showCarNav(foundFactory.rentals); //
+          carFactory.showCarNav(foundFactory.rentals); //check for href change
 
-          if (!window.location.href.includes('ourFleet')) {
-            _context.next = 19;
+          if (!window.location.href.includes("ourFleet")) {
+            _context2.next = 23;
             break;
           }
 
           pageRef = window.location.hash;
-          pageRef = parseInt(pageRef.match(/[1-9]/));
-          pageRef -= 1;
+          pageRef = parseInt(pageRef.match(/[0-9]/));
           carDetails = foundFactory.rentals[pageRef];
-          _context.next = 12;
-          return regeneratorRuntime.awrap(util.fetchTheBall('./../imgPaths.json'));
+          _context2.next = 11;
+          return regeneratorRuntime.awrap(util.fetchTheBall("./../imgPaths.json"));
 
-        case 12:
-          imgRefList = _context.sent;
-          _context.next = 15;
-          return regeneratorRuntime.awrap(util.fetchTheBall('./../icons.json'));
+        case 11:
+          imgRefList = _context2.sent;
+          _context2.next = 14;
+          return regeneratorRuntime.awrap(util.fetchTheBall("./../icons.json"));
 
-        case 15:
-          iconsList = _context.sent;
+        case 14:
+          iconsList = _context2.sent;
           carFactory.showCarImg(carDetails, imgRefList);
           carFactory.showCarIcons(carDetails, iconsList);
-          carFactory.showCarPage(carDetails); //console.log(document.querySelector('meta[name="description"]').content);
+          carFactory.showCarPage(carDetails); //async arrow function - super cool
 
-        case 19:
+          loadConditions = function loadConditions() {
+            return regeneratorRuntime.async(function loadConditions$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.next = 2;
+                    return regeneratorRuntime.awrap(util.fetchThePaper("./../conditions.txt"));
+
+                  case 2:
+                    util.getElem("#conditions").innerHTML = _context.sent;
+
+                  case 3:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            });
+          };
+
+          util.getElem("#conditionsBtn").addEventListener("click", loadConditions);
+          tabs = document.querySelectorAll(".details__tabs");
+          tabs.forEach(function (tab) {
+            tab.addEventListener("click", util.openTab);
+          });
+          carFactory.chkContent(carDetails);
+
+        case 23:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
     }
   });

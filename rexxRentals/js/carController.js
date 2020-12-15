@@ -1,6 +1,6 @@
 import CarMaker from "./carModel.js";
 import CarShow from "./carView.js";
-import { setNewCarWindow, setListeners } from "./util.js";
+import { setNewCarWindow, setListeners, getElem, getElemAll } from "./util.js";
 
 export default class CarFactory {
 	constructor(type1, type2, type3) {
@@ -10,14 +10,11 @@ export default class CarFactory {
 	}
 	showCarNav(factory) {
 		try {
-			this.carShow.renderCarNav(
-				this.carMaker.getNavLinkDataByType(factory, this.carTypeList),
-				this.carTypeList
-			);
+			this.carShow.renderCarNav(factory);
 			//closure start const - sets things up
-			const carLot = this.carShow.getLinkData("data-car");
+			const carLot = this.carMaker.getLinkData("data-car");
 			factory.forEach((car) => {
-				setListeners(carLot(car),"click", setNewCarWindow);
+				setListeners(carLot(car), "click", setNewCarWindow);
 			});
 		} catch (err) {
 			console.log(`CarFactory failed to showCarNav: ${err.message}`);
@@ -33,7 +30,7 @@ export default class CarFactory {
 				this.carMaker.getCarImgLists("/medium/", carImgList),
 				this.carMaker.getCarImgLists("large", carImgList)
 			);
-			let gallery = this.carShow.getElemAll(".car__gallery img");
+			let gallery = getElemAll(".car__gallery img");
 			gallery.forEach((img) => {
 				img.addEventListener("click", this.changeImgView.bind(this));
 			});
@@ -48,7 +45,7 @@ export default class CarFactory {
 			let imgSrc = srcSet.split(",");
 			imgSrc = imgSrc[1].split(" ");
 			this.carShow.renderFeatPic(
-				this.carShow.getElem("#featPic img"),
+				getElem("#featPic img"),
 				srcSet,
 				imgSrc[1],
 				alt
@@ -59,28 +56,61 @@ export default class CarFactory {
 	}
 	showCarIcons(carDetails, iconsList) {
 		try {
-			console.log(carDetails);
-			console.log(iconsList);
-
-			this.carShow.renderCarIcons(this.carMaker.getCarIcons(carDetails.specs, iconsList))
-				
-			// 	carDetails.specs;
-			// let features = carDetails.features
-			// let mechanics = carDetails.specs.mechanics;
-			
+			this.carShow.renderCarIcons(
+				this.carMaker.getCarIcons(carDetails.specs, iconsList)
+			);
 		} catch (err) {
 			console.log(`CarFactory failed to showCarIcons: ${err.message}`);
 		}
 	}
 	showCarPage(carDetails) {
-	    try {
-	        //type, name, year, imgPath, rentLnk, about, specs, travel, addons?,pkgIncl?, uniqAttrib?
-	        //show name
-			this.carShow.renderCarName(this.carShow.getElem('#carName'), carDetails);
-
-	    } catch (err) {
+		try {
+			//type, name, year, imgPath, rentLnk, about, specs, travel, addons?,pkgIncl?, uniqAttrib?
+			this.carShow.renderCarAttr(
+				getElem("#featName"),
+				this.carMaker.getName(carDetails)
+			);
+			this.carShow.renderCarAttr(
+				getElem("#carName"),
+				this.carMaker.getName(carDetails)
+			);
+			this.carShow.renderCarAttr(
+				getElem("#about"),
+				this.carMaker.getAbout(carDetails)
+			);
+			if (carDetails.uniqAttr) {
+				this.carShow.renderCarDetails(
+					getElem("#uniqAttr ul"),
+					this.carMaker.getAttr(carDetails.uniqAttr)
+				);
+			}
+			if (carDetails.addOns) {
+				this.carShow.renderCarDetails(
+					getElem("#addOns ul"),
+					this.carMaker.getAttr(carDetails.addOns)
+				);
+			}
+			if (carDetails.pkgIncl) {
+				this.carShow.renderCarDetails(
+					getElem("#pkgIncl ul"),
+					this.carMaker.getAttr(carDetails.pkgIncl)
+				);
+			}
+			this.carShow.renderCarDetails(
+				getElem("#specs ul"),
+				this.carMaker.getSpecs(carDetails.specs)
+			);
+			this.carShow.renderTravel(getElem("#travel ul"), carDetails.travel);
+		} catch (err) {
 			console.log(`CarFactory failed to showCarPage: ${err.message}`);
 		}
-
+	}
+	chkContent(carDetails) {
+		if (!(carDetails.uniqAttr && carDetails.pkgIncl)) {
+			getElem("#enhancements").remove();
+			getElem(".tabs__links:nth-of-type(1)").remove();
+			getElem("#specs").style.display = "grid";
+			getElem("#specsData").classList.add("active");
+		}
 	}
 }

@@ -205,6 +205,22 @@ body ul li {
   list-style-type: none;
 }
 
+body button {
+  background: #1d0305;
+  color: #ffaf2d;
+  font-family: "Megrim", cursive;
+  border-color: #2b2a2a;
+  padding: 0.3rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+body button:hover,
+body .bot-nav-btns__contact-us:hover {
+  -webkit-box-shadow: inset 0px -2px 5px #ffc260;
+          box-shadow: inset 0px -2px 5px #ffc260;
+}
+
 body footer {
   background-color: #2b2a2a;
   border-right: 10px solid #1d0305;
@@ -238,7 +254,6 @@ body h3 {
   color: #ffaf2d;
   font-family: "Megrim", cursive;
   background-color: #1d0305;
-  padding: 0.2rem;
 }
 
 body p {
@@ -440,22 +455,6 @@ nav .nav__close-btn {
   grid-column: span 2;
 }
 
-.bot-nav-btns button {
-  background: #1d0305;
-  color: #ffaf2d;
-  font-family: "Megrim", cursive;
-  border-color: #2b2a2a;
-  padding: 0.3rem;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.bot-nav-btns button:hover,
-.bot-nav-btns .bot-nav-btns__contact-us:hover {
-  -webkit-box-shadow: inset 0px -2px 5px #ffc260;
-          box-shadow: inset 0px -2px 5px #ffc260;
-}
-
 .bot-nav-btns .bot-nav-btns__contact-us {
   grid-column: span 2;
   background: #2b2a2a;
@@ -619,20 +618,40 @@ ol li {
   border-right: 10px solid #1d0305;
 }
 
-.car__details .details__content {
-  display: none;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-}
-
-.car__details #conditions {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+.car__details #enhancements {
+  -ms-grid-columns: 1fr .3fr;
+      grid-template-columns: 1fr .3fr;
 }
 
 .car__details .active {
   display: -ms-grid;
   display: grid;
+}
+
+.details__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.details__content {
+  display: none;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.details__content ul {
+  padding: .5rem;
+}
+
+.details__content ul li {
+  padding: .3rem;
+  list-style-type: initial;
+  list-style-position: inside;
 }
 
 /* Scrollbar Alterations */
@@ -664,6 +683,18 @@ ol li {
   }
   .car .figcapt__icon-reel li {
     padding: 0.2em;
+  }
+  .details__tabs {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .details__tabs button {
+    width: 100%;
   }
 }
 

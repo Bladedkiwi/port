@@ -34,9 +34,9 @@ function () {
     key: "showCarNav",
     value: function showCarNav(factory) {
       try {
-        this.carShow.renderCarNav(this.carMaker.getNavLinkDataByType(factory, this.carTypeList), this.carTypeList); //closure start const - sets things up
+        this.carShow.renderCarNav(factory); //closure start const - sets things up
 
-        var carLot = this.carShow.getLinkData("data-car");
+        var carLot = this.carMaker.getLinkData("data-car");
         factory.forEach(function (car) {
           (0, _util.setListeners)(carLot(car), "click", _util.setNewCarWindow);
         });
@@ -54,7 +54,7 @@ function () {
           return img.match("".concat(carDetails.imgPath));
         });
         this.carShow.renderCarImgs(this.carMaker.getCarImgLists("/mini/", carImgList), this.carMaker.getCarImgLists("/medium/", carImgList), this.carMaker.getCarImgLists("large", carImgList));
-        var gallery = this.carShow.getElemAll(".car__gallery img");
+        var gallery = (0, _util.getElemAll)(".car__gallery img");
         gallery.forEach(function (img) {
           img.addEventListener("click", _this.changeImgView.bind(_this));
         });
@@ -70,7 +70,7 @@ function () {
         var alt = event.target.alt;
         var imgSrc = srcSet.split(",");
         imgSrc = imgSrc[1].split(" ");
-        this.carShow.renderFeatPic(this.carShow.getElem("#featPic img"), srcSet, imgSrc[1], alt);
+        this.carShow.renderFeatPic((0, _util.getElem)("#featPic img"), srcSet, imgSrc[1], alt);
       } catch (err) {
         console.log("CarFactory failed to changeImgView: ".concat(err.message));
       }
@@ -79,11 +79,7 @@ function () {
     key: "showCarIcons",
     value: function showCarIcons(carDetails, iconsList) {
       try {
-        console.log(carDetails);
-        console.log(iconsList);
-        this.carShow.renderCarIcons(this.carMaker.getCarIcons(carDetails.specs, iconsList)); // 	carDetails.specs;
-        // let features = carDetails.features
-        // let mechanics = carDetails.specs.mechanics;
+        this.carShow.renderCarIcons(this.carMaker.getCarIcons(carDetails.specs, iconsList));
       } catch (err) {
         console.log("CarFactory failed to showCarIcons: ".concat(err.message));
       }
@@ -93,10 +89,36 @@ function () {
     value: function showCarPage(carDetails) {
       try {
         //type, name, year, imgPath, rentLnk, about, specs, travel, addons?,pkgIncl?, uniqAttrib?
-        //show name
-        this.carShow.renderCarName(this.carShow.getElem('#carName'), carDetails);
+        this.carShow.renderCarAttr((0, _util.getElem)("#featName"), this.carMaker.getName(carDetails));
+        this.carShow.renderCarAttr((0, _util.getElem)("#carName"), this.carMaker.getName(carDetails));
+        this.carShow.renderCarAttr((0, _util.getElem)("#about"), this.carMaker.getAbout(carDetails));
+
+        if (carDetails.uniqAttr) {
+          this.carShow.renderCarDetails((0, _util.getElem)("#uniqAttr ul"), this.carMaker.getAttr(carDetails.uniqAttr));
+        }
+
+        if (carDetails.addOns) {
+          this.carShow.renderCarDetails((0, _util.getElem)("#addOns ul"), this.carMaker.getAttr(carDetails.addOns));
+        }
+
+        if (carDetails.pkgIncl) {
+          this.carShow.renderCarDetails((0, _util.getElem)("#pkgIncl ul"), this.carMaker.getAttr(carDetails.pkgIncl));
+        }
+
+        this.carShow.renderCarDetails((0, _util.getElem)("#specs ul"), this.carMaker.getSpecs(carDetails.specs));
+        this.carShow.renderTravel((0, _util.getElem)("#travel ul"), carDetails.travel);
       } catch (err) {
         console.log("CarFactory failed to showCarPage: ".concat(err.message));
+      }
+    }
+  }, {
+    key: "chkContent",
+    value: function chkContent(carDetails) {
+      if (!(carDetails.uniqAttr && carDetails.pkgIncl)) {
+        (0, _util.getElem)("#enhancements").remove();
+        (0, _util.getElem)(".tabs__links:nth-of-type(1)").remove();
+        (0, _util.getElem)("#specs").style.display = "grid";
+        (0, _util.getElem)("#specsData").classList.add("active");
       }
     }
   }]);

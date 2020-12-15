@@ -75,6 +75,19 @@ body {
 	ul li {
 		list-style-type: none;
 	}
+	button{
+		background: $dark-red;
+		color: $gold;
+		font-family: $font-hdr;
+		border-color: $dark-gray;
+		padding: 0.3rem;
+		font-size: 2rem;
+		cursor: pointer;
+	}
+	button:hover,
+	.bot-nav-btns__contact-us:hover {
+		box-shadow: inset 0px -2px 5px lighten($gold, 10%);
+	}
 	footer {
 		background-color: $dark-gray;
 		border-right: $border-10-red;
@@ -98,7 +111,6 @@ body {
 		color: $gold;
 		font-family: $font-hdr;
 		background-color: $dark-red;
-		padding: 0.2rem;
 	}
 	p {
 		padding: 1rem;
@@ -249,19 +261,6 @@ nav {
 	#rentBtn {
 		grid-column: span 2;
 	}
-	button{
-		background: $dark-red;
-		color: $gold;
-		font-family: $font-hdr;
-		border-color: $dark-gray;
-		padding: 0.3rem;
-		font-size: 2rem;
-		cursor: pointer;
-	}
-	button:hover,
-	.bot-nav-btns__contact-us:hover {
-		box-shadow: inset 0px -2px 5px lighten($gold, 10%);
-	}
 	.bot-nav-btns__contact-us {
 		grid-column: span 2;
 		background: $dark-gray;
@@ -376,15 +375,27 @@ ol {
 	display: grid;
 	background-color: $dark-gray;
 	border-right: $border-10-red;
-	.details__content {
-		display: none;
-		grid-template-columns: 1fr 1fr;
-	}
-	#conditions {
-		grid-template-columns: 1fr;
+	#enhancements {
+		grid-template-columns: 1fr .3fr;
 	}
 	.active {
 		display: grid;
+	}
+}
+.details__tabs {
+	display: flex;
+	flex-direction: column;
+}
+.details__content {
+	display: none;
+	grid-template-columns: 1fr;
+	ul {
+		padding: .5rem;
+		li {
+			padding: .3rem;
+			list-style-type: initial;
+			list-style-position: inside;
+		}
 	}
 }
 /* Scrollbar Alterations */
@@ -415,6 +426,13 @@ ol {
 			li {
 				padding: 0.2em;
 			}
+		}
+	}
+	.details__tabs {
+		flex-direction: row;
+		justify-content: space-evenly;
+		button {
+			width: 100%;
 		}
 	}
 }
