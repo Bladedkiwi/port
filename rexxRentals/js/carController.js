@@ -101,6 +101,7 @@ export default class CarFactory {
 				this.carMaker.getSpecs(carDetails.specs)
 			);
 			this.carShow.renderTravel(getElem("#travel ul"), carDetails.travel);
+			getElem('#rentBtn').dataset.src = carDetails.rentLnk;
 		} catch (err) {
 			console.log(`CarFactory failed to showCarPage: ${err.message}`);
 		}
